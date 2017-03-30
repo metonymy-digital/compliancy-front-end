@@ -1,0 +1,38 @@
+.site-nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hero {
+  background-image: url({{ 'hero.jpg' | asset_url }});
+  background-size: cover;
+  position: relative;
+  width: 100%;
+  display: inline-block;
+}
+
+.hero::after {
+    padding-top: 56.25%;
+    display: block;
+    content: '';
+}
+
+.hero__inner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.hero__copy {
+  position: absolute;
+}
+
+.full-bleed-hero {
+  width: 100%;
+}
+
+.full-bleed-hero__image {
+  width: 1920px;
+}
