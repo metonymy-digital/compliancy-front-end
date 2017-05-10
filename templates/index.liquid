@@ -1,100 +1,155 @@
 {{ content_for_index }}
-<section class="hero">
-  <div class="hero__inner">
-    <div class="hero__copy">
-      <h1>exclusive artisan wines from around the world</h1>
-      <img src="" alt="Todd English Uncorked">
-      <h2>Savor every moment with premium wines curated by award&dash;winning, world&dash;renowned chef, Todd English</h2>
-      <button class="btn-cta">get uncorked</button>
+<div class="grid">
+  <div class="grid__item hero hero--top">
+    <!-- <div class="hero__logo">
+      <img src="{{ 'pineapple.svg' | asset_url }}" alt="pineapple" class="icon icon--pineapple" />
+      <h1>Deen Brothers Wines</h1>
+    </div> -->
+    <div class="hero__cta">
+      <h2>a taste of southern hospitality</h2>
+      <p>Enjoy a selection of fine wines, curated with love and care by Jamie Deen. Perfect for every day, every occassion, and every dish.</p>
+      <button class="btn__cta">explore wines</button>
     </div>
   </div>
-</section>
-<section class="levels">
-  <div class="level">
-    <img src="" alt="taster">
-    <img src="" alt="bottles">
-    <h1>3 bottles</h1>
-    <p>&sol;per month</p>
-    <p>Perfect every day wines to share with family and friends. Todd specially selects these beauties for excellent quality and real character.</p>
-    <p>$48 &sol;month<br /> first month 50&percnt; off</p>
-    <button class="btn-cta">get started</button>
+</div>
+<div class="grid">
+  <div class="grid__item value-prop">
+    <div class="value-prop__content">
+      <h2>hand&ndash;selected, Deen approved wines</h2>
+        <p>
+          Growing up with a momma like Paula, I have learned a thing or two about the importance of southern hospitality. I was taught to cook from the heart, laugh from the belly, and welcome guests like they were part of my own family. With Deen Brothers&apos; Wine you'll be able to purchase wine at your leisure, or enjoy a monthly subscription that not only delivers wonderful wines from some of the best vinyards in the United States, You'll also receive complementary, mouth watering recipes so you can welcome your own guests in true Savannah style.
+        </p>
+        <button class="btn__cta">explore wines</button>
+      </div>
+      <img class="" src="{{ 'deen.png' | asset_url }}" alt="Jamie Deen" />
   </div>
-  <div class="level">
-    <div class="level__header">
-      <h1>&lbrace; magnificent &rbrace;</h1>
+</div>
+<div class="grid">
+  <div class="grid__item featured-wines">
+      <div class="featured-wines__header">
+        <h3>featured wines</h3>
+        <ul class="featured-wines__nav">
+          <li>bundles</li>
+          <li>white</li>
+          <li>reds</li>
+        </ul>
+      </div>
+      <!-- pull wines in this category and run a loop -->
+      <div class="grid__item">
+        <div class="grid">
+          <div class="grid__item large--one-forth medium--one-half small--one-whole product">
+            <img src="{{ 'bottle.png' | asset_url }}" alt="product" class="product__image" />
+            <p class="product__type">Product Type</p>
+            <h4>California Vineyard</h4>
+            <p class="product__location">Napa Valley, CA</p>
+            <p class="product__price">$65</p>
+            <button class="btn__subscribe">subscribe</button>
+            <button class="btn__buy">buy now</button>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+
+<div class="grid__item hero hero--middle">
+  <img src="{{ 'fleur.svg' | asset_url }}" alt="fleur" class="icon icon--fleur" />
+  <h4>wine &amp; dine</h4>
+  <div class="hero__title">
+    <img src="{{ 'leaves-left.svg' | asset_url }}" role="presentation" class="icon icon--leaves" />
+    <h2>welcome to our table</h2>
+    <img src="{{ 'leaves-right.svg' | asset_url }}" role="presentation" class="icon icon--leaves" />
+  </div>
+  <img src="{{ 'separator-1.svg' | asset_url }}" role="presentation" class="icon--separator-lg" />
+  <p>
+    Jamie Deen, and wine expert, Doug Margerum, have carefully selected wines that pair well with food. Using the Deen brothers&apos; succulent recipes, you&apos;re invited to try these perfect pairings. We&apos;ve curated comfort wines to go with comfort food, guaranteed to put a smile on your face.
+  </p>
+  <button class="btn__cta">get cookin&apos;</button>
+</div>
+<div class="grid__item selection-process">
+  <img class="icon icon--leaf" src="{{ 'leaf.svg' | asset_url }}" role="presentation" />
+  <h5>made with TLC</h5>
+  <img class="icon icon--separator-sm" role="presentation" src="{{ 'separator-2.svg' | asset_url }}" />
+  <h2>the deen selection process</h2>
+  <p>
+    We carefully select premium wines from only the best vineyards. Never afraid to try something new, we are always on the lookout for our next great find. Y&apos;all decide which wines are your favorite, but be sure to try them all!
+  </p>
+</div>
+<div class="grid__item">
+  <div class="grid column-container">
+    <div class="grid__item large--one-third small--one-whole value-item">
+      <h3>y&apos;all come drink</h3>
+      <img class="icon icon--map" src="{{ 'map.svg' | asset_url }}" role="presentation" />
+      <div class="value-item__title">
+        <span class="brace">{</span>
+        <h6>for you</h6>
+        <span class="brace">}</span>
+      </div>
+      <p>
+        Choose from our mixed packs of red, white, or ros&eacute; wines or pick your favorite wine as a cellar pack to enjoy now, enjoy later, and to save in your wine cellar.
+      </p>
+      <p>
+        Make every day special with wine carefully picked just for you.
+      </p>
     </div>
-    <img src="" alt="enthusiast" />
-    <p>Todd's favorites. These perfectly balanced gems reveal layers of flavor with every sip. Excellent for dinner parties and impressive as gifts.</p>
-    <p>$72&sol;minth ($135 value) + free shipping</p>
-    <p>1st month only $36</p>
-    <button class="btn-cta">get started</button>
+    <div class="grid__item large--one-third small--one-whole value-item">
+      <h3>share the love</h3>
+      <img class="icon icon--somm" src="{{ 'somm.png' | asset_url }}" role="presentation" />
+      <div class="value-item__title">
+        <span class="brace">{</span>
+        <h6>for a friend</h6>
+        <span class="brace">}</span>
+      </div>
+      <p>
+        Show someone you care and send any of our wines directly to your loved ones. Deen Brothers Wines make a great gift for any occasion or "just because".
+      </p>
+      <p>
+        Add a gift to your order during checkout and make someone very happy.
+      </p>
+    </div>
+    <div class="grid__item large--one-third small--one-whole value-item">
+      <h3>subscribe &amp; save</h3>
+      <img class="icon icon--basket" src="{{ 'basket.svg' | asset_url }}" role="presentation" />
+      <div class="value-item__title">
+        <span class="brace">{</span>
+        <h6>keep it comin&apos;</h6>
+        <span class="brace">}</span>
+      </div>
+      <p>
+        Save 50% on your first shipment when you subscribe for 3 months.
+      </p>
+      <p>
+        This limited time offer keeps the wine coming every month so your cellar is stocked. Experiment with new recipes that pair with our wines to find your favorite combination.
+      </p>
+    </div>
   </div>
-  <div class="level">
-    <img src="" alt="vintner">
-    <img src="" alt="bottles">
-    <img src="" alt="bottles">
-    <img src="" alt="bottles">
-    <h1>9 bottles</h1>
-    <p>&sol;per month</p>
-    <p>Wines of intriguing complexity for special occasions or well&dash;earned indulgence. Todd's most notable discoveries. The best of the best.</p>
-    <p>$96&sol;month ($360 value)</p>
-    <button class="btn-cta">get started</button>
+</div>
+
+<div class="grid__item">
+  <img class="full-bleed" alt="Jamie Deen" src="{{ 'meet-deen.png' | asset_url }}"/>
+</div>
+
+<div class="grid__item">
+  <img class="icon icon--leaf" role="presentation" src="{{ 'leaf.svg' | asset_url }}" />
+  <h5>meet the Deen brothers</h5>
+  <img class="icon icon--separator-sm" role="presentation" src="{{ 'separator-2.svg' | asset_url }}" />
+  <h2>from our family to yours</h2>
+  <p>
+    I&apos;ve been fortunate enough to learn about wine from the experts including my friend and winemaker, Doug Margerum. By visiting vineyards, tasting grapes, and helping blend wines, I&apos;ve learned so much about wine, and can&apos;t wait to share what I&apos;ve learned with you. Y&apos;all are going to love what we&apos;ve picked out for you. Shop our hand&ndash;selected wines below.
+  </p>
+  <button class="btn__cta">get started</button>
+</div>
+
+<div class="grid__item hero hero--bottom">
+  <img src="{{ 'fleur.svg' | asset_url }}" alt="fleur" class="icon icon--fleur" />
+  <h4>from our customers</h4>
+  <div class="hero__title">
+    <img src="{{ 'leaves-left.svg' | asset_url }}" role="presentation" class="icon icon--leaves" />
+    <h2>don&apos;t take our word for it</h2>
+    <img src="{{ 'leaves-right.svg' | asset_url }}" role="presentation" class="icon icon--leaves" />
   </div>
-</section>
-<section class="value-props">
-  <div class="value-prop">
-    <h1>raise your glass</h1>
-    <h2>crazy good wine</h2>
-    <p>Benefit for Todd's long-time relationships in the wine world for insider access to special bottlings, small batchesand linited production vintages.</p>
-    <button class="btn-cta">get started</button>
-    <img src="" alt="wine bottles and red rings">
-  </div>
-  <div class="value-prop">
-    <img src="" alt="wine grapes and cheese">
-    <h1>you'll love the</h1>
-    <h2>exclusive limited releases</h2>
-    <p>unlike many clubs out there, we don't repaclage bulk wines with a snaxxy label &mdash; subscribers only receive authentic artisanal and handcrafted wines.</p>
-    <button class="btn-cta">get started</button>
-  </div>
-  <div class="value-prop">
-    <h1>expand your horizons</h1>
-    <h2>broaden your knowledge</h2>
-    <p>Develop a connoisseur's palate as you discover the stories behind the wine, food pairings, and special recipes developed by Chef Todd himself.</p>
-  </div>
-</section>
-
-<section class="full-bleed">
-  <h1>exclusively for you</h1>
-  <h2>from Todd with love.</h2>
-  <p>Todd connects with his winemaker and sommelier friends to curate the monthly selections of food-friendly wines sourced from small, family-run wineries and boutique estates around the world.</p>
-  <button class="btn-cta">get started</button>
-</section>
-
-<section>
-  <h1>how it works</h1>
-
-  <h2>the wine</h2>
-  <h3>sourcing</h3>
-  <p>Todd's network of friends search the globe for exclusive, artisan wines from small, family run wineries and boutique estates that Todd will love &mdash; and that will be worthy of Todd English Uncorked.</p>
-  <h3>curating</h3>
-  <p>Todd selects a collection of Reds and Whites for the monthly deliveries, with Ros&egrave; and Sparkling wines befitting the season, and the occasional Fortified or Dessert wines just for fun.</p>
-
-  <h2>the subscription</h2>
-  <p>Choose your subscription: Tasterm Enthusiast or Vinter</p>
-  <p>Would you like to receive 3, 6, or 12 bottles each month?</p>
-  <p>Todd recomends his mixed collection, but you can choose all red or all white.</p>
-  <p>We realize that s your palate ecolves you may want to change things up a bit. Have no fear; it's easy to modify your subscription options.</p>
-
-  <h2>receive</h2>
-  <p>After you subscribe, you will receive a complimentary Todd English Uncorked Wine Journal to hold the winemaker's notes and Todd's specially developed recipes. Following that, your first shipment of wines will be delivered directly to your doorstep accompanied by comprehensive tasting notes and food pairing suggestions</p>
-
-  <h2>Enjoy</h2>
-  <p>savor every moment with exclusive, artisan, and food friendly wines curated by Todd English hinself. Expand your knowledge with comprehensive tasting, foodpairing and winemaker notes. Expand your horizons &mdash; and your palate &mdash; with Todd English Uncorked.</p>
-</section>
-
-<section>
-  <h1>exclusively for you</h1>
-  <h2>wines of the world</h2>
-  <p>Enjoy hand-slected wines from the best-known appellations as well as regions considered best-kept secrets. All Todd English Uncorked wines reflect the small, singular places where they're grown. </p>
-  <button class="btn-cta">get started</button>
-</section>
+  <img src="{{ 'separator-1.svg' | asset_url }}" role="presentation" class="icon icon--separator-lg" />
+  <p>
+    need quote here
+  </p>
+  <button class="btn__cta">get started</button>
+</div>

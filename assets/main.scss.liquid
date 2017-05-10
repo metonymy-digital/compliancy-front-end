@@ -1,38 +1,408 @@
-.site-nav {
-  display: flex;
-  justify-content: flex-end;
+$brown: #8b683e;
+$grey: #666;
+$dark-grey: #333;
+$white: #fff;
+
+@font-face {
+  font-family: 'Avenir';
+  src: url({{ 'Avenir-Black.woff2' | asset_url }}) format('woff2'),
+       url({{ 'Avenir-Black.woff' | asset_url }}) format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
+@font-face {
+  font-family: 'Whitenights';
+  src: url({{ 'WhitenightsLTStd-Regular.woff' | asset_url }}) format('woff'),
+       url({{ 'Whitenights-LT-Std_48829.woff2' | asset_url }}) format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Whitenights-Titling';
+  src: url({{ 'Whitenights-LT-Std-Titling_48828.woff2' | asset_url }}) format('woff2'),
+       url({{ 'WhitenightsLTStd-Titling.woff' | asset_url }}) format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Whitenights-Bold';
+  src: url({{ 'Whitenights-LT-Std-Bold_48825.ttf' | asset_url }}) format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  color: $dark-grey;
+  text-rendering: optimizeLegibility;
+}
+
+////////////////
+//TYPEOGRAPHY//
+//////////////
+
+p {
+  margin: 0;
+}
+.wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+
+
+h1 {
+  font-family: "whitenights-Titling";
+  font-size: 29px;
+  font-weight: bold;
+}
+
+h2 {
+  font-family: "Whitenights-Bold";
+  font-size: 56px;
+  letter-spacing: -0.05em;
+  margin: 0;
+}
+
+h3 {
+  font-family: "freight-display-pro",serif;
+  font-size: 33px;
+  letter-spacing: 0.03em;
+  font-weight: 400;
+}
+
+h4 {
+  font-family: "freight-display-pro",serif;
+  font-size: 28px;
+  letter-spacing: 0.01em;
+  font-weight: 700;
+}
+
+h5 {
+  font-family: "freight-display-pro",serif;
+  font-size: 32px;
+  letter-spacing: 0.01em;
+  color: $brown;
+  font-weight: 400;
+}
+
+h6 {
+  font-family: "Whitenights";
+  font-size: 24px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+p {
+  font-family: "Freight Book";
+  font-size: 24px;
+  letter-spacing: 0.01em;
+}
+
+.product__type {
+  font-family: "Avenir";
+  font-size: 13px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: $brown
+}
+
+.product__location {
+  font-family: "Freight Book Italic";
+  font-size: 20px;
+  letter-spacing: 0.01em;
+}
+
+.product__price {
+  font-family: "Freight Bold";
+  font-size: 22px;
+  letter-spacing: 0.01em;
+}
+
+
+////////////////////
+//BUTTONS AND ICONS
+///////////////////
+
+.btn__cta {
+  border: 1px solid #fff;
+  font-family: "Whitenights";
+  font-size: 23px;
+  text-transform: uppercase;
+  letter-spacing: 0.23em;
+  border-radius: 5px;
+  padding: 10px 35px 5px;
+}
+
+.btn__subscribe, .btn__buy {
+  font-family: "Avenir";
+  font-size: 14px;
+  letter-spacing: 0.31em;
+  text-transform: uppercase;
+  border-radius: 5px;
+  width: 225px;
+  padding: 10px 55px 7px;
+  margin-bottom: 15px;
+}
+
+.btn__subscribe {
+  color: $grey;
+  border: 1px solid $grey;
+  margin-top: 20px;
+}
+
+.btn__buy {
+  background-color: $brown;
+  color: $white;
+}
+
+.icon {
+  width: 32px;
+}
+.icon--pineapple {
+  width: 25px;
+}
+
+.icon--fleur {
+  width: 70px;
+}
+
+.icon--leaves {
+  width: 40px;
+  height: 100%;
+  margin: 0 5px;
+}
+
+.icon--separator-lg {
+  width: 225px;
+}
+
+.icon--separator-sm {
+  width: 150px;
+  margin: 15px 0;
+}
+
+.icon--leaf {
+  width: 60px;
+  margin-bottom: 15px;
+}
+
+.icon--map {
+  width: 80px;
+}
+
+.icon--somm {
+  width: 95px;
+}
+
+.icon--basket {
+  width: 75px;
+}
+
+.brace {
+  font-size: 50px;
+  line-height: 1;
+  margin: 0 5px;
+  font-family: 'Whitenights';
+}
+
+///////////
+//CONTENT
+//////////
+
 .hero {
-  background-image: url({{ 'hero.jpg' | asset_url }});
-  background-size: cover;
+    background-size: cover;
+    color: $white;
+}
+
+.hero .btn__cta {
+  color: $white;
+}
+
+.hero__logo {
+  width: 32px;
+}
+
+.hero--top {
+  background: url({{ 'hero.jpg' | asset_url }});
+  padding-right: 40px;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+  margin-bottom: 45px;
+}
+
+.hero--top .hero__cta {
+  margin-top: 245px;
+  margin-bottom: 360px;
+  display: flex;
+  flex-flow: column;
+  align-items: flex-end;
+}
+
+.hero--top .hero__cta p {
+  max-width: 670px;
+  text-align: right;
+  margin-bottom: 45px;
+}
+
+.hero--middle {
+  background: url({{ 'hero-2.jpg' | asset_url }});
+}
+
+.hero--bottom {
+  background: url({{ 'hero-3.jpg' | asset_url }});
+}
+
+.value-prop .btn__cta {
+  color: $brown;
+  border-color: $brown;
+}
+
+
+.value-prop {
+  padding: 0 120px 0 145px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 80px;
+}
+
+.value-prop__content {
+  display: flex;
+  flex-flow: column;
+  align-items: flex-end;
+}
+
+.value-prop__content h2 {
+  font-size: 45px;
+  line-height: 1.6;
+}
+
+.value-prop__content p {
+  max-width: 765px;
+  text-align: right;
+  margin-bottom: 50px;
+  line-height: 1.3;
+  color: $brown;
+}
+
+.featured-wines {
+  padding: 0 120px 0 145px;
+}
+
+.featured-wines__header {
   position: relative;
+  display: flex;
   width: 100%;
+  justify-content: space-between;
+  margin-bottom: 90px;
+  border-image: url({{ 'separator-2.svg' | asset_url }}) 0 0 0 0fill repeat;
+}
+
+.featured-wines__header:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  border-image: url({{ 'separator-2.svg' | asset_url }}) 0 0 0 0 fill repeat;
+}
+
+.featured-wines__nav li {
+  list-style: none;
   display: inline-block;
 }
 
-.hero::after {
-    padding-top: 56.25%;
-    display: block;
-    content: '';
+.product {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  margin-bottom: 45px;
 }
 
-.hero__inner {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+.product__image {
+  width: 230px;
+  margin-bottom: 32px;
 }
 
-.hero__copy {
-  position: absolute;
+.hero--middle {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  height: 718px;
+  margin-bottom: 65px;
 }
 
-.full-bleed-hero {
+.hero--middle .icon--fleur {
+  margin-bottom: 20px;
+}
+
+.hero--middle p {
+  max-width: 1145px;
+  text-align: center;
+  margin: 30px 0 50px;
+}
+
+.hero--middle .hero__title {
+  display: flex;
+  justify-content: center;
+}
+
+.selection-process {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  margin-bottom: 125px;
+}
+
+.selection-process p {
+  max-width: 870px;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.column-container {
+  display: flex;
+  justify-content: space-between;
   width: 100%;
+  margin-bottom: 90px;
+  padding: 0 100px;
 }
 
-.full-bleed-hero__image {
-  width: 1920px;
+.value-item {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  max-width: 400px;
+}
+
+.value-item h3 {
+  margin-bottom: 65px;
+  font-family: 'Whitenights';
+  font-size: 40px;
+  color: $brown;
+  letter-spacing: -0.05em;
+}
+
+.value-item .icon {
+  margin-bottom: 40px;
+}
+
+.value-item__title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.value-item p {
+  text-align: center;
 }

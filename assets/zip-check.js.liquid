@@ -36,7 +36,7 @@ $(function() {
       var total = JSON.parse(data.total_price)
        return $.ajax({
           method: "POST",
-          url: 'http://c623b0cc.ngrok.io/compliancy-connector/zip-chcek',
+          url: 'http://b90e0e94.ngrok.io/compliance/check',
           data: { zip: zipCode, total: total },
         })
     }).then(function(data) {
