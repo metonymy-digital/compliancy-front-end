@@ -250,8 +250,8 @@ $socialIconFontStack: 'icons';
   Layer promotion mixin for creating smoother animations with higher FPS.
 ==============================================================================*/
 @mixin promote-layer($properties: transform) {
-  -webkit-transform: translateZ(0); // translateZ hack
-  will-change: $properties; // spec
+  // -webkit-transform: translateZ(0); // translateZ hack
+  // will-change: $properties; // spec
 }
 
 /*============================================================================

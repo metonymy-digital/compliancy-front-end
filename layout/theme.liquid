@@ -64,9 +64,6 @@
     </div>
     <!-- begin mobile-nav -->
     <ul class="mobile-nav">
-      <li class="mobile-nav__item mobile-nav__search">
-        {% include 'search-bar' %}
-      </li>
       {% for link in linklists.main-menu.links %}
         {% comment %}
           Create a dropdown menu by naming a linklist the same as a link in the parent nav
@@ -215,8 +212,8 @@
       </div>
     </header>
 
-    <nav class="nav-bar" role="navigation">
-      <div class="wrapper">
+    <nav class="nav-bar" role="navigation" id="nav">
+      <div class="wrapper nav-wrapper">
         <div class="medium-down--hide">
           {% comment %}
             List out your main-menu linklist (default)
@@ -225,6 +222,10 @@
               - http://docs.shopify.com/themes/liquid-variables/linklists
           {% endcomment %}
           <!-- begin site-nav -->
+          <div class="hero__logo">
+            <img src="{{ 'pineapple.svg' | asset_url }}" alt="pineapple" class="icon icon--pineapple" />
+            <h1>Deen Brothers Wines</h1>
+          </div>
           <ul class="site-nav" id="AccessibleNav">
             {% for link in linklists.main-menu.links %}
               {% comment %}
@@ -427,6 +428,7 @@
       });
     </script>
     {{ 'zip-check.js' | asset_url | script_tag }}
+    {{ 'app.js' | asset_url | script_tag }}
   {% endif %}
   <script>
     (function(d) {
