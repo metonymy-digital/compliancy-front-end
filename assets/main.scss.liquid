@@ -73,6 +73,10 @@ body {
   align-items: center;
   justify-content: space-between;
 }
+
+.breadcrumb {
+  margin-top: 60px;
+}
 //
 // .nav-wrapper {
 //   position: fixed;
@@ -198,6 +202,10 @@ p {
   padding: 10px 0 7px;
   margin-bottom: 15px;
   max-width: 180px;
+}
+
+.btn__subscribe a, .btn__buy a {
+  color: $white;
 }
 
 .btn__subscribe {
@@ -370,7 +378,6 @@ p {
   justify-content: space-between;
   margin-bottom: 90px;
   border-image: url({{ 'separator-2.svg' | asset_url }}) 0 0 0 0 repeat;
-  padding: 10px 0;
 }
 
 .featured-wines__header:after {
@@ -383,9 +390,33 @@ p {
   border-image: url({{ 'separator-2.svg' | asset_url }}) 0 0 0 0 fill repeat;
 }
 
+.featured-wines__nav {
+  margin: 0;
+  padding: 0;
+}
+
 .featured-wines__nav li {
   list-style: none;
   display: inline-block;
+  margin-right: 15px;
+  margin-bottom: 0;
+}
+
+.featured-wines__nav li:last-of-type {
+  margin-right: 0;
+}
+
+.featured-wines__nav a {
+  font-family: 'Avenir';
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 18px;
+  // padding-bottom: 2px;
+  display: inline-block;
+}
+
+.featured-wines__nav a.active {
+  border-bottom: 2px solid $brown;
 }
 
 .wines {
@@ -444,7 +475,6 @@ p {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  max-width: 400px;
 }
 
 .value-item h3 {
@@ -468,7 +498,15 @@ p {
 .value-item p {
   text-align: center;
   margin-bottom: 0.5em;
+  max-width: 250px;
+}
 
+.value-item__cta {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-left: 30px;
+  padding-top: 50px;
 }
 
 .text-section {
@@ -742,6 +780,14 @@ p {
 
   .featured-wines__header {
     margin-bottom: 30px;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 15px;
+  }
+
+  .featured-wines__header h3 {
+    line-height: 2;
   }
 
   .product__image {
@@ -782,4 +828,17 @@ p {
   .full-bleed__img > img {
     min-width: 768px;
   }
+}
+
+.product-tabs li {
+  display: inline;
+  list-style: none;
+}
+
+.product-tabs a {
+  text-decoration: none;
+}
+
+.product-tabs a .active {
+  text-decoration: underline;
 }

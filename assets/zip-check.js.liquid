@@ -36,18 +36,25 @@ $(function() {
       var total = JSON.parse(data.total_price)
        return $.ajax({
           method: "POST",
-          url: 'http://b90e0e94.ngrok.io/compliance/check',
+          url: 'http://cec38c4d.ngrok.io/compliance/check',
           data: { zip: zipCode, total: total },
         })
-    }).then(function(data) {
-      localStorage.setItem('taxId', data.id);
+    }).then(function(response) {
+      if (!response.data.compliant) {
+        console.log('NOT COMPLIANT');
+        return
+      }
+      localStorage.setItem('taxId', response.data.id);
       $.ajax({
         method: "POST",
         url: '/cart/add.js',
+        dataType: 'json',
         data: {
           quantity: 1,
-          id: data.id
+          id: response.data.id
         }
+      }).then(function() {
+        console.log('were done here');
       })
     })
   })

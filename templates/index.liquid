@@ -25,15 +25,35 @@
     <div class="grid__item featured-wines__header">
       <h3>featured wines</h3>
       <ul class="featured-wines__nav">
-        <li>bundles</li>
-        <li>white</li>
-        <li>reds</li>
+        <li><a href="#bundles">bundles</a></li>
+        <li><a href="#whites">whites</a></li>
+        <li><a href="#reds">reds</a></li>
       </ul>
     </div>
     <!-- pull wines in this category and run a loop -->
     <div class="grid__item">
       <div class="grid">
+        <div id="bundles">
             {% for product in collections.bundles.products %}
+              <div class="grid__item large--one-quarter medium--one-half small--one-whole">
+                <div class="product">
+                  {% for image in product.images %}
+                    <a href="{{ product.url }}">
+                      <img src={{ image.src | product_img_url: 'medium' }} alt="product" class="product__image" />
+                    </a>
+                  {% endfor %}
+                  <p class="product__type">{{ product.type }}</p>
+                  <h4>{{ product.title }}</h4>
+                  <p class="product__location">{{ product.description }}</p>
+                  <p class="product__price">{{ product.price | money }}</p>
+                  <button class="btn__subscribe">subscribe</button>
+                  <button class="btn__buy"><a href="{{ product.url }}">buy now</a></button>
+                </div>
+              </div>
+          {% endfor %}
+        </div>
+        <div id="whites">
+            {% for product in collections.whites.products %}
               <div class="grid__item large--one-quarter medium--one-half small--one-whole">
                 <div class="product">
                   {% for image in product.images %}
@@ -48,6 +68,24 @@
                 </div>
               </div>
           {% endfor %}
+        </div>
+        <div id="reds">
+            {% for product in collections.reds.products %}
+              <div class="grid__item large--one-quarter medium--one-half small--one-whole">
+                <div class="product">
+                  {% for image in product.images %}
+                    <img src={{ image.src | product_img_url: 'medium' }} alt="product" class="product__image" />
+                  {% endfor %}
+                  <p class="product__type">{{ product.type }}</p>
+                  <h4>{{ product.title }}</h4>
+                  <p class="product__location">{{ product.description }}</p>
+                  <p class="product__price">{{ product.price | money }}</p>
+                  <button class="btn__subscribe">subscribe</button>
+                  <button class="btn__buy">buy now</button>
+                </div>
+              </div>
+          {% endfor %}
+        </div>
       </div>
     </div>
 </div>
@@ -123,7 +161,9 @@
       This limited time offer keeps the wine coming every month so your cellar is stocked. Experiment with new recipes that pair with our wines to find your favorite combination.
     </p>
   </div>
-  <button class="btn__cta">Get Cookin&apos;</button>
+  <div class="value-item__cta">
+    <button class="btn__cta">Get Cookin&apos;</button>
+  </div>
 </div>
 
 <div class="grid full-bleed">

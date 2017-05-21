@@ -112,10 +112,6 @@
 
       </div>
 
-      <div class="product-description rte" itemprop="description">
-        {{ product.description }}
-      </div>
-
       {% comment %}
         If the user is on a collection product page (ie with /collections/collection-handle/products/product-handle)
         in the URL, we can show next/previous links to other products in the collection.
@@ -139,7 +135,33 @@
 
     </div>
   </div>
-
+  <section>
+    <div class="product-description rte" itemprop="description">
+      <ul class="product-tabs">
+        <li><a href="#tab-tasting">Tasting notes</a></li>
+        <li><a href="#tab-details">Details</a></li>
+        <li><a href="#tab-reviews">Reviews</a></li>
+        <li><a href="#tab-about">About</a></li>
+        <li><a href="#tab-recipes">Recipes</a></li>
+      </ul>
+      <div id="tab-tasting">
+      {{ product.metafields.name.key }}
+      </div>
+      <div id="tab-details">
+      {% include 'shipping' %}
+      </div>
+      <div id="tab-reviews">
+      {{ pages.returns.content }}
+      </div>
+      <div id="tab-about">
+      {{ pages.returns.content }}
+      </div>
+      <div id="tab-recipes">
+        {% include 'recipe' %}
+      </div>
+    </div>
+  </section>
+  {% section 'related-products' %}
 </div>
 
 {% comment %}
