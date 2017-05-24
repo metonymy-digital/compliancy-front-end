@@ -1,7 +1,39 @@
 // customers/register.liquid
-#create-account {
+.template-customers-register {
   padding-top: $top-nav-height;
   .main-content {
     padding: $space-xl 0;
+    h1 {
+      margin: $space-md 0;
+    }
+    .form-vertical {
+      label {
+        float: left;
+        font-family: 'Whitenights';
+        text-transform: lowercase;
+      }
+      .link--forgot-password {
+        float: right;
+        text-decoration: underline;
+        font-family: 'Whitenights';
+      }
+      .input-full {
+        margin-top: $space-xs;
+        margin-bottom: $space-lg;
+      }
+      .btn--full {
+        color: $white;
+        background-color: $brown;
+        text-transform: uppercase;
+        margin: $space-lg 0;
+      }
+      .link--sign-in {
+        text-decoration: underline;
+      }
+    }
   }
+}
+
+.template-customers-login {
+  padding-top: $top-nav-height;
 }
