@@ -31,6 +31,9 @@
   {{ 'timber.scss.css' | asset_url | stylesheet_tag }}
   {{ 'main.scss.css' | asset_url | stylesheet_tag }}
 
+  <!-- jerry's compiled css -->
+  {{ 'site.css' | asset_url | stylesheet_tag }}
+
   <!-- Header hook for plugins ================================================== -->
   {{ content_for_header }}
   {% include 'oldIE-js' %}
@@ -255,7 +258,6 @@
                 </li>
               {% endif %}
             {% endfor %}
-             <li>{{ "Sign up" | customer_register_link }}</li>
           </ul>
           <!-- //site-nav -->
         </div>
