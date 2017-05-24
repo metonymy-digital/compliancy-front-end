@@ -15,7 +15,7 @@ var jsDest = 'assets/';
 
 gulp.task('build-css', function() {
   console.log('buidling css..')
-  gulp.src(scssSource + 'main.scss')
+  gulp.src(scssSource + 'manifest.scss')
   .pipe(bulkSass())
   .pipe(liquid({
         locals: {}
