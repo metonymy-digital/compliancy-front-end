@@ -10,7 +10,7 @@
     letter-spacing: 0;
   }
   hr {
-    margin-top: 0;
+    margin-top: $space-sm;
   }
   // scoped nav bar styling
   .nav-bar {
@@ -31,6 +31,7 @@
     }
     #customer_logout_link {
       @include link--brown;
+      font-family: 'Avenir-Black';
     }
     ul.account-menu {
       @include list-no-style;
@@ -48,5 +49,22 @@
   .account-content {
     padding: 42px;
     border: 1px solid $grey;
+    h3 {
+      color: $brown;
+      font-family: 'Whitenights-bold';
+      font-size: 22px;
+      margin-top: $space-xl;
+      margin-bottom: $space-sm;
+    }
+    .link--actions a {
+      @include link--brown;
+      font-size: 16px;
+    }
+    .address-display {
+      margin-top: $space-md;
+    }
+    .edit-address {
+      margin-top: $space-lg;
+    }
   }
 }
