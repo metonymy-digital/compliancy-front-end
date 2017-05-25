@@ -1,8 +1,8 @@
 <!-- /templates/customers/account.liquid -->
 {% comment %}
 
-  For all available customer liquid tags:
-    - http://docs.shopify.com/themes/liquid-variables/customer
+For all available customer liquid tags:
+- http://docs.shopify.com/themes/liquid-variables/customer
 
 {% endcomment %}
 
@@ -13,45 +13,46 @@
   </div>
 
   <div class="grid__item three-quarters medium-down--one-whole">
-    <div class="title-row">
-      <h1>Account Details</h1>
-      <hr>
-    </div>
+    <div class="account-content">
+      <div class="title-row">
+        <h1>Account Details</h1>
+        <hr>
+      </div>
 
-    <h3 class="h5">{{ customer.name }}</h3>
+      <h3 class="h5">{{ customer.name }}</h3>
 
-    {% if customer.default_address != nil %}
+      {% if customer.default_address != nil %}
       <p>
-      {{ customer.default_address.address1 }}<br>
+        {{ customer.default_address.address1 }}<br>
 
-      {% if customer.default_address.address2 != "" %}
+        {% if customer.default_address.address2 != "" %}
         {{ customer.default_address.address2 }}<br>
-      {% endif %}
+        {% endif %}
 
-      {% if customer.default_address.city != "" %}
+        {% if customer.default_address.city != "" %}
         {{ customer.default_address.city }}<br>
-      {% endif %}
+        {% endif %}
 
-      {% if customer.default_address.province_code != "" %}
+        {% if customer.default_address.province_code != "" %}
         {{ customer.default_address.province_code | upcase }}<br>
-      {% endif %}
+        {% endif %}
 
-      {% if customer.default_address.zip != "" %}
+        {% if customer.default_address.zip != "" %}
         {{ customer.default_address.zip | upcase }}<br>
-      {% endif %}
+        {% endif %}
 
-      {% if customer.default_address.country != "" %}
+        {% if customer.default_address.country != "" %}
         {{ customer.default_address.country }}<br>
-      {% endif %}
+        {% endif %}
 
-      {% if customer.default_address.phone != "" %}
+        {% if customer.default_address.phone != "" %}
         {{ customer.default_address.phone }}
-      {% endif %}
+        {% endif %}
       </p>
 
-    {% endif %}
+      {% endif %}
 
-    <p><a href="/account/addresses">{{ 'customer.account.view_addresses' | t }} ({{ customer.addresses_count }})</a></p>
+      <p><a href="/account/addresses">{{ 'customer.account.view_addresses' | t }} ({{ customer.addresses_count }})</a></p>
+    </div>
   </div>
-
 </div>
