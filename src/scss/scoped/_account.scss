@@ -7,6 +7,37 @@
   @include page-paddings;
   .account-nav {
     border: 1px solid $grey;
-    padding: $space-md $space-lg;
+    padding: 24px 42px;
+    h3 {
+      font-size: 20px;
+      font-family: 'Whitenights-bold';
+      margin: $space-md 0;
+    }
+    h2 {
+      font-size: 38px;
+      margin-top: $space-lg; 
+    }
+    hr {
+      margin-top: 0;
+    }
+    #customer_logout_link {
+      color: $brown;
+      font-family: 'Avenir-Black';
+      text-decoration: underline;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+    }
+    ul.account-menu {
+      @include list-no-style;
+      li {
+        @include link-style($brown);
+        font-size: 20px;
+        line-height: 1.2;
+        text-transform: uppercase;
+        font-family: 'Whitenights';
+        margin: $space-lg 0;
+        letter-spacing: 0.15em;
+      }
+    }
   }
 }

@@ -1,4 +1,13 @@
 <div class="account-nav">
-  <h2>My Account</h2>
   <h3>{{ customer.email }}</h3>
+  {{ 'Sign out' | customer_logout_link }}
+  <h2>My Account</h2>
+  <hr>
+  <ul class="account-menu">
+    {% for link in linklists.account-menu.links %}
+    <li>
+      <a href="{{ link.url }}" class="account-menu__link">{{ link.title }}</a>
+    </li>
+    {% endfor %}
+  </ul>
 </div>
