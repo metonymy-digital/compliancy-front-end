@@ -231,9 +231,18 @@
           </div>
           <ul class="site-nav" id="AccessibleNav">
             {% for link in linklists.main-menu.links %}
-            <li {% if link.active %}class="site-nav--active"{% endif %}>
-              <a href="{{ link.url }}" class="site-nav__link">{{ link.title }}</a>
-            </li>
+            {% comment %}
+              hide sign up link for logged in customers
+            {% endcomment %}
+            {% if link.url == "/account/register" and customer %}
+              <li>
+                <a href="/account" class="site-nav__link">account</a>
+              </li>
+            {% else %}
+              <li {% if link.active %}class="site-nav--active"{% endif %}>
+                <a href="{{ link.url }}" class="site-nav__link">{{ link.title }}</a>
+              </li>
+            {% endif %}
             {% endfor %}
           </ul>
           <!-- //site-nav -->
