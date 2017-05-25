@@ -5,6 +5,11 @@
 .template-customers-addresses
 {
   @include page-paddings;
+  // scoped nav bar styling
+  .nav-bar {
+    position: absolute;
+    background-color: $brown !important;
+  }
   .account-nav {
     border: 1px solid $grey;
     padding: 24px 42px;
@@ -15,7 +20,7 @@
     }
     h2 {
       font-size: 38px;
-      margin-top: $space-lg; 
+      margin-top: $space-lg;
     }
     hr {
       margin-top: 0;
