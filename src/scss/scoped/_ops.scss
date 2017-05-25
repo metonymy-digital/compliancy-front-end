@@ -8,19 +8,19 @@
   @include page-paddings;
   // scoped nav bar styling
   @include static-top-nav($grey);
+  h1 {
+    margin: $space-lg 0;
+    font-size: 40px;
+  }
+  h2 {
+    margin: $space-md 0;
+    font-family: 'Whitenights';
+    font-size: 20px;
+  }
+  hr {
+    margin-top: 0;
+  }
   .form-vertical {
-    h1 {
-      margin: $space-lg 0;
-      font-size: 40px;
-    }
-    h2 {
-      margin: $space-md 0;
-      font-family: 'Whitenights';
-      font-size: 20px;
-    }
-    hr {
-      margin-top: 0;
-    }
     label {
       float: left;
       font-family: 'Whitenights';
