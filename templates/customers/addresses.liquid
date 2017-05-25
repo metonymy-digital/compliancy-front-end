@@ -10,15 +10,6 @@
 
 {% paginate customer.addresses by 5 %}
 
-<header class="section-header">
-  <h1 class="section-header__left">{{ 'customer.account.title' | t }}</h1>
-  <div class="section-header__right">
-    <a href="#" class="btn" onclick="Shopify.CustomerAddress.toggleNewForm(); return false;">{{ 'customer.addresses.add_new' | t }}</a>
-  </div>
-</header>
-
-<hr class="hr--small">
-
 <div class="grid">
 
   <div class="grid__item one-quarter medium-down--one-whole">
@@ -32,6 +23,7 @@
     {% form 'customer_address', customer.new_address %}
       <div id="AddAddress" class="form-vertical" {% unless form.errors %}style="display:none;"{% endunless %}>
         <h2>{{ 'customer.addresses.add_new' | t }}</h2>
+
         {{ form.errors | default_errors }}
 
         <div class="grid">
@@ -95,9 +87,11 @@
         <hr>
       </div>
     {% endform %}
-
-    <h2>{{ 'customer.addresses.title' | t }}</h2>
-
+    <div class="title-row">
+      <h1>Saved Addresses</h1>
+      <a href="#" class="link--brown" onclick="Shopify.CustomerAddress.toggleNewForm(); return false;">add new</a>
+      <hr>
+    </div>
     {% comment %}
       List all customer addresses with a unique edit form.
       Also add pagination in case they have a large number of addresses

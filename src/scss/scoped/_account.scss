@@ -5,6 +5,13 @@
 .template-customers-addresses
 {
   @include page-paddings;
+  h1 {
+    font-size: 38px;
+    letter-spacing: 0;
+  }
+  hr {
+    margin-top: 0;
+  }
   // scoped nav bar styling
   .nav-bar {
     position: absolute;
@@ -13,24 +20,17 @@
   .account-nav {
     border: 1px solid $grey;
     padding: 24px 42px;
+    h2 {
+      font-size: 38px;
+      margin-top: $space-lg;
+    }
     h3 {
       font-size: 20px;
       font-family: 'Whitenights-bold';
       margin: $space-md 0;
     }
-    h2 {
-      font-size: 38px;
-      margin-top: $space-lg;
-    }
-    hr {
-      margin-top: 0;
-    }
     #customer_logout_link {
-      color: $brown;
-      font-family: 'Avenir-Black';
-      text-decoration: underline;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
+      @include link--brown;
     }
     ul.account-menu {
       @include list-no-style;

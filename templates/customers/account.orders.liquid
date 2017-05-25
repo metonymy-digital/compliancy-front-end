@@ -6,17 +6,16 @@
 
 {% endcomment %}
 
-<h1>{{ 'customer.account.title' | t }}</h1>
-
-<hr class="hr--small">
-
 <div class="grid">
   <div class="grid__item one-quarter medium-down--one-whole">
     {% include 'account-nav' %}
   </div>
 
   <div class="grid__item three-quarters medium-down--one-whole">
-    <h2 class="h4">{{ 'customer.orders.title' | t }}</h2>
+    <div class="title-row">
+      <h1>Order History</h1>
+      <hr>
+    </div>
 
     {% comment %}
       If we have past orders, loop through each one

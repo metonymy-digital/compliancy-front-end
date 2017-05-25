@@ -6,10 +6,6 @@
 
 {% endcomment %}
 
-<h1>{{ 'customer.account.title' | t }}</h1>
-
-<hr class="hr--small">
-
 <div class="grid">
 
   <div class="grid__item one-quarter medium-down--one-whole">
@@ -17,7 +13,10 @@
   </div>
 
   <div class="grid__item three-quarters medium-down--one-whole">
-    <h2 class="h4">{{ 'customer.account.details' | t }}</h2>
+    <div class="title-row">
+      <h1>Account Details</h1>
+      <hr>
+    </div>
 
     <h3 class="h5">{{ customer.name }}</h3>
 
