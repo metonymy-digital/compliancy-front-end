@@ -19,8 +19,9 @@
   .account-nav {
     padding: 24px 42px;
     background-color: $white;
-    position: relative;
-    @include corners($space-lg);
+    @include breakpoint-up(lg){
+      @include has-corners(42px);
+    }
     h2 {
       font-size: 38px;
       margin-top: $space-lg;
@@ -48,10 +49,13 @@
     }
   }
   .new-address {
-    @include account-right-content;
+    @include account-content-styles;
   }
   .account-content {
-    @include account-right-content;
+    @include account-content-styles;
+    @include breakpoint-up(lg){
+      @include has-corners(56px);
+    }
     h3 {
       color: $brown;
       font-family: 'Whitenights-bold';

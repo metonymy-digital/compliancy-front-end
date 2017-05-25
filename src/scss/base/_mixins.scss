@@ -20,7 +20,7 @@
 }
 
 
-// layout helpers
+// layout and styling helpers
 @mixin static-top-nav($color) {
   .nav-bar {
     background-color: $color !important;
@@ -34,10 +34,10 @@
   }
 }
 
-@mixin account-right-content {
+@mixin account-content-styles {
   padding: 42px;
   background-color: $white;
-  @include breakpoint-up(lg) {
+  @media (min-width: 1092px) {
     margin-left: $space-xl;
   }
 }

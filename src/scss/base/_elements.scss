@@ -63,7 +63,8 @@
   transform: rotate(180deg);
 }
 
-@mixin corners($size) {
+@mixin has-corners($size) {
+  position: relative;
   .corner-top-left {
     @include corner-top-left($size);
   }

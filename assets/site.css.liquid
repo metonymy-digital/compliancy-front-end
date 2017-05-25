@@ -28,57 +28,60 @@
   .template-customers-account .account-nav,
   .template-customers-addresses .account-nav {
     padding: 24px 42px;
-    background-color: #ffffff;
-    position: relative; }
-    .template-customers-account .account-nav .corner-top-left,
-    .template-customers-addresses .account-nav .corner-top-left {
-      background-image: url("{{ 'fancy-corner.png' | asset_url }}");
-      position: absolute;
-      display: block;
-      height: 32px;
-      width: 32px;
-      background-size: 32px;
-      left: -4px;
-      top: -4px; }
-    .template-customers-account .account-nav .corner-top-right,
-    .template-customers-addresses .account-nav .corner-top-right {
-      background-image: url("{{ 'fancy-corner.png' | asset_url }}");
-      position: absolute;
-      display: block;
-      height: 32px;
-      width: 32px;
-      background-size: 32px;
-      top: -4px;
-      right: -4px;
-      -webkit-transform: rotate(90deg);
-          -ms-transform: rotate(90deg);
-              transform: rotate(90deg); }
-    .template-customers-account .account-nav .corner-bot-left,
-    .template-customers-addresses .account-nav .corner-bot-left {
-      background-image: url("{{ 'fancy-corner.png' | asset_url }}");
-      position: absolute;
-      display: block;
-      height: 32px;
-      width: 32px;
-      background-size: 32px;
-      left: -4px;
-      bottom: -4px;
-      -webkit-transform: rotate(-90deg);
-          -ms-transform: rotate(-90deg);
-              transform: rotate(-90deg); }
-    .template-customers-account .account-nav .corner-bot-right,
-    .template-customers-addresses .account-nav .corner-bot-right {
-      background-image: url("{{ 'fancy-corner.png' | asset_url }}");
-      position: absolute;
-      display: block;
-      height: 32px;
-      width: 32px;
-      background-size: 32px;
-      right: -4px;
-      bottom: -4px;
-      -webkit-transform: rotate(180deg);
-          -ms-transform: rotate(180deg);
-              transform: rotate(180deg); }
+    background-color: #ffffff; }
+    @media (min-width: 769px) {
+      .template-customers-account .account-nav,
+      .template-customers-addresses .account-nav {
+        position: relative; }
+        .template-customers-account .account-nav .corner-top-left,
+        .template-customers-addresses .account-nav .corner-top-left {
+          background-image: url("{{ 'fancy-corner.png' | asset_url }}");
+          position: absolute;
+          display: block;
+          height: 42px;
+          width: 42px;
+          background-size: 42px;
+          left: -5.25px;
+          top: -5.25px; }
+        .template-customers-account .account-nav .corner-top-right,
+        .template-customers-addresses .account-nav .corner-top-right {
+          background-image: url("{{ 'fancy-corner.png' | asset_url }}");
+          position: absolute;
+          display: block;
+          height: 42px;
+          width: 42px;
+          background-size: 42px;
+          top: -5.25px;
+          right: -5.25px;
+          -webkit-transform: rotate(90deg);
+              -ms-transform: rotate(90deg);
+                  transform: rotate(90deg); }
+        .template-customers-account .account-nav .corner-bot-left,
+        .template-customers-addresses .account-nav .corner-bot-left {
+          background-image: url("{{ 'fancy-corner.png' | asset_url }}");
+          position: absolute;
+          display: block;
+          height: 42px;
+          width: 42px;
+          background-size: 42px;
+          left: -5.25px;
+          bottom: -5.25px;
+          -webkit-transform: rotate(-90deg);
+              -ms-transform: rotate(-90deg);
+                  transform: rotate(-90deg); }
+        .template-customers-account .account-nav .corner-bot-right,
+        .template-customers-addresses .account-nav .corner-bot-right {
+          background-image: url("{{ 'fancy-corner.png' | asset_url }}");
+          position: absolute;
+          display: block;
+          height: 42px;
+          width: 42px;
+          background-size: 42px;
+          right: -5.25px;
+          bottom: -5.25px;
+          -webkit-transform: rotate(180deg);
+              -ms-transform: rotate(180deg);
+                  transform: rotate(180deg); } }
     .template-customers-account .account-nav h2,
     .template-customers-addresses .account-nav h2 {
       font-size: 38px;
@@ -124,7 +127,7 @@
   .template-customers-addresses .new-address {
     padding: 42px;
     background-color: #ffffff; }
-    @media (min-width: 769px) {
+    @media (min-width: 1092px) {
       .template-customers-account .new-address,
       .template-customers-addresses .new-address {
         margin-left: 64px; } }
@@ -132,10 +135,63 @@
   .template-customers-addresses .account-content {
     padding: 42px;
     background-color: #ffffff; }
-    @media (min-width: 769px) {
+    @media (min-width: 1092px) {
       .template-customers-account .account-content,
       .template-customers-addresses .account-content {
         margin-left: 64px; } }
+    @media (min-width: 769px) {
+      .template-customers-account .account-content,
+      .template-customers-addresses .account-content {
+        position: relative; }
+        .template-customers-account .account-content .corner-top-left,
+        .template-customers-addresses .account-content .corner-top-left {
+          background-image: url("{{ 'fancy-corner.png' | asset_url }}");
+          position: absolute;
+          display: block;
+          height: 56px;
+          width: 56px;
+          background-size: 56px;
+          left: -7px;
+          top: -7px; }
+        .template-customers-account .account-content .corner-top-right,
+        .template-customers-addresses .account-content .corner-top-right {
+          background-image: url("{{ 'fancy-corner.png' | asset_url }}");
+          position: absolute;
+          display: block;
+          height: 56px;
+          width: 56px;
+          background-size: 56px;
+          top: -7px;
+          right: -7px;
+          -webkit-transform: rotate(90deg);
+              -ms-transform: rotate(90deg);
+                  transform: rotate(90deg); }
+        .template-customers-account .account-content .corner-bot-left,
+        .template-customers-addresses .account-content .corner-bot-left {
+          background-image: url("{{ 'fancy-corner.png' | asset_url }}");
+          position: absolute;
+          display: block;
+          height: 56px;
+          width: 56px;
+          background-size: 56px;
+          left: -7px;
+          bottom: -7px;
+          -webkit-transform: rotate(-90deg);
+              -ms-transform: rotate(-90deg);
+                  transform: rotate(-90deg); }
+        .template-customers-account .account-content .corner-bot-right,
+        .template-customers-addresses .account-content .corner-bot-right {
+          background-image: url("{{ 'fancy-corner.png' | asset_url }}");
+          position: absolute;
+          display: block;
+          height: 56px;
+          width: 56px;
+          background-size: 56px;
+          right: -7px;
+          bottom: -7px;
+          -webkit-transform: rotate(180deg);
+              -ms-transform: rotate(180deg);
+                  transform: rotate(180deg); } }
     .template-customers-account .account-content h3,
     .template-customers-addresses .account-content h3 {
       color: #8b683e;
