@@ -11,6 +11,15 @@
     .form-vertical {
       h1 {
         margin: $space-lg 0;
+        font-size: 40px;
+      }
+      h2 {
+        margin: $space-md 0;
+        font-family: 'Whitenights';
+        font-size: 20px;
+      }
+      hr {
+        margin-top: 0;
       }
       label {
         float: left;
@@ -33,6 +42,10 @@
         background-color: $brown;
         text-transform: uppercase;
         margin: $space-lg 0;
+        height: 48px;
+        font-family: 'Avenir-Black';
+        letter-spacing: 0.2em;
+        font-size: 16px;
       }
       .link--form-nav {
         text-decoration: underline;

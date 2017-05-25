@@ -15,8 +15,10 @@
 
     <div id="CustomerLoginForm" class="form-vertical">
       {% form 'customer_login' %}
-        <img src="http://placehold.it/400x200" />
-        <h1>{{ 'customer.login.title' | t }}</h1>
+        <img src="http://placehold.it/50x50" />
+        <h2>almost there</h2>
+        <hr>
+        <h1>customer login</h1>
 
         {{ form.errors | default_errors }}
 
@@ -25,7 +27,7 @@
 
         {% if form.password_needed %}
           <label for="CustomerPassword">{{ 'customer.login.password' | t }}</label>
-          <a class="link--forgot-password" href="#recover">forgot your password?</a>
+          <a class="link--forgot-password" id="RecoverPassword" href="#recover">forgot your password?</a>
           <input type="password" value="" name="customer[password]" id="CustomerPassword" class="input-full{% if form.errors contains 'password' %} error{% endif %}">
         {% endif %}
 
@@ -41,10 +43,11 @@
     {% comment %}
       JS shows/hides this form in timber.loginForms()
     {% endcomment %}
-    <div id="RecoverPasswordForm" style="display: none;">
-
-      <h2>{{ 'customer.recover_password.title' | t }}</h2>
-      <p>{{ 'customer.recover_password.subtext' | t }}</p>
+    <div id="RecoverPasswordForm" class="form-vertical" style="display: none;">
+      <img src="http://placehold.it/50x50" />
+      <h2>We will send you an email to reset your password.</h2>
+      <hr>
+      <h1>reset password</h1>
 
       <div class="form-vertical">
         {% form 'recover_customer_password' %}
@@ -62,7 +65,7 @@
           <input type="email" value="" name="email" id="RecoverEmail" class="input-full" placeholder="{{ 'customer.recover_password.email' | t }}" autocorrect="off" autocapitalize="off">
 
           <p>
-            <input type="submit" class="btn btn--full" value="{{ 'customer.recover_password.submit' | t }}">
+            <input type="submit" class="btn btn--full" value="reset password">
           </p>
           <button type="button" id="HideRecoverPasswordLink" class="text-link">{{ 'customer.recover_password.cancel' | t }}</button>
         {% endform %}
