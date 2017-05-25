@@ -1,0 +1,8 @@
+// product.liquid
+
+.template-product
+{
+  @include page-paddings;
+  // scoped nav bar styling
+  @include static-top-nav($grey);
+}

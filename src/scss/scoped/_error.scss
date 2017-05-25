@@ -1,4 +1,7 @@
-.template-404 {
+// 404.liquid
+
+.template-404
+{
   @include page-paddings;
   // scoped nav bar styling
   @include static-top-nav($grey);
