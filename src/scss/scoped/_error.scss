@@ -8,9 +8,16 @@
       font-size: 24px;
       margin-bottom: $space-xl;
     }
+    img {
+      max-width: 400px;
+    }
     .hr {
-      margin: $space-lg auto;
+      @include hr--black;
+      margin: $space-md auto;
       width: 50%;
+    }
+    .ops__logo {
+      width: $space-xl;
     }
   }
 }
