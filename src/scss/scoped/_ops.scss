@@ -1,21 +1,28 @@
 // customers/register.liquid
-.template-customers-register {
+// customers/login.liquid
+// customers/reset_password.liquid
+
+.template-customers-register,
+.template-customers-login
+{
   padding-top: $top-nav-height;
   .main-content {
     padding: $space-xl 0;
-    h1 {
-      margin: $space-md 0;
-    }
     .form-vertical {
+      h1 {
+        margin: $space-lg 0;
+      }
       label {
         float: left;
         font-family: 'Whitenights';
         text-transform: lowercase;
       }
+      a {
+        font-family: 'Whitenights';
+      }
       .link--forgot-password {
         float: right;
         text-decoration: underline;
-        font-family: 'Whitenights';
       }
       .input-full {
         margin-top: $space-xs;
@@ -27,13 +34,9 @@
         text-transform: uppercase;
         margin: $space-lg 0;
       }
-      .link--sign-in {
+      .link--form-nav {
         text-decoration: underline;
       }
     }
   }
-}
-
-.template-customers-login {
-  padding-top: $top-nav-height;
 }
