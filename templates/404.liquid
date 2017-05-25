@@ -1,3 +1,11 @@
 <!-- /templates/404.liquid -->
-<h1>{{ 'general.404.title' | t }}</h1>
-<p>{{ 'general.404.subtext_html' | t }}</p>
+
+
+<div class="grid">
+  <div class="grid__item large--one-half push--large--one-quarter text-center">
+    <img class="ops__logo" src="{{ 'pineapple-black.svg' | asset_url }}" />
+    <div class="hr" style="background-image: url({{ 'separator-2.svg' | asset_url }});"></div>
+    <p>{{ 'general.404.subtext_html' | t }}</p>
+    <img class="error__image" src="http://placehold.it/600x300"/>
+  </div>
+</div>

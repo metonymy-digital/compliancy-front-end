@@ -1,0 +1,15 @@
+.template-404 {
+  @include page-paddings;
+  // scoped nav bar styling
+  @include static-top-nav($grey);
+  .main-content {
+    p {
+      font-size: 24px;
+      margin-bottom: $space-xl;
+    }
+    .hr {
+      margin: $space-lg auto;
+      width: 50%;
+    }
+  }
+}
