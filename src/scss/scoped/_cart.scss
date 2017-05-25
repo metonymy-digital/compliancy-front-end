@@ -1,0 +1,18 @@
+#CartDrawer
+{
+  width: 100%;
+  padding-bottom: $space-xl;
+  background-color: rgba($black,0.9);
+  color: $white;
+  @include link-style($white);
+  @include breakpoint-up(lg) {
+    width: 500px;
+  }
+  .ajaxcart {
+    padding-left: $space-lg;
+    .ajaxcart__row {
+      border-color: $grey;
+    }
+  }
+
+}
