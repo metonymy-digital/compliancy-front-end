@@ -1,0 +1,6 @@
+@mixin page-paddings {
+  padding-top: $top-nav-height;
+  .main-content {
+    padding: $space-xl 0;
+  }
+}

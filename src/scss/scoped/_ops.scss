@@ -5,51 +5,48 @@
 .template-customers-register,
 .template-customers-login
 {
-  padding-top: $top-nav-height;
-  .main-content {
-    padding: $space-xl 0;
-    .form-vertical {
-      h1 {
-        margin: $space-lg 0;
-        font-size: 40px;
-      }
-      h2 {
-        margin: $space-md 0;
-        font-family: 'Whitenights';
-        font-size: 20px;
-      }
-      hr {
-        margin-top: 0;
-      }
-      label {
-        float: left;
-        font-family: 'Whitenights';
-        text-transform: lowercase;
-      }
-      a {
-        font-family: 'Whitenights';
-      }
-      .link--forgot-password {
-        float: right;
-        text-decoration: underline;
-      }
-      .input-full {
-        margin-top: $space-xs;
-        margin-bottom: $space-lg;
-      }
-      .btn--full {
-        color: $white;
-        background-color: $brown;
-        text-transform: uppercase;
-        margin: $space-lg 0;
-        height: 48px;
-        font-family: 'Avenir-Black';
-        letter-spacing: 0.2em;
-        font-size: 16px;
-      }
-      .link--form-nav {
-        text-decoration: underline;
-      }
+  @include page-paddings;
+  .form-vertical {
+    h1 {
+      margin: $space-lg 0;
+      font-size: 40px;
+    }
+    h2 {
+      margin: $space-md 0;
+      font-family: 'Whitenights';
+      font-size: 20px;
+    }
+    hr {
+      margin-top: 0;
+    }
+    label {
+      float: left;
+      font-family: 'Whitenights';
+      text-transform: lowercase;
+    }
+    a {
+      font-family: 'Whitenights';
+    }
+    .link--forgot-password {
+      float: right;
+      text-decoration: underline;
+    }
+    .input-full {
+      margin-top: $space-xs;
+      margin-bottom: $space-lg;
+    }
+    .btn--full {
+      color: $white;
+      background-color: $brown;
+      text-transform: uppercase;
+      margin: $space-lg 0;
+      height: 48px;
+      font-family: 'Avenir-Black';
+      letter-spacing: 0.2em;
+      font-size: 16px;
+    }
+    .link--form-nav {
+      text-decoration: underline;
     }
   }
 }
