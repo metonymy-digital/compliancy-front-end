@@ -16,8 +16,14 @@
 
 
 // layout helpers
+@mixin static-top-nav($color) {
+  .nav-bar {
+    background-color: $color !important;
+    position: static;
+  }
+}
+
 @mixin page-paddings {
-  padding-top: $top-nav-height;
   .main-content {
     padding: $space-xl 0;
   }

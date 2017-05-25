@@ -6,6 +6,8 @@
 .template-customers-login
 {
   @include page-paddings;
+  // scoped nav bar styling
+  @include static-top-nav($grey);
   .form-vertical {
     h1 {
       margin: $space-lg 0;
