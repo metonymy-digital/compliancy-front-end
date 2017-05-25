@@ -14,6 +14,11 @@
   list-style: none;
 }
 
+@mixin bg-img($url, $size: cover, $posX: center, $posY: center, $repeat: no-repeat) {
+  background: url($url) $posX $posY $repeat;
+  background-size: $size;
+}
+
 
 // layout helpers
 @mixin static-top-nav($color) {

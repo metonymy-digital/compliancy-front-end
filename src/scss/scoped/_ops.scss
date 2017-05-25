@@ -9,6 +9,7 @@
   @include page-paddings;
   // scoped nav bar styling
   @include static-top-nav($grey);
+  @include bg-img("{{ 'bg-hills.jpg' | asset_url }}");
   .main-content {
     h1 {
       margin: $space-lg 0;
@@ -41,6 +42,8 @@
     .input-full {
       margin-top: $space-xs;
       margin-bottom: $space-lg;
+      background-color: transparent;
+      border-color: $grey;
     }
     .btn--full {
       color: $white;

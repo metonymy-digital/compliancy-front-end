@@ -20,3 +20,11 @@
   width: 100%;
   background-repeat: repeat-x;
 }
+
+.hr-black {
+  background-image: url("{{ 'seperator-black.png' | asset_url }}");
+}
+
+.hr-brown {
+  background-image: url("{{ 'seperator-brown.svg' | asset_url }}");
+}

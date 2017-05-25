@@ -2,7 +2,7 @@
   <h3>{{ customer.email }}</h3>
   {{ 'Sign out' | customer_logout_link }}
   <h2>My Account</h2>
-  <div class="hr" style="background-image: url({{ 'separator-2.svg' | asset_url }});"></div>
+  <div class="hr hr-black"></div>
   <ul class="account-menu">
     {% for link in linklists.account-menu.links %}
     <li>

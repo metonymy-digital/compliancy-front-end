@@ -12,6 +12,12 @@
   width: 100%;
   background-repeat: repeat-x; }
 
+.hr-black {
+  background-image: url("{{ 'seperator-black.png' | asset_url }}"); }
+
+.hr-brown {
+  background-image: url("{{ 'seperator-brown.svg' | asset_url }}"); }
+
 .template-customers-account .main-content,
 .template-customers-addresses .main-content {
   padding: 64px 0; }
@@ -101,77 +107,74 @@
   .template-customers-addresses .account-content .edit-address {
     margin-top: 32px; }
 
-.template-customers-register .main-content,
-.template-customers-login .main-content,
-.template-customers-reset_password .main-content {
-  padding: 64px 0; }
-
-.template-customers-register .nav-bar,
-.template-customers-login .nav-bar,
-.template-customers-reset_password .nav-bar {
-  background-color: #666 !important;
-  position: static; }
-
-.template-customers-register .main-content h1,
-.template-customers-login .main-content h1,
-.template-customers-reset_password .main-content h1 {
-  margin: 32px 0;
-  font-size: 40px; }
-
-.template-customers-register .main-content h2,
-.template-customers-login .main-content h2,
-.template-customers-reset_password .main-content h2 {
-  margin: 16px 0;
-  font-family: 'Whitenights';
-  font-size: 20px; }
-
-.template-customers-register .main-content .hr,
-.template-customers-login .main-content .hr,
-.template-customers-reset_password .main-content .hr {
-  margin-top: 0;
-  width: 60%;
-  margin: auto; }
-
-.template-customers-register .form-vertical label,
-.template-customers-login .form-vertical label,
-.template-customers-reset_password .form-vertical label {
-  float: left;
-  font-family: 'Whitenights';
-  text-transform: lowercase; }
-
-.template-customers-register .form-vertical a,
-.template-customers-login .form-vertical a,
-.template-customers-reset_password .form-vertical a {
-  font-family: 'Whitenights'; }
-
-.template-customers-register .form-vertical .link--forgot-password,
-.template-customers-login .form-vertical .link--forgot-password,
-.template-customers-reset_password .form-vertical .link--forgot-password {
-  float: right;
-  text-decoration: underline; }
-
-.template-customers-register .form-vertical .input-full,
-.template-customers-login .form-vertical .input-full,
-.template-customers-reset_password .form-vertical .input-full {
-  margin-top: 4px;
-  margin-bottom: 32px; }
-
-.template-customers-register .form-vertical .btn--full,
-.template-customers-login .form-vertical .btn--full,
-.template-customers-reset_password .form-vertical .btn--full {
-  color: #ffffff;
-  background-color: #8b683e;
-  text-transform: uppercase;
-  margin: 32px 0;
-  height: 48px;
-  font-family: 'Avenir-Black';
-  letter-spacing: 0.2em;
-  font-size: 16px; }
-
-.template-customers-register .form-vertical .link--form-nav,
-.template-customers-login .form-vertical .link--form-nav,
-.template-customers-reset_password .form-vertical .link--form-nav {
-  text-decoration: underline; }
+.template-customers-register,
+.template-customers-login,
+.template-customers-reset_password {
+  background: url("{{ 'bg-hills.jpg' | asset_url }}") center center no-repeat;
+  background-size: cover; }
+  .template-customers-register .main-content,
+  .template-customers-login .main-content,
+  .template-customers-reset_password .main-content {
+    padding: 64px 0; }
+  .template-customers-register .nav-bar,
+  .template-customers-login .nav-bar,
+  .template-customers-reset_password .nav-bar {
+    background-color: #666 !important;
+    position: static; }
+  .template-customers-register .main-content h1,
+  .template-customers-login .main-content h1,
+  .template-customers-reset_password .main-content h1 {
+    margin: 32px 0;
+    font-size: 40px; }
+  .template-customers-register .main-content h2,
+  .template-customers-login .main-content h2,
+  .template-customers-reset_password .main-content h2 {
+    margin: 16px 0;
+    font-family: 'Whitenights';
+    font-size: 20px; }
+  .template-customers-register .main-content .hr,
+  .template-customers-login .main-content .hr,
+  .template-customers-reset_password .main-content .hr {
+    margin-top: 0;
+    width: 60%;
+    margin: auto; }
+  .template-customers-register .form-vertical label,
+  .template-customers-login .form-vertical label,
+  .template-customers-reset_password .form-vertical label {
+    float: left;
+    font-family: 'Whitenights';
+    text-transform: lowercase; }
+  .template-customers-register .form-vertical a,
+  .template-customers-login .form-vertical a,
+  .template-customers-reset_password .form-vertical a {
+    font-family: 'Whitenights'; }
+  .template-customers-register .form-vertical .link--forgot-password,
+  .template-customers-login .form-vertical .link--forgot-password,
+  .template-customers-reset_password .form-vertical .link--forgot-password {
+    float: right;
+    text-decoration: underline; }
+  .template-customers-register .form-vertical .input-full,
+  .template-customers-login .form-vertical .input-full,
+  .template-customers-reset_password .form-vertical .input-full {
+    margin-top: 4px;
+    margin-bottom: 32px;
+    background-color: transparent;
+    border-color: #666; }
+  .template-customers-register .form-vertical .btn--full,
+  .template-customers-login .form-vertical .btn--full,
+  .template-customers-reset_password .form-vertical .btn--full {
+    color: #ffffff;
+    background-color: #8b683e;
+    text-transform: uppercase;
+    margin: 32px 0;
+    height: 48px;
+    font-family: 'Avenir-Black';
+    letter-spacing: 0.2em;
+    font-size: 16px; }
+  .template-customers-register .form-vertical .link--form-nav,
+  .template-customers-login .form-vertical .link--form-nav,
+  .template-customers-reset_password .form-vertical .link--form-nav {
+    text-decoration: underline; }
 
 .template-404 .main-content {
   padding: 64px 0; }
