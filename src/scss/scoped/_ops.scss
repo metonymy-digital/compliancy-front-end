@@ -3,22 +3,25 @@
 // customers/reset_password.liquid
 
 .template-customers-register,
-.template-customers-login
+.template-customers-login,
+.template-customers-reset_password
 {
   @include page-paddings;
   // scoped nav bar styling
   @include static-top-nav($grey);
-  h1 {
-    margin: $space-lg 0;
-    font-size: 40px;
-  }
-  h2 {
-    margin: $space-md 0;
-    font-family: 'Whitenights';
-    font-size: 20px;
-  }
-  hr {
-    margin-top: 0;
+  .main-content {
+    h1 {
+      margin: $space-lg 0;
+      font-size: 40px;
+    }
+    h2 {
+      margin: $space-md 0;
+      font-family: 'Whitenights';
+      font-size: 20px;
+    }
+    hr {
+      margin-top: 0;
+    }
   }
   .form-vertical {
     label {
