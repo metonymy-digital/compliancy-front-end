@@ -21,6 +21,7 @@
       font-size: 20px;
     }
     .hr {
+      @include hr--black;
       margin-top: 0;
       width: 60%;
       margin: auto;

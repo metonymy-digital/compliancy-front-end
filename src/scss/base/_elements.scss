@@ -6,11 +6,15 @@
   letter-spacing: 0.2em;
 }
 
-// classes
-.link--brown {
-  @include link--brown;
+@mixin hr--black {
+  background-image: url("{{ 'separator-black.png' | asset_url }}");
 }
 
+@mixin hr--brown {
+  background-image: url("{{ 'separator-brown.svg' | asset_url }}");
+}
+
+// classes
 .ops__logo {
   width: 42px;
 }
@@ -19,12 +23,4 @@
   height: 8px;
   width: 100%;
   background-repeat: repeat-x;
-}
-
-.hr-black {
-  background-image: url("{{ 'seperator-black.png' | asset_url }}");
-}
-
-.hr-brown {
-  background-image: url("{{ 'seperator-brown.svg' | asset_url }}");
 }

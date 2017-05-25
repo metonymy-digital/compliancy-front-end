@@ -1,9 +1,3 @@
-.link--brown {
-  color: #8b683e;
-  text-decoration: underline;
-  text-transform: uppercase;
-  letter-spacing: 0.2em; }
-
 .ops__logo {
   width: 42px; }
 
@@ -11,12 +5,6 @@
   height: 8px;
   width: 100%;
   background-repeat: repeat-x; }
-
-.hr-black {
-  background-image: url("{{ 'seperator-black.png' | asset_url }}"); }
-
-.hr-brown {
-  background-image: url("{{ 'seperator-brown.svg' | asset_url }}"); }
 
 .template-customers-account .main-content,
 .template-customers-addresses .main-content {
@@ -34,6 +22,7 @@
 
 .template-customers-account .hr,
 .template-customers-addresses .hr {
+  background-image: url("{{ 'separator-brown.svg' | asset_url }}");
   margin-top: 8px; }
 
 .template-customers-account .account-nav,
@@ -93,6 +82,15 @@
     font-size: 22px;
     margin-top: 64px;
     margin-bottom: 8px; }
+  .template-customers-account .account-content .link--add-new,
+  .template-customers-addresses .account-content .link--add-new {
+    margin-top: 16px; }
+    .template-customers-account .account-content .link--add-new a,
+    .template-customers-addresses .account-content .link--add-new a {
+      color: #8b683e;
+      text-decoration: underline;
+      text-transform: uppercase;
+      letter-spacing: 0.2em; }
   .template-customers-account .account-content .link--actions a,
   .template-customers-addresses .account-content .link--actions a {
     color: #8b683e;
@@ -135,6 +133,7 @@
   .template-customers-register .main-content .hr,
   .template-customers-login .main-content .hr,
   .template-customers-reset_password .main-content .hr {
+    background-image: url("{{ 'separator-black.png' | asset_url }}");
     margin-top: 0;
     width: 60%;
     margin: auto; }

@@ -20,11 +20,12 @@ into an external JS file
     <div class="account-content">
       <div class="title-row">
         <h1>Saved Addresses</h1>
-        <p>
-          <a href="#" class="link--brown" onclick="Shopify.CustomerAddress.toggleNewForm(); return false;">add new</a>
-        </p>
-        <div class="hr hr-black"></div>
+        <div class="hr"></div>
       </div>
+
+      <p class="link--add-new">
+        <a href="#" onclick="Shopify.CustomerAddress.toggleNewForm(); return false;">add new</a>
+      </p>
       {% comment %}
       List all customer addresses with a unique edit form.
       Also add pagination in case they have a large number of addresses

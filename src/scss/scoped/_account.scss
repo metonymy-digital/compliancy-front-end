@@ -12,6 +12,7 @@
     letter-spacing: 0;
   }
   .hr {
+    @include hr--brown;
     margin-top: $space-sm;
   }
   .account-nav {
@@ -52,6 +53,12 @@
       font-size: 22px;
       margin-top: $space-xl;
       margin-bottom: $space-sm;
+    }
+    .link--add-new {
+      margin-top: $space-md;
+      a {
+        @include link--brown;
+      }
     }
     .link--actions a {
       @include link--brown;
