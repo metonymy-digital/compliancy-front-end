@@ -7,6 +7,7 @@
   @include page-paddings;
   // scoped nav bar styling
   @include static-top-nav($brown);
+  @include bg-img("{{ 'bg-matte.jpg' | asset_url }}");
   h1 {
     font-size: 38px;
     letter-spacing: 0;
@@ -16,8 +17,8 @@
     margin-top: $space-sm;
   }
   .account-nav {
-    border: 1px solid $grey;
     padding: 24px 42px;
+    background-color: $white;
     h2 {
       font-size: 38px;
       margin-top: $space-lg;
@@ -46,7 +47,10 @@
   }
   .account-content {
     padding: 42px;
-    border: 1px solid $grey;
+    background-color: $white;
+    @include breakpoint-up(lg) {
+      margin-left: $space-xl;
+    }
     h3 {
       color: $brown;
       font-family: 'Whitenights-bold';

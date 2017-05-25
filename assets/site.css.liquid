@@ -6,104 +6,107 @@
   width: 100%;
   background-repeat: repeat-x; }
 
-.template-customers-account .main-content,
-.template-customers-addresses .main-content {
-  padding: 64px 0; }
-
-.template-customers-account .nav-bar,
-.template-customers-addresses .nav-bar {
-  background-color: #8b683e !important;
-  position: static; }
-
-.template-customers-account h1,
-.template-customers-addresses h1 {
-  font-size: 38px;
-  letter-spacing: 0; }
-
-.template-customers-account .hr,
-.template-customers-addresses .hr {
-  background-image: url("{{ 'separator-brown.svg' | asset_url }}");
-  margin-top: 8px; }
-
-.template-customers-account .account-nav,
-.template-customers-addresses .account-nav {
-  border: 1px solid #666;
-  padding: 24px 42px; }
-  .template-customers-account .account-nav h2,
-  .template-customers-addresses .account-nav h2 {
+.template-customers-account,
+.template-customers-addresses {
+  background: url("{{ 'bg-matte.jpg' | asset_url }}") center center no-repeat;
+  background-size: cover; }
+  .template-customers-account .main-content,
+  .template-customers-addresses .main-content {
+    padding: 64px 0; }
+  .template-customers-account .nav-bar,
+  .template-customers-addresses .nav-bar {
+    background-color: #8b683e !important;
+    position: static; }
+  .template-customers-account h1,
+  .template-customers-addresses h1 {
     font-size: 38px;
-    margin-top: 32px; }
-  .template-customers-account .account-nav h3,
-  .template-customers-addresses .account-nav h3 {
-    font-size: 20px;
-    font-family: 'Whitenights-bold';
-    margin: 16px 0; }
-  .template-customers-account .account-nav #customer_logout_link,
-  .template-customers-addresses .account-nav #customer_logout_link {
-    color: #8b683e;
-    text-decoration: underline;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    font-family: 'Avenir-Black'; }
-  .template-customers-account .account-nav ul.account-menu,
-  .template-customers-addresses .account-nav ul.account-menu {
-    padding: 0;
-    margin: 0;
-    list-style: none; }
-    .template-customers-account .account-nav ul.account-menu li,
-    .template-customers-addresses .account-nav ul.account-menu li {
+    letter-spacing: 0; }
+  .template-customers-account .hr,
+  .template-customers-addresses .hr {
+    background-image: url("{{ 'separator-brown.svg' | asset_url }}");
+    margin-top: 8px; }
+  .template-customers-account .account-nav,
+  .template-customers-addresses .account-nav {
+    padding: 24px 42px;
+    background-color: #ffffff; }
+    .template-customers-account .account-nav h2,
+    .template-customers-addresses .account-nav h2 {
+      font-size: 38px;
+      margin-top: 32px; }
+    .template-customers-account .account-nav h3,
+    .template-customers-addresses .account-nav h3 {
       font-size: 20px;
-      line-height: 1.2;
-      text-transform: uppercase;
-      font-family: 'Whitenights';
-      margin: 32px 0;
-      letter-spacing: 0.15em; }
-      .template-customers-account .account-nav ul.account-menu li a, .template-customers-account .account-nav ul.account-menu li,
-      .template-customers-addresses .account-nav ul.account-menu li a,
-      .template-customers-addresses .account-nav ul.account-menu li {
-        color: #8b683e; }
-        .template-customers-account .account-nav ul.account-menu li a:hover, .template-customers-account .account-nav ul.account-menu li a:active, .template-customers-account .account-nav ul.account-menu li a:focus, .template-customers-account .account-nav ul.account-menu li:hover, .template-customers-account .account-nav ul.account-menu li:active, .template-customers-account .account-nav ul.account-menu li:focus,
-        .template-customers-addresses .account-nav ul.account-menu li a:hover,
-        .template-customers-addresses .account-nav ul.account-menu li a:active,
-        .template-customers-addresses .account-nav ul.account-menu li a:focus,
-        .template-customers-addresses .account-nav ul.account-menu li:hover,
-        .template-customers-addresses .account-nav ul.account-menu li:active,
-        .template-customers-addresses .account-nav ul.account-menu li:focus {
-          text-decoration: none; }
-
-.template-customers-account .account-content,
-.template-customers-addresses .account-content {
-  padding: 42px;
-  border: 1px solid #666; }
-  .template-customers-account .account-content h3,
-  .template-customers-addresses .account-content h3 {
-    color: #8b683e;
-    font-family: 'Whitenights-bold';
-    font-size: 22px;
-    margin-top: 64px;
-    margin-bottom: 8px; }
-  .template-customers-account .account-content .link--add-new,
-  .template-customers-addresses .account-content .link--add-new {
-    margin-top: 16px; }
-    .template-customers-account .account-content .link--add-new a,
-    .template-customers-addresses .account-content .link--add-new a {
+      font-family: 'Whitenights-bold';
+      margin: 16px 0; }
+    .template-customers-account .account-nav #customer_logout_link,
+    .template-customers-addresses .account-nav #customer_logout_link {
       color: #8b683e;
       text-decoration: underline;
       text-transform: uppercase;
-      letter-spacing: 0.2em; }
-  .template-customers-account .account-content .link--actions a,
-  .template-customers-addresses .account-content .link--actions a {
-    color: #8b683e;
-    text-decoration: underline;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    font-size: 16px; }
-  .template-customers-account .account-content .address-display,
-  .template-customers-addresses .account-content .address-display {
-    margin-top: 16px; }
-  .template-customers-account .account-content .edit-address,
-  .template-customers-addresses .account-content .edit-address {
-    margin-top: 32px; }
+      letter-spacing: 0.2em;
+      font-family: 'Avenir-Black'; }
+    .template-customers-account .account-nav ul.account-menu,
+    .template-customers-addresses .account-nav ul.account-menu {
+      padding: 0;
+      margin: 0;
+      list-style: none; }
+      .template-customers-account .account-nav ul.account-menu li,
+      .template-customers-addresses .account-nav ul.account-menu li {
+        font-size: 20px;
+        line-height: 1.2;
+        text-transform: uppercase;
+        font-family: 'Whitenights';
+        margin: 32px 0;
+        letter-spacing: 0.15em; }
+        .template-customers-account .account-nav ul.account-menu li a, .template-customers-account .account-nav ul.account-menu li,
+        .template-customers-addresses .account-nav ul.account-menu li a,
+        .template-customers-addresses .account-nav ul.account-menu li {
+          color: #8b683e; }
+          .template-customers-account .account-nav ul.account-menu li a:hover, .template-customers-account .account-nav ul.account-menu li a:active, .template-customers-account .account-nav ul.account-menu li a:focus, .template-customers-account .account-nav ul.account-menu li:hover, .template-customers-account .account-nav ul.account-menu li:active, .template-customers-account .account-nav ul.account-menu li:focus,
+          .template-customers-addresses .account-nav ul.account-menu li a:hover,
+          .template-customers-addresses .account-nav ul.account-menu li a:active,
+          .template-customers-addresses .account-nav ul.account-menu li a:focus,
+          .template-customers-addresses .account-nav ul.account-menu li:hover,
+          .template-customers-addresses .account-nav ul.account-menu li:active,
+          .template-customers-addresses .account-nav ul.account-menu li:focus {
+            text-decoration: none; }
+  .template-customers-account .account-content,
+  .template-customers-addresses .account-content {
+    padding: 42px;
+    background-color: #ffffff; }
+    @media (min-width: 769px) {
+      .template-customers-account .account-content,
+      .template-customers-addresses .account-content {
+        margin-left: 64px; } }
+    .template-customers-account .account-content h3,
+    .template-customers-addresses .account-content h3 {
+      color: #8b683e;
+      font-family: 'Whitenights-bold';
+      font-size: 22px;
+      margin-top: 64px;
+      margin-bottom: 8px; }
+    .template-customers-account .account-content .link--add-new,
+    .template-customers-addresses .account-content .link--add-new {
+      margin-top: 16px; }
+      .template-customers-account .account-content .link--add-new a,
+      .template-customers-addresses .account-content .link--add-new a {
+        color: #8b683e;
+        text-decoration: underline;
+        text-transform: uppercase;
+        letter-spacing: 0.2em; }
+    .template-customers-account .account-content .link--actions a,
+    .template-customers-addresses .account-content .link--actions a {
+      color: #8b683e;
+      text-decoration: underline;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-size: 16px; }
+    .template-customers-account .account-content .address-display,
+    .template-customers-addresses .account-content .address-display {
+      margin-top: 16px; }
+    .template-customers-account .account-content .edit-address,
+    .template-customers-addresses .account-content .edit-address {
+      margin-top: 32px; }
 
 .template-customers-register,
 .template-customers-login,
@@ -175,17 +178,17 @@
   .template-customers-reset_password .form-vertical .link--form-nav {
     text-decoration: underline; }
 
-.template-404 .main-content {
-  padding: 64px 0; }
-
-.template-404 .nav-bar {
-  background-color: #666 !important;
-  position: static; }
-
-.template-404 .main-content p {
-  font-size: 24px;
-  margin-bottom: 64px; }
-
-.template-404 .main-content .hr {
-  margin: 32px auto;
-  width: 50%; }
+.template-404 {
+  background: url("{{ 'bg-hills.jpg' | asset_url }}") center center no-repeat;
+  background-size: cover; }
+  .template-404 .main-content {
+    padding: 64px 0; }
+  .template-404 .nav-bar {
+    background-color: #666 !important;
+    position: static; }
+  .template-404 .main-content p {
+    font-size: 24px;
+    margin-bottom: 64px; }
+  .template-404 .main-content .hr {
+    margin: 32px auto;
+    width: 50%; }
