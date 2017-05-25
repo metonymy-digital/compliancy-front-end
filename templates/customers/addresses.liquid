@@ -12,17 +12,16 @@ into an external JS file
 
 <div class="grid">
 
-  <div class="grid__item large--one-quarter one-whole">
+  <div class="grid__item large--one-third one-whole">
     {% include 'account-nav' %}
   </div>
-  <div class="grid__item large--three-quarters one-whole">
+  <div class="grid__item large--two-thirds one-whole">
     {% include 'account-new-address-form' %}
     <div class="account-content">
       <div class="title-row">
         <h1>Saved Addresses</h1>
         <div class="hr"></div>
       </div>
-
       <p class="link--add-new">
         <a href="#" onclick="Shopify.CustomerAddress.toggleNewForm(); return false;">add new</a>
       </p>

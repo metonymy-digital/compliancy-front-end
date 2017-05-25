@@ -14,6 +14,71 @@
   background-image: url("{{ 'separator-brown.svg' | asset_url }}");
 }
 
+// fancy corners
+
+@mixin corner-top-left($size) {
+  background-image: url("{{ 'fancy-corner.png' | asset_url }}");
+  position: absolute;
+  display: block;
+  height: $size;
+  width: $size;
+  background-size: $size;
+  left: -($size/8);
+  top: -($size/8);
+}
+
+@mixin corner-top-right($size) {
+  background-image: url("{{ 'fancy-corner.png' | asset_url }}");
+  position: absolute;
+  display: block;
+  height: $size;
+  width: $size;
+  background-size: $size;
+  top: -($size/8);
+  right: -($size/8);
+  transform: rotate(90deg);
+}
+
+@mixin corner-bot-left($size) {
+  background-image: url("{{ 'fancy-corner.png' | asset_url }}");
+  position: absolute;
+  display: block;
+  height: $size;
+  width: $size;
+  background-size: $size;
+  left: -($size/8);
+  bottom: -($size/8);
+  transform: rotate(-90deg);
+}
+
+@mixin corner-bot-right($size) {
+  background-image: url("{{ 'fancy-corner.png' | asset_url }}");
+  position: absolute;
+  display: block;
+  height: $size;
+  width: $size;
+  background-size: $size;
+  right: -($size/8);
+  bottom: -($size/8);
+  transform: rotate(180deg);
+}
+
+@mixin corners($size) {
+  .corner-top-left {
+    @include corner-top-left($size);
+  }
+  .corner-top-right {
+    @include corner-top-right($size);
+  }
+  .corner-bot-left {
+    @include corner-bot-left($size);
+  }
+  .corner-bot-right {
+    @include corner-bot-right($size);
+  }
+}
+
+
 // classes
 .ops__logo {
   width: 42px;

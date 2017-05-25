@@ -33,3 +33,11 @@
     padding: $space-xl 0;
   }
 }
+
+@mixin account-right-content {
+  padding: 42px;
+  background-color: $white;
+  @include breakpoint-up(lg) {
+    margin-left: $space-xl;
+  }
+}

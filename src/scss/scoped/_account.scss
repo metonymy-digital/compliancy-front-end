@@ -19,6 +19,8 @@
   .account-nav {
     padding: 24px 42px;
     background-color: $white;
+    position: relative;
+    @include corners($space-lg);
     h2 {
       font-size: 38px;
       margin-top: $space-lg;
@@ -45,12 +47,11 @@
       }
     }
   }
+  .new-address {
+    @include account-right-content;
+  }
   .account-content {
-    padding: 42px;
-    background-color: $white;
-    @include breakpoint-up(lg) {
-      margin-left: $space-xl;
-    }
+    @include account-right-content;
     h3 {
       color: $brown;
       font-family: 'Whitenights-bold';
