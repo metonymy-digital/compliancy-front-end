@@ -1,0 +1,24 @@
+// utility
+@mixin link-style($color, $decor:none) {
+  a, & {
+    color: $color;
+    &:hover,&:active,&:focus {
+      text-decoration: $decor;
+    }
+  }
+}
+
+@mixin list-no-style {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+
+// layout helpers
+@mixin page-paddings {
+  padding-top: $top-nav-height;
+  .main-content {
+    padding: $space-xl 0;
+  }
+}
