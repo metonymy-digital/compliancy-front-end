@@ -339,7 +339,8 @@
     #CartDrawer {
       width: 500px; } }
   #CartDrawer input {
-    background-color: #666; }
+    background-color: #666;
+    color: #ffffff; }
     #CartDrawer input ::-webkit-input-placeholder {
       /* Chrome/Opera/Safari */
       color: #ffffff; }
@@ -368,14 +369,67 @@
   #CartDrawer .ajaxcart__row {
     margin: 0;
     border-color: #666;
+    padding: 32px 0;
     padding-right: 16px;
     border: none;
     position: relative; }
     #CartDrawer .ajaxcart__row .ajaxcart__qty {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
       margin: 0;
       position: absolute;
-      right: 0;
-      bottom: 0; }
+      right: 16px;
+      bottom: 32px; }
+      #CartDrawer .ajaxcart__row .ajaxcart__qty input {
+        border: none;
+        -webkit-box-sizing: content-box;
+                box-sizing: content-box;
+        padding: 0;
+        margin: 0;
+        width: 24px;
+        height: 24px; }
+      #CartDrawer .ajaxcart__row .ajaxcart__qty .ajaxcart__qty-adjust {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        color: rgba(255, 255, 255, 0.5);
+        display: block;
+        padding: 0;
+        margin: 0;
+        position: relative;
+        width: 16px;
+        height: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        -webkit-border-radius: 50%;
+                border-radius: 50%;
+        background-color: transparent; }
+        #CartDrawer .ajaxcart__row .ajaxcart__qty .ajaxcart__qty-adjust span {
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          margin: auto;
+          top: -5.6px; }
   #CartDrawer .ajaxcart__subtotal {
     height: 64px;
     padding-left: 32px;

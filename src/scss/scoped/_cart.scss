@@ -13,6 +13,7 @@
   }
   input {
     background-color: $grey;
+    color: $white;
     ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
       color: $white;
     }
@@ -47,14 +48,41 @@
   .ajaxcart__row {
     margin: 0;
     border-color: $grey;
+    padding: $space-lg 0;
     padding-right: $space-md;
     border: none;
     position: relative;
     .ajaxcart__qty {
+      @include flex-center-space-between;
       margin: 0;
       position: absolute;
-      right: 0;
-      bottom: 0;
+      right: $space-md;
+      bottom: $space-lg;
+      input {
+        border: none;
+        box-sizing: content-box;
+        padding: 0;
+        margin: 0;
+        width: 24px;
+        height: 24px;
+      }
+      .ajaxcart__qty-adjust {
+        @include flex-center;
+        color: rgba($white,0.5);
+        display: block;
+        padding: 0;
+        margin: 0;
+        position: relative;
+        width: $space-md;
+        height: $space-md;
+        border: 1px solid rgba($white,0.5);
+        border-radius: 50%;
+        background-color: transparent;
+        span {
+          @include absolute-center;
+          top: -5.6px;
+        }
+      }
     }
   }
   .ajaxcart__subtotal {
