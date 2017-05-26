@@ -293,6 +293,36 @@
   .template-customers-login .form-vertical .link--form-nav,
   .template-customers-reset_password .form-vertical .link--form-nav {
     text-decoration: underline; }
+  .template-customers-register .form-vertical .pre-register-check,
+  .template-customers-login .form-vertical .pre-register-check,
+  .template-customers-reset_password .form-vertical .pre-register-check {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+    .template-customers-register .form-vertical .pre-register-check input[type=checkbox],
+    .template-customers-login .form-vertical .pre-register-check input[type=checkbox],
+    .template-customers-reset_password .form-vertical .pre-register-check input[type=checkbox] {
+      -webkit-box-ordinal-group: 2;
+      -webkit-order: 1;
+          -ms-flex-order: 1;
+              order: 1;
+      margin: 0; }
+    .template-customers-register .form-vertical .pre-register-check label,
+    .template-customers-login .form-vertical .pre-register-check label,
+    .template-customers-reset_password .form-vertical .pre-register-check label {
+      -webkit-box-ordinal-group: 3;
+      -webkit-order: 2;
+          -ms-flex-order: 2;
+              order: 2; }
 
 .template-404 {
   background: url("{{ 'bg-hills.jpg' | asset_url }}") center center no-repeat;
@@ -353,10 +383,6 @@
     #CartDrawer input :-moz-placeholder {
       /* Firefox 18- */
       color: #ffffff; }
-  #CartDrawer input[type=checkbox] {
-    -webkit-transform: scale(1.8);
-        -ms-transform: scale(1.8);
-            transform: scale(1.8); }
   #CartDrawer .drawer__header,
   #CartDrawer .ajaxcart__inner,
   #CartDrawer .ajaxcart__footer {
@@ -470,6 +496,10 @@
       text-align: right; }
       #CartDrawer .ajaxcart__footer .pre-submit-check label {
         margin-right: 16px; }
+      #CartDrawer .ajaxcart__footer .pre-submit-check input[type=checkbox] {
+        -webkit-transform: scale(1.8);
+            -ms-transform: scale(1.8);
+                transform: scale(1.8); }
     #CartDrawer .ajaxcart__footer .cart__checkout {
       display: -webkit-box;
       display: -webkit-flex;

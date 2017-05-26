@@ -30,7 +30,7 @@ gulp.task('build-css', function() {
 });
 
 gulp.task('build-js', function() {
-gulp.src([jsSource+'plugins/**/*',jsSource+'/*'])
+gulp.src([jsSource+'vendor/**/*',jsSource+'modules/*'])
 .pipe(concat('site.js'))
 .pipe(gulp.dest(jsDest));
 });

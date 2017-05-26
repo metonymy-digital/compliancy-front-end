@@ -28,6 +28,11 @@
       <a class="link--forgot-password" href="/account/login#recover">forgot your password?</a>
       <input type="password" name="customer[password]" id="CreatePassword" class="input-full{% if form.errors contains 'password' %} error{% endif %}">
 
+      <div id="pre-register-check">
+        <input type="checkbox" name="terms-checkbox" />
+        <label for="terms-checkbox">I am at least 21 and I agree to the terms of service</label>
+      </div>
+
       <p>
         <input type="submit" value="Create Account" class="btn btn--full">
       </p>

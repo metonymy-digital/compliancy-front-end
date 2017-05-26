@@ -27,9 +27,6 @@
       color: $white;
     }
   }
-  input[type=checkbox] {
-    transform: scale(1.8);
-  }
   .drawer__header,
   .ajaxcart__inner,
   .ajaxcart__footer
@@ -104,6 +101,9 @@
       text-align: right;
       label {
         margin-right: $space-md;
+      }
+      input[type=checkbox] {
+        transform: scale(1.8);
       }
     }
     .cart__checkout {
