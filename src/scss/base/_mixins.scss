@@ -19,6 +19,17 @@
   background-size: $size;
 }
 
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-center-space-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
 // layout and styling helpers
 @mixin static-top-nav($color) {
