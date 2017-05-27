@@ -37,7 +37,7 @@
     padding: 24px 42px;
     background-color: $white;
     @include breakpoint-up(lg){
-      @include has-corners(42px);
+      @include fancy-corners(42px);
     }
     #customer_logout_link {
       @include link--brown;
@@ -64,7 +64,7 @@
   .account-right-content {
     @include account-content-styles;
     @include breakpoint-up(lg){
-      @include has-corners(56px);
+      @include fancy-corners(56px);
     }
     font-family: 'Whitenights';
     h3 {

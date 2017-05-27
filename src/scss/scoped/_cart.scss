@@ -1,15 +1,6 @@
 #CartDrawer
 {
-  width: 100%;
-  padding: 0;
-  background-color: rgba($black,0.9);
-  border: none;
-  color: $white;
-  font-family: 'Whitenights';
-  z-index: 1000;
-  @include breakpoint-up(lg) {
-    width: 500px;
-  }
+  @include drawer-styles;
   #CartContainer > p {
     margin: $space-lg;
     font-size: 24px;

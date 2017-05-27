@@ -15,7 +15,6 @@
 }
 
 // fancy corners
-
 @mixin corner-top-left($size) {
   background-image: url("{{ 'fancy-corner.png' | asset_url }}");
   position: absolute;
@@ -63,7 +62,7 @@
   transform: rotate(180deg);
 }
 
-@mixin has-corners($size) {
+@mixin fancy-corners($size) {
   position: relative;
   .corner-top-left {
     @include corner-top-left($size);
@@ -76,6 +75,34 @@
   }
   .corner-bot-right {
     @include corner-bot-right($size);
+  }
+}
+
+@mixin page-paddings {
+  padding-top: 80px;
+  .main-content {
+    padding: $space-xl 0;
+  }
+}
+
+@mixin account-content-styles {
+  padding: 42px;
+  background-color: $white;
+  @media (min-width: 1092px) {
+    margin-left: $space-xl;
+  }
+}
+
+@mixin drawer-styles {
+  width: 100%;
+  padding: 0;
+  background-color: rgba($black,0.9);
+  border: none;
+  color: $white;
+  font-family: 'Whitenights';
+  z-index: 1000;
+  @include breakpoint-up(lg) {
+    width: 500px;
   }
 }
 

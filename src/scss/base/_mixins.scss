@@ -38,19 +38,3 @@
   align-items: center;
   justify-content: space-between;
 }
-
-// layout and styling helpers
-@mixin page-paddings {
-  padding-top: 80px;
-  .main-content {
-    padding: $space-xl 0;
-  }
-}
-
-@mixin account-content-styles {
-  padding: 42px;
-  background-color: $white;
-  @media (min-width: 1092px) {
-    margin-left: $space-xl;
-  }
-}
