@@ -79,9 +79,15 @@
 }
 
 @mixin page-paddings {
-  padding-top: 80px;
+  padding-top: 51px;
   .main-content {
-    padding: $space-xl 0;
+    padding: $space-lg $space-md;
+  }
+  @include breakpoint-up(lg) {
+    padding-top: 80px;
+    .main-content {
+      padding: $space-xl 0;
+    }
   }
 }
 
