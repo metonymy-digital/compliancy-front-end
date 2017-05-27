@@ -6,7 +6,6 @@
   border: none;
   color: $white;
   font-family: 'Whitenights';
-  @include link-style($white);
   z-index: 1000;
   @include breakpoint-up(lg) {
     width: 500px;
@@ -14,6 +13,9 @@
   #CartContainer > p {
     margin: $space-lg;
     font-size: 24px;
+  }
+  a {
+    @include link-style($white);
   }
   input {
     background-color: $grey;

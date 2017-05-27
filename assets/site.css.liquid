@@ -225,7 +225,7 @@ p {
   color: #ffffff; }
 
 .hero__logo {
-  color: white;
+  color: #ffffff;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -237,6 +237,9 @@ p {
   line-height: 1;
   padding: 15px 0;
   text-transform: uppercase; }
+  .hero__logo:hover, .hero__logo:active, .hero__logo:focus {
+    color: #ffffff;
+    text-decoration: none; }
 
 .hero--top {
   background-image: url("{{ 'hero.jpg' | asset_url }}");
@@ -895,25 +898,18 @@ p {
         font-family: 'Whitenights';
         margin: 32px 0;
         letter-spacing: 0.15em; }
-        .template-customers-account .account-left-content ul.account-menu li a, .template-customers-account .account-left-content ul.account-menu li,
+        .template-customers-account .account-left-content ul.account-menu li a,
         .template-customers-addresses .account-left-content ul.account-menu li a,
-        .template-customers-addresses .account-left-content ul.account-menu li,
-        .template-customers-order .account-left-content ul.account-menu li a,
-        .template-customers-order .account-left-content ul.account-menu li {
+        .template-customers-order .account-left-content ul.account-menu li a {
           color: #8b683e; }
-          .template-customers-account .account-left-content ul.account-menu li a:hover, .template-customers-account .account-left-content ul.account-menu li a:active, .template-customers-account .account-left-content ul.account-menu li a:focus, .template-customers-account .account-left-content ul.account-menu li:hover, .template-customers-account .account-left-content ul.account-menu li:active, .template-customers-account .account-left-content ul.account-menu li:focus,
+          .template-customers-account .account-left-content ul.account-menu li a:hover, .template-customers-account .account-left-content ul.account-menu li a:active, .template-customers-account .account-left-content ul.account-menu li a:focus,
           .template-customers-addresses .account-left-content ul.account-menu li a:hover,
           .template-customers-addresses .account-left-content ul.account-menu li a:active,
           .template-customers-addresses .account-left-content ul.account-menu li a:focus,
-          .template-customers-addresses .account-left-content ul.account-menu li:hover,
-          .template-customers-addresses .account-left-content ul.account-menu li:active,
-          .template-customers-addresses .account-left-content ul.account-menu li:focus,
           .template-customers-order .account-left-content ul.account-menu li a:hover,
           .template-customers-order .account-left-content ul.account-menu li a:active,
-          .template-customers-order .account-left-content ul.account-menu li a:focus,
-          .template-customers-order .account-left-content ul.account-menu li:hover,
-          .template-customers-order .account-left-content ul.account-menu li:active,
-          .template-customers-order .account-left-content ul.account-menu li:focus {
+          .template-customers-order .account-left-content ul.account-menu li a:focus {
+            color: #8b683e;
             text-decoration: none; }
   .template-customers-account .new-address,
   .template-customers-addresses .new-address,
@@ -1186,16 +1182,17 @@ p {
   color: #ffffff;
   font-family: 'Whitenights';
   z-index: 1000; }
-  #CartDrawer a, #CartDrawer {
-    color: #ffffff; }
-    #CartDrawer a:hover, #CartDrawer a:active, #CartDrawer a:focus, #CartDrawer:hover, #CartDrawer:active, #CartDrawer:focus {
-      text-decoration: none; }
   @media (min-width: 769px) {
     #CartDrawer {
       width: 500px; } }
   #CartDrawer #CartContainer > p {
     margin: 32px;
     font-size: 24px; }
+  #CartDrawer a {
+    color: #ffffff; }
+    #CartDrawer a:hover, #CartDrawer a:active, #CartDrawer a:focus {
+      color: #ffffff;
+      text-decoration: none; }
   #CartDrawer input {
     background-color: #666;
     color: #ffffff; }

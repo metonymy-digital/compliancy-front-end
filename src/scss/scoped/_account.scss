@@ -46,7 +46,9 @@
     ul.account-menu {
       @include list-no-style;
       li {
-        @include link-style($brown);
+        a {
+          @include link-style($brown);
+        }
         font-size: 20px;
         line-height: 1.2;
         text-transform: uppercase;

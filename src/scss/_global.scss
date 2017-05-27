@@ -271,7 +271,7 @@ p {
 }
 
 .hero__logo {
-  color: white;
+  @include link-style($white);
   display: flex;
   align-items: flex-end;
   line-height: 1;
