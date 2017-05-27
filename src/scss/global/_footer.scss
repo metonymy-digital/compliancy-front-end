@@ -22,6 +22,24 @@
   .footer-contact {
     text-transform: uppercase;
     text-align: right;
-    margin-bottom: $space-lg;
+    margin-bottom: 3*$space-md;
+  }
+
+  // newsletter form
+  #contact_form {
+    input {
+      font-family: 'Whitenights';
+    }
+    #subscribe {
+      background-color: $burgundy;
+    }
+  }
+
+  .copyright {
+    text-transform: capitalize;
+    text-align: left;
+    .uppercase {
+      text-transform: uppercase;
+    }
   }
 }

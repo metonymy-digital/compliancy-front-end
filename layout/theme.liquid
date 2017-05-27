@@ -183,8 +183,7 @@ Add the page template as a class for easy page or template specific styling.
     <footer class="site-footer small--text-center" role="contentinfo">
       <div class="wrapper">
         <div class="grid">
-          {% if settings.footer_social_enable %}
-          <div class="grid__item large--one-third medium--one-half">
+          <div class="grid__item one-whole large--one-third medium--one-half">
             <ul class="footer-nav">
               <li class="footer-nav__item">
                 <a href="/">Home</a>
@@ -196,27 +195,26 @@ Add the page template as a class for easy page or template specific styling.
                 <a href="/">Subscicribe</a>
               </li>
               {% if shop.customer_accounts_enabled %}
-                {% if customer %}
-                <li class="footer-nav__item">
-                  <a href="/account">{{ 'layout.customer.account' | t }}</a>
-                </li>
-                <li class="footer-nav__item">
-                  {{ 'layout.customer.log_out' | t | customer_logout_link }}
-                </li>
-                {% else %}
-                <li class="footer-nav__item">
-                  {{ 'layout.customer.log_in' | t | customer_login_link }}
-                </li>
-                <li class="footer-nav__item">
-                  {{ 'layout.customer.create_account' | t | customer_register_link }}
-                </li>
-                {% endif %}
+              {% if customer %}
+              <li class="footer-nav__item">
+                <a href="/account">{{ 'layout.customer.account' | t }}</a>
+              </li>
+              <li class="footer-nav__item">
+                {{ 'layout.customer.log_out' | t | customer_logout_link }}
+              </li>
+              {% else %}
+              <li class="footer-nav__item">
+                {{ 'layout.customer.log_in' | t | customer_login_link }}
+              </li>
+              <li class="footer-nav__item">
+                {{ 'layout.customer.create_account' | t | customer_register_link }}
+              </li>
+              {% endif %}
               {% endif %}
             </ul>
           </div>
-          {% endif %}
 
-          <div class="grid__item large--one-third push--large--one-third medium--one-half">
+          <div class="grid__item one-whole large--one-third push--large--one-third medium--one-half">
             <div class="footer-contact">
               <h4>Contact</h4>
               <p>{{ shop.address.street }}</p>
@@ -225,42 +223,45 @@ Add the page template as a class for easy page or template specific styling.
               <p> (123) 456-7890 (F)</p>
             </div>
             {% if settings.footer_newsletter_enable %}
-              {% comment %}
-              MailChimp is the go-to newsletter service for Shopify.
-              Use the link below to find your MailChimp form action
-              and insert it in your site settings.
+            {% comment %}
+            MailChimp is the go-to newsletter service for Shopify.
+            Use the link below to find your MailChimp form action
+            and insert it in your site settings.
 
-              If the form action URL is not set in the theme settings,
-              it will fallback to a customer form so you can still capture the email.
+            If the form action URL is not set in the theme settings,
+            it will fallback to a customer form so you can still capture the email.
 
-              MailChimp newsletter integration and requirement:
-              - http://docs.shopify.com/support/configuration/store-customization/where-do-i-get-my-mailchimp-form-action
-              {% endcomment %}
-              <h4>{{ 'layout.footer.newsletter_title' | t }}</h4>
-              {% if settings.newsletter_form_action != blank %}
-              <form action="{{ settings.newsletter_form_action }}" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" class="input-group">
-                <input type="email" value="{% if customer %}{{ customer.email }}{% endif %}" placeholder="{{ 'general.newsletter_form.newsletter_email' | t }}" name="EMAIL" id="mail" class="input-group-field" aria-label="{{ 'general.newsletter_form.newsletter_email' | t }}" autocorrect="off" autocapitalize="off">
-                <span class="input-group-btn">
-                  <input type="submit" class="btn" name="subscribe" id="subscribe" value="{{ 'general.newsletter_form.submit' | t }}">
-                </span>
-              </form>
-              {% else %}
-              {% form 'customer' %}
-              {{ form.errors | default_errors }}
-              {% if form.posted_successfully? %}
-              <p class="note form-success">{{ 'general.newsletter_form.confirmation' | t }}</p>
-              {% else %}
-              <div class="input-group">
-                <input type="email" value="{% if customer %}{{ customer.email }}{% endif %}" placeholder="{{ 'general.newsletter_form.newsletter_email' | t }}" name="contact[email]" id="Email" class="input-group-field" aria-label="{{ 'general.newsletter_form.newsletter_email' | t }}" autocorrect="off" autocapitalize="off">
-                <input type="hidden" name="contact[tags]" value="newsletter">
-                <span class="input-group-btn">
-                  <input type="submit" class="btn" name="subscribe" id="subscribe" value="{{ 'general.newsletter_form.submit' | t }}">
-                </span>
-              </div>
-              {% endif %}
-              {% endform %}
-              {% endif %}
+            MailChimp newsletter integration and requirement:
+            - http://docs.shopify.com/support/configuration/store-customization/where-do-i-get-my-mailchimp-form-action
+            {% endcomment %}
+            <h4>{{ 'layout.footer.newsletter_title' | t }}</h4>
+            {% if settings.newsletter_form_action != blank %}
+            <form action="{{ settings.newsletter_form_action }}" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" class="input-group">
+              <input type="email" value="{% if customer %}{{ customer.email }}{% endif %}" placeholder="{{ 'general.newsletter_form.newsletter_email' | t }}" name="EMAIL" id="mail" class="input-group-field" aria-label="{{ 'general.newsletter_form.newsletter_email' | t }}" autocorrect="off" autocapitalize="off">
+              <span class="input-group-btn">
+                <input type="submit" class="btn" name="subscribe" id="subscribe" value="{{ 'general.newsletter_form.submit' | t }}">
+              </span>
+            </form>
+            {% else %}
+            {% form 'customer' %}
+            {{ form.errors | default_errors }}
+            {% if form.posted_successfully? %}
+            <p class="note form-success">{{ 'general.newsletter_form.confirmation' | t }}</p>
+            {% else %}
+            <div class="input-group">
+              <input type="email" value="{% if customer %}{{ customer.email }}{% endif %}" placeholder="{{ 'general.newsletter_form.newsletter_email' | t }}" name="contact[email]" id="Email" class="input-group-field" aria-label="{{ 'general.newsletter_form.newsletter_email' | t }}" autocorrect="off" autocapitalize="off">
+              <input type="hidden" name="contact[tags]" value="newsletter">
+              <span class="input-group-btn">
+                <input type="submit" class="btn" name="subscribe" id="subscribe" value="{{ 'general.newsletter_form.submit' | t }}">
+              </span>
+            </div>
             {% endif %}
+            {% endform %}
+            {% endif %}
+            {% endif %}
+          </div>
+          <div class="grid__item one-whole">
+            <p class="copyright"> &copy; Copyright {{ 'now' | date: "%Y" }} <span class="uppercase">Deen Brothers, LLC.</span> All Rights Reserved.</p>
           </div>
         </div>
       </div>
