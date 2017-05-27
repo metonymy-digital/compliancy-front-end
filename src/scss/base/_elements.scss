@@ -104,6 +104,29 @@
   @include breakpoint-up(lg) {
     width: 500px;
   }
+  .drawer__header {
+    position: relative;
+    .drawer__close {
+      position: absolute;
+      padding: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      right: $space-lg;
+      width: $space-lg;
+      height: $space-lg;
+      button {
+        &, span.icon, span.icon::before {
+          padding: 0;
+          @include block-fill;
+          @include absolute-center;
+        }
+        &:active {
+          background-color: transparent;
+        }
+      }
+    }
+  }
 }
 
 
