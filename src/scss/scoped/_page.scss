@@ -1,0 +1,5 @@
+// page.liquid
+
+.template-page {
+  @include page-paddings;
+}
