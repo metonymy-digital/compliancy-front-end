@@ -1,12 +1,14 @@
 // customers/account.*.liquid
 // customers/addresses.liquid
+// customers/order.liquid
 
 .template-customers-account,
-.template-customers-addresses
+.template-customers-addresses,
+.template-customers-order
 {
   @include page-paddings;
   // scoped nav bar styling
-  @include static-top-nav($brown);
+  @include static-top-nav(rgba($brown, 0.7));
   @include bg-img("{{ 'bg-matte.jpg' | asset_url }}");
   h1 {
     font-size: 38px;
@@ -16,7 +18,7 @@
     @include hr--brown;
     margin-top: $space-sm;
   }
-  .account-nav {
+  .account-left-content {
     padding: 24px 42px;
     background-color: $white;
     @include breakpoint-up(lg){
@@ -51,11 +53,12 @@
   .new-address {
     @include account-content-styles;
   }
-  .account-content {
+  .account-right-content {
     @include account-content-styles;
     @include breakpoint-up(lg){
       @include has-corners(56px);
     }
+    font-family: 'Whitenights';
     h3 {
       color: $brown;
       font-family: 'Whitenights-bold';
@@ -63,6 +66,12 @@
       margin-top: $space-xl;
       margin-bottom: $space-sm;
     }
+
+    .title-row {
+      margin-bottom: $space-md;
+    }
+
+    // address
     .link--add-new {
       margin-top: $space-md;
       a {
@@ -78,6 +87,25 @@
     }
     .edit-address {
       margin-top: $space-lg;
+    }
+
+    // order history
+    table.full {
+      margin: $space-lg 0;
+      th, td {
+        padding: $space-xs $space-md;
+        border: 1px solid $brown;
+        color: $grey;
+        a {
+          text-decoration: underline;
+        }
+      }
+      th {
+        background-color: rgba($brown, 0.7);
+        color: $white;
+        text-transform: uppercase;
+        font-weight: normal;
+      }
     }
   }
 }
