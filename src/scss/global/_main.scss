@@ -35,18 +35,7 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-.site-nav__link {
-  color: $white;
-  font-family: "Whitenights";
-  font-size: 16px;
-  letter-spacing: 0.25em;
-  padding: 15px 10px 5px;
-  text-transform: uppercase;
-}
 
-.site-header {
-  display: none;
-}
 
 .main-content {
   padding-bottom: 0;
@@ -612,18 +601,6 @@ p {
   .full-bleed__img > img {
     min-width: 1440px;
   }
-}
-
-
-.nav-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 100;
-  width: 100vw;
-  background-color: $grey;
-  padding: 0 30px;
-  transition: 200ms ease-out;
 }
 
 

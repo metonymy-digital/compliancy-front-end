@@ -69,17 +69,6 @@ body {
   color: #333;
   text-rendering: optimizeLegibility; }
 
-.site-nav__link {
-  color: #ffffff;
-  font-family: "Whitenights";
-  font-size: 16px;
-  letter-spacing: 0.25em;
-  padding: 15px 10px 5px;
-  text-transform: uppercase; }
-
-.site-header {
-  display: none; }
-
 .main-content {
   padding-bottom: 0; }
 
@@ -664,17 +653,6 @@ p {
   .full-bleed__img > img {
     min-width: 1440px; } }
 
-.nav-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 100;
-  width: 100vw;
-  background-color: #666;
-  padding: 0 30px;
-  -webkit-transition: 200ms ease-out;
-  transition: 200ms ease-out; }
-
 @media screen and (max-width: 480px) {
   h1 {
     font-size: 18px; }
@@ -856,6 +834,53 @@ p {
         text-decoration: none;
         background-color: transparent;
         outline: none; }
+
+#nav.nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100vw;
+  background-color: #666;
+  padding: 0 30px;
+  -webkit-transition: 200ms ease-out;
+  transition: 200ms ease-out; }
+  #nav.nav-bar .site-nav__link {
+    color: #ffffff;
+    font-family: "Whitenights";
+    font-size: 16px;
+    letter-spacing: 0.25em;
+    padding: 15px 10px 5px;
+    text-transform: uppercase; }
+
+.site-footer {
+  background-color: #333;
+  color: #ffffff; }
+  .site-footer h4, .site-footer p, .site-footer li {
+    font-family: 'Whitenights';
+    font-size: 24px;
+    text-transform: uppercase;
+    margin-bottom: 16px; }
+  .site-footer h4 {
+    margin-bottom: 32px;
+    text-align: right; }
+  .site-footer .footer-nav {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-transform: uppercase;
+    text-align: center; }
+    .site-footer .footer-nav li a {
+      color: #ffffff; }
+      .site-footer .footer-nav li a:hover, .site-footer .footer-nav li a:active, .site-footer .footer-nav li a:focus {
+        color: #ffffff;
+        text-decoration: none;
+        background-color: transparent;
+        outline: none; }
+  .site-footer .footer-contact {
+    text-transform: uppercase;
+    text-align: right;
+    margin-bottom: 32px; }
 
 .template-page {
   padding-top: 51px; }

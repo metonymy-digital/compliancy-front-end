@@ -1,0 +1,27 @@
+.site-footer {
+  background-color: $dark-grey;
+  color: $white;
+  h4, p, li {
+    font-family: 'Whitenights';
+    font-size: 24px;
+    text-transform: uppercase;
+    margin-bottom: $space-md;
+  }
+  h4 {
+    margin-bottom: $space-lg;
+    text-align: right;
+  }
+  .footer-nav {
+    @include list-no-style;
+    text-transform: uppercase;
+    text-align: center;
+    li a {
+      @include link-style($white);
+    }
+  }
+  .footer-contact {
+    text-transform: uppercase;
+    text-align: right;
+    margin-bottom: $space-lg;
+  }
+}

@@ -1,0 +1,36 @@
+// mobile nav
+#NavDrawer {
+  @include drawer-styles;
+  .mobile-nav {
+    .mobile-nav__item {
+      background-color: transparent;
+      padding: $space-md $space-lg;
+      a {
+        @include link-style($white);
+        font-size: 24px;
+        padding: 0;
+      }
+    }
+  }
+}
+
+
+// desktop nav
+#nav.nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100vw;
+  background-color: $grey;
+  padding: 0 30px;
+  transition: 200ms ease-out;
+  .site-nav__link {
+    color: $white;
+    font-family: "Whitenights";
+    font-size: 16px;
+    letter-spacing: 0.25em;
+    padding: 15px 10px 5px;
+    text-transform: uppercase;
+  }
+}
