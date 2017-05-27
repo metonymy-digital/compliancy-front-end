@@ -11,6 +11,10 @@
   @include breakpoint-up(lg) {
     width: 500px;
   }
+  #CartContainer > p {
+    margin: $space-lg;
+    font-size: 24px;
+  }
   input {
     background-color: $grey;
     color: $white;
