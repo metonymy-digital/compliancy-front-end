@@ -37,24 +37,22 @@ handlebar.js template tags as available hooks.
               </p>
 
               <div class="grid--full display-table">
-                <div class="grid__item display-table-cell one-half">
-                  <div class="ajaxcart__qty">
-                    <button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--minus icon-fallback-text" data-id="{{key}}" data-qty="{{itemMinus}}" data-line="{{line}}">
-                      <span>&minus;</span>
-                    </button>
-                    <input type="text" name="updates[]" class="ajaxcart__qty-num" value="{{itemQty}}" min="0" data-id="{{key}}" data-line="{{line}}" aria-label="quantity" pattern="[0-9]*">
-                    <button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--plus icon-fallback-text" data-id="{{key}}" data-line="{{line}}" data-qty="{{itemAdd}}">
-                      <span>&plus;</span>
-                    </button>
-                  </div>
-                </div>
-                <div class="grid__item display-table-cell one-half text-right">
+                <div class="grid__item one-whole">
                   {{#if discountsApplied}}
                   <small class="ajaxcart-item__price-strikethrough"><s>{{{originalLinePrice}}}</s></small>
                   <br><span>{{{linePrice}}}</span>
                   {{else}}
                   <span>{{{linePrice}}}</span>
                   {{/if}}
+                </div>
+                <div class="ajaxcart__qty">
+                  <button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--minus icon-fallback-text" data-id="{{key}}" data-qty="{{itemMinus}}" data-line="{{line}}">
+                    <span>&minus;</span>
+                  </button>
+                  <input type="text" name="updates[]" class="ajaxcart__qty-num" value="{{itemQty}}" min="0" data-id="{{key}}" data-line="{{line}}" aria-label="quantity" pattern="[0-9]*">
+                  <button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--plus icon-fallback-text" data-id="{{key}}" data-line="{{line}}" data-qty="{{itemAdd}}">
+                    <span>&plus;</span>
+                  </button>
                 </div>
               </div>
               {{#if discountsApplied}}
