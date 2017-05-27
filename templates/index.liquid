@@ -47,7 +47,7 @@
                   <p class="product__location">{{ product.description }}</p>
                   <p class="product__price">{{ product.price | money }}</p>
                   <button class="btn__subscribe">subscribe</button>
-                  <button class="btn__buy"><a href="{{ product.url }}">buy now</a></button>
+                  {% include 'buy-now-button' %}
                 </div>
               </div>
           {% endfor %}

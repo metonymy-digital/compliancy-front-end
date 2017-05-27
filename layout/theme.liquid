@@ -29,7 +29,7 @@
 
   <!-- CSS ================================================== -->
   {{ 'timber.scss.css' | asset_url | stylesheet_tag }}
-  
+
   <!-- jerry's compiled css -->
   {{ 'site.css' | asset_url | stylesheet_tag }}
 
@@ -135,7 +135,6 @@
   {% if settings.ajax_cart_method == "drawer" %}
     <div id="CartDrawer" class="drawer drawer--right">
       <div class="drawer__header">
-        <div class="drawer__title h3">{{ 'cart.general.title' | t }}</div>
         <div class="drawer__close js-drawer-close">
           <button type="button" class="icon-fallback-text">
             <span class="icon icon-x" aria-hidden="true"></span>
@@ -146,10 +145,9 @@
       <div id="CartContainer"></div>
     </div>
   {% endif %}
-  <div id="PageContainer" class="is-moved-by-drawer">
+  <div id="PageContainer">
     <header class="site-header" role="banner">
       <div class="wrapper">
-
         <div class="grid--full grid--table">
           <div class="grid__item large--one-half">
             {% comment %}
