@@ -8,7 +8,6 @@
 {
   @include page-paddings;
   // scoped nav bar styling
-  @include static-top-nav(rgba($brown, 0.7));
   @include bg-img("{{ 'bg-matte.jpg' | asset_url }}");
   h1 {
     font-size: 38px;

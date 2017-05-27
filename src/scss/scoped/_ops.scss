@@ -7,8 +7,6 @@
 .template-customers-reset_password
 {
   @include page-paddings;
-  // scoped nav bar styling
-  @include static-top-nav($grey);
   @include bg-img("{{ 'bg-hills.jpg' | asset_url }}");
   .main-content {
     h1 {

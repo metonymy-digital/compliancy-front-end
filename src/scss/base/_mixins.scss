@@ -41,15 +41,8 @@
 }
 
 // layout and styling helpers
-@mixin static-top-nav($color) {
-  .nav-bar {
-    background-color: $color !important;
-    position: static;
-    width: 100%;
-  }
-}
-
 @mixin page-paddings {
+  padding-top: 80px;
   .main-content {
     padding: $space-xl 0;
   }

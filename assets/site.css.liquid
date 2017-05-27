@@ -6,21 +6,27 @@
   width: 100%;
   background-repeat: repeat-x; }
 
+.nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100vw;
+  background-color: #666;
+  padding: 0 30px;
+  -webkit-transition: 200ms ease-out;
+  transition: 200ms ease-out; }
+
 .template-customers-account,
 .template-customers-addresses,
 .template-customers-order {
+  padding-top: 80px;
   background: url("{{ 'bg-matte.jpg' | asset_url }}") center center no-repeat;
   background-size: cover; }
   .template-customers-account .main-content,
   .template-customers-addresses .main-content,
   .template-customers-order .main-content {
     padding: 64px 0; }
-  .template-customers-account .nav-bar,
-  .template-customers-addresses .nav-bar,
-  .template-customers-order .nav-bar {
-    background-color: rgba(139, 104, 62, 0.7) !important;
-    position: static;
-    width: 100%; }
   .template-customers-account h1,
   .template-customers-addresses h1,
   .template-customers-order h1 {
@@ -304,18 +310,13 @@
 .template-customers-register,
 .template-customers-login,
 .template-customers-reset_password {
+  padding-top: 80px;
   background: url("{{ 'bg-hills.jpg' | asset_url }}") center center no-repeat;
   background-size: cover; }
   .template-customers-register .main-content,
   .template-customers-login .main-content,
   .template-customers-reset_password .main-content {
     padding: 64px 0; }
-  .template-customers-register .nav-bar,
-  .template-customers-login .nav-bar,
-  .template-customers-reset_password .nav-bar {
-    background-color: #666 !important;
-    position: static;
-    width: 100%; }
   .template-customers-register .main-content h1,
   .template-customers-login .main-content h1,
   .template-customers-reset_password .main-content h1 {
@@ -403,14 +404,11 @@
               order: 2; }
 
 .template-404 {
+  padding-top: 80px;
   background: url("{{ 'bg-hills.jpg' | asset_url }}") center center no-repeat;
   background-size: cover; }
   .template-404 .main-content {
     padding: 64px 0; }
-  .template-404 .nav-bar {
-    background-color: #666 !important;
-    position: static;
-    width: 100%; }
   .template-404 .main-content p {
     font-size: 24px;
     margin-bottom: 64px; }
@@ -423,13 +421,10 @@
   .template-404 .main-content .ops__logo {
     width: 64px; }
 
-.template-product .main-content {
-  padding: 64px 0; }
-
-.template-product .nav-bar {
-  background-color: #666 !important;
-  position: static;
-  width: 100%; }
+.template-product {
+  padding-top: 80px; }
+  .template-product .main-content {
+    padding: 64px 0; }
 
 #CartDrawer {
   width: 100%;

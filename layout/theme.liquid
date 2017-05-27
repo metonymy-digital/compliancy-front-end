@@ -226,8 +226,10 @@
           {% endcomment %}
           <!-- begin site-nav -->
           <div class="hero__logo">
-            <img src="{{ 'pineapple.svg' | asset_url }}" alt="pineapple" class="icon icon--pineapple" />
-            <h1>Deen Brothers Wines</h1>
+            <a href="/">
+              <img src="{{ 'pineapple.svg' | asset_url }}" alt="pineapple" class="icon icon--pineapple" />
+              <h1>Deen Brothers Wines</h1>
+            </a>
           </div>
           <ul class="site-nav" id="AccessibleNav">
             {% for link in linklists.main-menu.links %}
