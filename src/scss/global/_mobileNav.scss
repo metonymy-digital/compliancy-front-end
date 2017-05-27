@@ -1,3 +1,14 @@
 #NavDrawer {
   @include drawer-styles;
+  .mobile-nav {
+    .mobile-nav__item {
+      background-color: transparent;
+      padding: $space-md $space-lg;
+      a {
+        @include link-style($white);
+        font-size: 24px;
+        padding: 0;
+      }
+    }
+  }
 }

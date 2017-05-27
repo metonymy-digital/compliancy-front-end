@@ -4,6 +4,8 @@
   &:hover,&:active,&:focus {
     color: $color;
     text-decoration: $decor;
+    background-color: transparent;
+    outline: none;
   }
 }
 

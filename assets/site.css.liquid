@@ -242,7 +242,9 @@ p {
   text-transform: uppercase; }
   .hero__logo:hover, .hero__logo:active, .hero__logo:focus {
     color: #ffffff;
-    text-decoration: none; }
+    text-decoration: none;
+    background-color: transparent;
+    outline: none; }
 
 .hero--top {
   background-image: url("{{ 'hero.jpg' | asset_url }}");
@@ -810,6 +812,18 @@ p {
         margin: auto; }
       #NavDrawer .drawer__header .drawer__close button:active {
         background-color: transparent; }
+  #NavDrawer .mobile-nav .mobile-nav__item {
+    background-color: transparent;
+    padding: 16px 32px; }
+    #NavDrawer .mobile-nav .mobile-nav__item a {
+      color: #ffffff;
+      font-size: 24px;
+      padding: 0; }
+      #NavDrawer .mobile-nav .mobile-nav__item a:hover, #NavDrawer .mobile-nav .mobile-nav__item a:active, #NavDrawer .mobile-nav .mobile-nav__item a:focus {
+        color: #ffffff;
+        text-decoration: none;
+        background-color: transparent;
+        outline: none; }
 
 .template-page {
   padding-top: 80px; }
@@ -959,7 +973,9 @@ p {
           .template-customers-order .account-left-content ul.account-menu li a:active,
           .template-customers-order .account-left-content ul.account-menu li a:focus {
             color: #8b683e;
-            text-decoration: none; }
+            text-decoration: none;
+            background-color: transparent;
+            outline: none; }
   .template-customers-account .new-address,
   .template-customers-addresses .new-address,
   .template-customers-order .new-address {
@@ -1265,7 +1281,9 @@ p {
     color: #ffffff; }
     #CartDrawer a:hover, #CartDrawer a:active, #CartDrawer a:focus {
       color: #ffffff;
-      text-decoration: none; }
+      text-decoration: none;
+      background-color: transparent;
+      outline: none; }
   #CartDrawer input {
     background-color: #666;
     color: #ffffff; }
