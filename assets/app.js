@@ -1,18 +1,4 @@
 $(function() {
-  $(window).scroll(function() {
-    console.log('scrolling');
-    if ($(document.body).scrollTop() !== 0) {
-      $('#nav').css({'background-color': 'rgba(55, 55, 55, 0.5)'})
-    } else {
-      $('#nav').css({'background-color': 'rgba(0, 0, 0, 0)'})
-    }
-  })
-
-  if (window.location.pathnamne !== '/') {
-    console.log('not home');
-    $('#nav').css({'background-color': 'rgba(55, 55, 55, 0.5)'})
-  }
-
   $('ul.product-tabs').each(function(){
     var active, content, links = $(this).find('a');
     active = links.first().addClass('active');
