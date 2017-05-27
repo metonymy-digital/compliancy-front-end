@@ -426,8 +426,11 @@
         timber.RightDrawer.open();
       });
     </script>
+    {% comment %}
+    hide these tags while testing checkout logic
     {{ 'zip-check.js' | asset_url | script_tag }}
     {{ 'app.js' | asset_url | script_tag }}
+    {% endcomment %}
   {% endif %}
   <script>
     (function(d) {
