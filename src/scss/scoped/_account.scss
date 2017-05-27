@@ -18,6 +18,11 @@
     @include hr--brown;
     margin-top: $space-sm;
   }
+  .btn {
+    background-color: $brown;
+    margin-top: $space-md;
+    margin-bottom: $space-md;
+  }
   .account-left-content {
     padding: 24px 42px;
     background-color: $white;
@@ -67,6 +72,7 @@
       margin-bottom: $space-sm;
     }
 
+    // general
     .title-row {
       margin-bottom: $space-md;
     }
