@@ -14,6 +14,14 @@
     font-size: 38px;
     letter-spacing: 0;
   }
+  h2 {
+    font-size: 38px;
+  }
+  h3 {
+    font-size: 20px;
+    font-family: 'Whitenights-bold';
+    margin: $space-md 0;
+  }
   .hr {
     @include hr--brown;
     margin-top: $space-sm;
@@ -24,19 +32,13 @@
     margin-bottom: $space-md;
   }
   .account-left-content {
+    h2 {
+      margin-top: $space-md;
+    }
     padding: 24px 42px;
     background-color: $white;
     @include breakpoint-up(lg){
       @include has-corners(42px);
-    }
-    h2 {
-      font-size: 38px;
-      margin-top: $space-lg;
-    }
-    h3 {
-      font-size: 20px;
-      font-family: 'Whitenights-bold';
-      margin: $space-md 0;
     }
     #customer_logout_link {
       @include link--brown;
