@@ -365,16 +365,17 @@ p {
 }
 
 .featured-wines__nav a {
-  font-family: 'Avenir';
+  @include link-style($brown);
+  font-family: 'Whitenights';
   font-weight: 400;
   text-transform: uppercase;
   font-size: 18px;
-  // padding-bottom: 2px;
+  line-height: 1.1;
   display: inline-block;
 }
 
 .featured-wines__nav a.active {
-  border-bottom: 2px solid $brown;
+  border-bottom: 1px solid $brown;
 }
 
 .wines {
