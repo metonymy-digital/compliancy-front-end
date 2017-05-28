@@ -7,65 +7,66 @@
 .template-customers-reset_password
 {
   @include body-padding;
+  @include bg-img("{{ 'bg-hills.jpg' | asset_url }}");
+
   .main-content {
     @include content-padding;
-  }
-  @include bg-img("{{ 'bg-hills.jpg' | asset_url }}");
-  h1 {
-    margin: $space-lg 0;
-    font-size: 40px;
-  }
-  h2 {
-    margin: $space-md 0;
-    font-family: 'Whitenights';
-    font-size: 20px;
-  }
-  .hr {
-    @include hr--black;
-    margin-top: 0;
-    width: 60%;
-    margin: auto;
-  }
-  .form-vertical {
-    label {
-      float: left;
-      font-family: 'Whitenights';
-      text-transform: lowercase;
-    }
-    a {
-      font-family: 'Whitenights';
-    }
-    .link--forgot-password {
-      float: right;
-      text-decoration: underline;
-    }
-    .input-full {
-      margin-top: $space-xs;
-      margin-bottom: $space-lg;
-      background-color: transparent;
-      border-color: $grey;
-    }
-    .btn--full {
-      color: $white;
-      background-color: $brown;
-      text-transform: uppercase;
+    h1 {
       margin: $space-lg 0;
-      height: 48px;
-      font-family: 'Avenir-Black';
-      letter-spacing: 0.2em;
-      font-size: 16px;
+      font-size: 40px;
     }
-    .link--form-nav {
-      text-decoration: underline;
+    h2 {
+      margin: $space-md 0;
+      font-family: 'Whitenights';
+      font-size: 20px;
     }
-    .pre-register-check {
-      @include flex-center-space-between;
-      input[type=checkbox] {
-        order: 1;
-        margin: 0;
-      }
+    .hr {
+      @include hr--black;
+      margin-top: 0;
+      width: 60%;
+      margin: auto;
+    }
+    .form-vertical {
       label {
-        order: 2;
+        float: left;
+        font-family: 'Whitenights';
+        text-transform: lowercase;
+      }
+      a {
+        font-family: 'Whitenights';
+      }
+      .link--forgot-password {
+        float: right;
+        text-decoration: underline;
+      }
+      .input-full {
+        margin-top: $space-xs;
+        margin-bottom: $space-lg;
+        background-color: transparent;
+        border-color: $grey;
+      }
+      .btn--full {
+        color: $white;
+        background-color: $brown;
+        text-transform: uppercase;
+        margin: $space-lg 0;
+        height: 48px;
+        font-family: 'Avenir-Black';
+        letter-spacing: 0.2em;
+        font-size: 16px;
+      }
+      .link--form-nav {
+        text-decoration: underline;
+      }
+      .pre-register-check {
+        @include flex-center-space-between;
+        input[type=checkbox] {
+          order: 1;
+          margin: 0;
+        }
+        label {
+          order: 2;
+        }
       }
     }
   }

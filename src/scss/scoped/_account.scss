@@ -7,31 +7,30 @@
 .template-customers-order
 {
   @include body-padding;
+  @include bg-img("{{ 'bg-matte.jpg' | asset_url }}");
   .main-content {
     @include content-padding;
-  }
-  // scoped nav bar styling
-  @include bg-img("{{ 'bg-matte.jpg' | asset_url }}");
-  h1 {
-    font-size: 38px;
-    letter-spacing: 0;
-  }
-  h2 {
-    font-size: 38px;
-  }
-  h3 {
-    font-size: 20px;
-    font-family: 'Whitenights-bold';
-    margin: $space-md 0;
-  }
-  .hr {
-    @include hr--brown;
-    margin-top: $space-sm;
-  }
-  .btn {
-    background-color: $brown;
-    margin-top: $space-md;
-    margin-bottom: $space-md;
+    h1 {
+      font-size: 38px;
+      letter-spacing: 0;
+    }
+    h2 {
+      font-size: 38px;
+    }
+    h3 {
+      font-size: 20px;
+      font-family: 'Whitenights-bold';
+      margin: $space-md 0;
+    }
+    .hr {
+      @include hr--brown;
+      margin-top: $space-sm;
+    }
+    .btn {
+      background-color: $brown;
+      margin-top: $space-md;
+      margin-bottom: $space-md;
+    }
   }
   .account-left-content {
     h2 {

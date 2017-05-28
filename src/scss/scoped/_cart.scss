@@ -1,5 +1,4 @@
-#CartDrawer
-{
+#CartDrawer {
   @include drawer-styles;
   #CartContainer > p {
     margin: $space-lg;
@@ -115,5 +114,4 @@
       }
     }
   }
-
 }

@@ -6,20 +6,20 @@
   @include bg-img("{{ 'bg-hills.jpg' | asset_url }}");
   .main-content {
     @include content-padding;
-  }
-  p {
-    font-size: 24px;
-    margin-bottom: $space-xl;
-  }
-  img {
-    max-width: 400px;
-  }
-  .hr {
-    @include hr--black;
-    margin: $space-md auto;
-    width: 50%;
-  }
-  .ops__logo {
-    width: $space-xl;
+    p {
+      font-size: 24px;
+      margin-bottom: $space-xl;
+    }
+    img {
+      max-width: 400px;
+    }
+    .hr {
+      @include hr--black;
+      margin: $space-md auto;
+      width: 50%;
+    }
+    .ops__logo {
+      width: $space-xl;
+    }
   }
 }
