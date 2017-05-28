@@ -1,5 +1,5 @@
 // index.liquid
 
 .template-index {
-  @include bg-img($url:"{{ 'bg-matte.jpg' | asset_url }}", $size: auto, $repeat: repeat);
+  
 }

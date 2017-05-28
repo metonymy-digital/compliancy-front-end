@@ -3,7 +3,6 @@
 .template-404
 {
   @include body-padding;
-  @include bg-img("{{ 'bg-hills.jpg' | asset_url }}");
   .main-content {
     @include content-padding;
     p {

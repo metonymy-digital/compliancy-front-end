@@ -1,7 +1,6 @@
 // page.liquid
 
 .template-page {
-  @include bg-img($url:"{{ 'bg-matte.jpg' | asset_url }}", $size: auto, $repeat: repeat);
   .main-content {
     .hero {
       @include bg-img("{{ 'hero-2.jpg' | asset_url }}");

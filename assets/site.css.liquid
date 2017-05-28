@@ -60,6 +60,8 @@
   font-style: normal; }
 
 body {
+  background: url("{{ 'bg-matte.jpg' | asset_url }}") center center repeat;
+  background-size: auto;
   color: #333;
   text-rendering: optimizeLegibility; }
 
@@ -842,7 +844,7 @@ p {
   #nav.nav-bar .site-nav__link {
     color: #ffffff;
     font-family: "Whitenights";
-    font-size: 16px;
+    font-size: 14px;
     letter-spacing: 0.25em;
     padding: 15px 10px 5px;
     text-transform: uppercase; }
@@ -899,70 +901,65 @@ p {
       .site-footer .copyright {
         text-align: left; } }
 
-.template-index {
-  background: url("{{ 'bg-matte.jpg' | asset_url }}") center center repeat;
-  background-size: auto; }
+.template-page .main-content .hero {
+  background: url("{{ 'hero-2.jpg' | asset_url }}") center center no-repeat;
+  background-size: cover;
+  height: 450px;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
+  margin-top: 0; }
 
-.template-page {
-  background: url("{{ 'bg-matte.jpg' | asset_url }}") center center repeat;
-  background-size: auto; }
-  .template-page .main-content .hero {
-    background: url("{{ 'hero-2.jpg' | asset_url }}") center center no-repeat;
-    background-size: cover;
-    height: 450px;
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
-    margin-top: 0; }
-  .template-page .main-content .hero__cta {
-    max-width: 1092px;
-    margin-top: 128px;
-    margin-left: 64px; }
-    .template-page .main-content .hero__cta p {
-      color: #ffffff; }
-  .template-page .how-it-works {
-    max-width: 770px;
-    margin: 0 auto;
-    padding: 32px 16px; }
-    @media (min-width: 769px) {
-      .template-page .how-it-works {
-        padding: 0;
-        padding-bottom: 128px; } }
-    .template-page .how-it-works h1 {
-      font-size: 46px;
-      font-family: 'Whitenights'; }
-    .template-page .how-it-works h2 {
-      font-size: 38px;
-      color: #333;
-      margin-bottom: 32px; }
-    .template-page .how-it-works p {
-      color: #8b683e; }
-    .template-page .how-it-works .grid__item {
-      margin: 64px 0; }
-    @media (min-width: 769px) {
-      .template-page .how-it-works .curate, .template-page .how-it-works .enjoy {
-        text-align: right; } }
-    .template-page .how-it-works .where-we-ship {
-      text-align: center; }
-      .template-page .how-it-works .where-we-ship p {
-        margin: 24px 0; }
-      .template-page .how-it-works .where-we-ship .hr {
-        background-image: url("{{ 'separator-brown.svg' | asset_url }}");
-        margin: 32px auto;
-        width: 256px; }
-      .template-page .how-it-works .where-we-ship .leaf {
-        width: 64px; }
-      .template-page .how-it-works .where-we-ship .map {
-        width: 75%; }
-      .template-page .how-it-works .where-we-ship .text {
-        margin-bottom: 64px; }
-      .template-page .how-it-works .where-we-ship .btn__cta {
+.template-page .main-content .hero__cta {
+  max-width: 1092px;
+  margin-top: 128px;
+  margin-left: 64px; }
+  .template-page .main-content .hero__cta p {
+    color: #ffffff; }
+
+.template-page .how-it-works {
+  max-width: 770px;
+  margin: 0 auto;
+  padding: 32px 16px; }
+  @media (min-width: 769px) {
+    .template-page .how-it-works {
+      padding: 0;
+      padding-bottom: 128px; } }
+  .template-page .how-it-works h1 {
+    font-size: 46px;
+    font-family: 'Whitenights'; }
+  .template-page .how-it-works h2 {
+    font-size: 38px;
+    color: #333;
+    margin-bottom: 32px; }
+  .template-page .how-it-works p {
+    color: #8b683e; }
+  .template-page .how-it-works .grid__item {
+    margin: 64px 0; }
+  @media (min-width: 769px) {
+    .template-page .how-it-works .curate, .template-page .how-it-works .enjoy {
+      text-align: right; } }
+  .template-page .how-it-works .where-we-ship {
+    text-align: center; }
+    .template-page .how-it-works .where-we-ship p {
+      margin: 24px 0; }
+    .template-page .how-it-works .where-we-ship .hr {
+      background-image: url("{{ 'separator-brown.svg' | asset_url }}");
+      margin: 32px auto;
+      width: 256px; }
+    .template-page .how-it-works .where-we-ship .leaf {
+      width: 64px; }
+    .template-page .how-it-works .where-we-ship .map {
+      width: 75%; }
+    .template-page .how-it-works .where-we-ship .text {
+      margin-bottom: 64px; }
+    .template-page .how-it-works .where-we-ship .btn__cta {
+      color: #8b683e;
+      border: 0.8px solid rgba(139, 104, 62, 0.8); }
+      .template-page .how-it-works .where-we-ship .btn__cta:hover, .template-page .how-it-works .where-we-ship .btn__cta:active, .template-page .how-it-works .where-we-ship .btn__cta:focus {
         color: #8b683e;
-        border: 0.8px solid rgba(139, 104, 62, 0.8); }
-        .template-page .how-it-works .where-we-ship .btn__cta:hover, .template-page .how-it-works .where-we-ship .btn__cta:active, .template-page .how-it-works .where-we-ship .btn__cta:focus {
-          color: #8b683e;
-          text-decoration: none;
-          background-color: transparent;
-          outline: none; }
+        text-decoration: none;
+        background-color: transparent;
+        outline: none; }
 
 .template-list-collections {
   padding-top: 51px; }
@@ -978,9 +975,7 @@ p {
 .template-customers-account,
 .template-customers-addresses,
 .template-customers-order {
-  padding-top: 51px;
-  background: url("{{ 'bg-matte.jpg' | asset_url }}") center center repeat;
-  background-size: auto; }
+  padding-top: 51px; }
   @media (min-width: 769px) {
     .template-customers-account,
     .template-customers-addresses,
@@ -1273,9 +1268,7 @@ p {
 .template-customers-register,
 .template-customers-login,
 .template-customers-reset_password {
-  padding-top: 51px;
-  background: url("{{ 'bg-hills.jpg' | asset_url }}") center center no-repeat;
-  background-size: cover; }
+  padding-top: 51px; }
   @media (min-width: 769px) {
     .template-customers-register,
     .template-customers-login,
@@ -1377,9 +1370,7 @@ p {
                 order: 2; }
 
 .template-404 {
-  padding-top: 51px;
-  background: url("{{ 'bg-hills.jpg' | asset_url }}") center center no-repeat;
-  background-size: cover; }
+  padding-top: 51px; }
   @media (min-width: 769px) {
     .template-404 {
       padding-top: 80px; } }

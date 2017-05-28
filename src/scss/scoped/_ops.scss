@@ -7,8 +7,6 @@
 .template-customers-reset_password
 {
   @include body-padding;
-  @include bg-img("{{ 'bg-hills.jpg' | asset_url }}");
-
   .main-content {
     @include content-padding;
     h1 {
