@@ -1,16 +1,16 @@
 .site-footer {
   background-color: $dark-grey;
   color: $white;
+  @include breakpoint-down(sm) {
+    padding: $space-lg $space-md;
+  }
   h4, p, li {
     font-family: 'Whitenights';
     font-size: 24px;
     text-transform: uppercase;
     margin-bottom: $space-md;
   }
-  h4 {
-    margin-bottom: $space-lg;
-    text-align: right;
-  }
+
   .footer-nav {
     @include list-no-style;
     text-transform: uppercase;
@@ -18,15 +18,22 @@
     li a {
       @include link-style($white);
     }
+    margin-bottom: 3*$space-md;
   }
   .footer-contact {
     text-transform: uppercase;
-    text-align: right;
+    text-align: center;
+    @include breakpoint-up(lg) {
+      text-align: right;
+    }
     margin-bottom: 3*$space-md;
   }
 
-  // newsletter form
-  #contact_form {
+  .footer-newsletter {
+    text-align: center;
+    @include breakpoint-up(lg) {
+      text-align: right;
+    }
     input {
       font-family: 'Whitenights';
     }
@@ -36,10 +43,16 @@
   }
 
   .copyright {
+    margin-top: $space-lg;
     text-transform: capitalize;
-    text-align: left;
+    text-align: center;
     .uppercase {
       text-transform: uppercase;
     }
+    @include breakpoint-up(lg) {
+      text-align: left;
+    }
+
   }
+
 }

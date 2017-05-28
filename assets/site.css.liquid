@@ -856,20 +856,21 @@ p {
 .site-footer {
   background-color: #333;
   color: #ffffff; }
+  @media (max-width: 767px) {
+    .site-footer {
+      padding: 32px 16px; } }
   .site-footer h4, .site-footer p, .site-footer li {
     font-family: 'Whitenights';
     font-size: 24px;
     text-transform: uppercase;
     margin-bottom: 16px; }
-  .site-footer h4 {
-    margin-bottom: 32px;
-    text-align: right; }
   .site-footer .footer-nav {
     padding: 0;
     margin: 0;
     list-style: none;
     text-transform: uppercase;
-    text-align: center; }
+    text-align: center;
+    margin-bottom: 48px; }
     .site-footer .footer-nav li a {
       color: #ffffff; }
       .site-footer .footer-nav li a:hover, .site-footer .footer-nav li a:active, .site-footer .footer-nav li a:focus {
@@ -879,17 +880,29 @@ p {
         outline: none; }
   .site-footer .footer-contact {
     text-transform: uppercase;
-    text-align: right;
+    text-align: center;
     margin-bottom: 48px; }
-  .site-footer #contact_form input {
-    font-family: 'Whitenights'; }
-  .site-footer #contact_form #subscribe {
-    background-color: #7c0e29; }
+    @media (min-width: 769px) {
+      .site-footer .footer-contact {
+        text-align: right; } }
+  .site-footer .footer-newsletter {
+    text-align: center; }
+    @media (min-width: 769px) {
+      .site-footer .footer-newsletter {
+        text-align: right; } }
+    .site-footer .footer-newsletter input {
+      font-family: 'Whitenights'; }
+    .site-footer .footer-newsletter #subscribe {
+      background-color: #7c0e29; }
   .site-footer .copyright {
+    margin-top: 32px;
     text-transform: capitalize;
-    text-align: left; }
+    text-align: center; }
     .site-footer .copyright .uppercase {
       text-transform: uppercase; }
+    @media (min-width: 769px) {
+      .site-footer .copyright {
+        text-align: left; } }
 
 .template-page {
   padding-top: 51px; }
