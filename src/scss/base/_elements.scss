@@ -151,23 +151,3 @@
 .form__buy {
   width: 100%;
 }
-
-.site-header__cart-toggle {
-  display: inline-flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  .icon-cart {
-    position: relative;
-    width: $space-lg;
-    height: $space-lg;
-    &:before {
-      @include block-fill;
-      @include absolute-center;
-      background-size: $space-lg;
-    }
-  }
-  #CartCount {
-    color: $white;
-    margin-left: $space-sm;
-  }
-}

@@ -25,12 +25,34 @@
   background-color: $grey;
   padding: 0 30px;
   transition: 200ms ease-out;
-  .site-nav__link {
-    color: $white;
-    font-family: "Whitenights";
-    font-size: 14px;
-    letter-spacing: 0.25em;
-    padding: 15px 10px 5px;
-    text-transform: uppercase;
+  ul.site-nav {
+    display: inline-flex;
+    .site-nav__link {
+      color: $white;
+      font-family: "Whitenights";
+      font-size: 14px;
+      letter-spacing: 0.25em;
+      padding: 15px 10px 5px;
+      text-transform: uppercase;
+    }
+    a.site-header__cart-toggle {
+      height: 100%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: flex-end;
+      .icon-cart {
+        position: relative;
+        width: 32px;
+        height: 32px;
+        &:before {
+          @include block-fill;
+          @include absolute-center;
+        }
+      }
+      #CartCount {
+        color: $white;
+        margin-left: $space-sm;
+      }
+    }
   }
 }

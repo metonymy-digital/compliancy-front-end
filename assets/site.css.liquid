@@ -9,38 +9,6 @@
 .form__buy {
   width: 100%; }
 
-.site-header__cart-toggle {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-align: end;
-  -webkit-align-items: flex-end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-      -ms-flex-pack: end;
-          justify-content: flex-end; }
-  .site-header__cart-toggle .icon-cart {
-    position: relative;
-    width: 32px;
-    height: 32px; }
-    .site-header__cart-toggle .icon-cart:before {
-      display: block;
-      height: 100%;
-      width: 100%;
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      margin: auto;
-      background-size: 32px; }
-  .site-header__cart-toggle #CartCount {
-    color: #ffffff;
-    margin-left: 8px; }
-
 @font-face {
   font-family: 'Avenir';
   src: url("{{ 'Avenir-Black.woff2' | asset_url }}") format("woff2"), url("{{ 'Avenir-Black.woff' | asset_url }}") format("woff");
@@ -841,13 +809,49 @@ p {
   padding: 0 30px;
   -webkit-transition: 200ms ease-out;
   transition: 200ms ease-out; }
-  #nav.nav-bar .site-nav__link {
-    color: #ffffff;
-    font-family: "Whitenights";
-    font-size: 14px;
-    letter-spacing: 0.25em;
-    padding: 15px 10px 5px;
-    text-transform: uppercase; }
+  #nav.nav-bar ul.site-nav {
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex; }
+    #nav.nav-bar ul.site-nav .site-nav__link {
+      color: #ffffff;
+      font-family: "Whitenights";
+      font-size: 14px;
+      letter-spacing: 0.25em;
+      padding: 15px 10px 5px;
+      text-transform: uppercase; }
+    #nav.nav-bar ul.site-nav a.site-header__cart-toggle {
+      height: 100%;
+      display: -webkit-inline-box;
+      display: -webkit-inline-flex;
+      display: -ms-inline-flexbox;
+      display: inline-flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: end;
+      -webkit-justify-content: flex-end;
+          -ms-flex-pack: end;
+              justify-content: flex-end; }
+      #nav.nav-bar ul.site-nav a.site-header__cart-toggle .icon-cart {
+        position: relative;
+        width: 32px;
+        height: 32px; }
+        #nav.nav-bar ul.site-nav a.site-header__cart-toggle .icon-cart:before {
+          display: block;
+          height: 100%;
+          width: 100%;
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          margin: auto; }
+      #nav.nav-bar ul.site-nav a.site-header__cart-toggle #CartCount {
+        color: #ffffff;
+        margin-left: 8px; }
 
 .site-footer {
   background-color: #333;
