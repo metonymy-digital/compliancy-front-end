@@ -54,12 +54,6 @@
   font-style: normal; }
 
 @font-face {
-  font-family: 'Whitenights-Titling';
-  src: url("{{ 'Whitenights-LT-Std-Titling_48828.woff2' | asset_url }}") format("woff2"), url("{{ 'WhitenightsLTStd-Titling.woff' | asset_url }}") format("woff");
-  font-weight: normal;
-  font-style: normal; }
-
-@font-face {
   font-family: 'Whitenights-Bold';
   src: url("{{ 'Whitenights-LT-Std-Bold_48825.ttf' | asset_url }}") format("woff");
   font-weight: normal;
@@ -100,8 +94,8 @@ h1, h2, h3, h4, h5, h6, p {
   margin: 0; }
 
 h1 {
-  font-family: "whitenights-Titling";
-  font-size: 29px;
+  font-family: "whitenights";
+  font-size: 24px;
   font-weight: bold;
   letter-spacing: 0.17em; }
 
@@ -827,7 +821,7 @@ p {
     padding: 16px 32px; }
     #NavDrawer .mobile-nav .mobile-nav__item a {
       color: #ffffff;
-      font-size: 24px;
+      font-size: 20px;
       padding: 0; }
       #NavDrawer .mobile-nav .mobile-nav__item a:hover, #NavDrawer .mobile-nav .mobile-nav__item a:active, #NavDrawer .mobile-nav .mobile-nav__item a:focus {
         color: #ffffff;
@@ -862,7 +856,7 @@ p {
       padding: 64px 16px; } }
   .site-footer h4, .site-footer p, .site-footer li {
     font-family: 'Whitenights';
-    font-size: 24px;
+    font-size: 16px;
     text-transform: uppercase;
     margin-bottom: 16px; }
   .site-footer .footer-nav {
@@ -905,10 +899,29 @@ p {
       .site-footer .copyright {
         text-align: left; } }
 
+.template-index {
+  background: url("{{ 'bg-matte.jpg' | asset_url }}") center center repeat;
+  background-size: auto; }
+
 .template-page {
   background: url("{{ 'bg-matte.jpg' | asset_url }}") center center repeat;
   background-size: auto; }
+  .template-page .main-content .hero {
+    background: url("{{ 'hero-2.jpg' | asset_url }}") center center no-repeat;
+    background-size: cover;
+    height: 450px;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
+    margin-top: 0; }
+  .template-page .main-content .hero__cta {
+    max-width: 1092px;
+    margin-top: 128px;
+    margin-left: 64px; }
+    .template-page .main-content .hero__cta p {
+      color: #ffffff; }
   .template-page .how-it-works {
+    max-width: 770px;
+    margin: 0 auto;
     padding: 32px 16px; }
     @media (min-width: 769px) {
       .template-page .how-it-works {
@@ -925,20 +938,6 @@ p {
       color: #8b683e; }
     .template-page .how-it-works .grid__item {
       margin: 64px 0; }
-    .template-page .how-it-works .hero {
-      background: url("{{ 'hero-2.jpg' | asset_url }}") center center no-repeat;
-      background-size: cover;
-      height: 450px;
-      -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
-              clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
-      margin-top: 0;
-      margin-bottom: 64px; }
-    .template-page .how-it-works .hero__cta {
-      max-width: 1092px;
-      margin-top: 128px;
-      margin-left: 64px; }
-      .template-page .how-it-works .hero__cta p {
-        color: #ffffff; }
     @media (min-width: 769px) {
       .template-page .how-it-works .curate, .template-page .how-it-works .enjoy {
         text-align: right; } }

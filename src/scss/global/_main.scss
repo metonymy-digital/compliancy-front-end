@@ -14,15 +14,6 @@
   font-style: normal;
 }
 
-
-@font-face {
-  font-family: 'Whitenights-Titling';
-  src: url("{{ 'Whitenights-LT-Std-Titling_48828.woff2' | asset_url }}") format('woff2'),
-       url("{{ 'WhitenightsLTStd-Titling.woff' | asset_url }}") format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
 @font-face {
   font-family: 'Whitenights-Bold';
   src: url("{{ 'Whitenights-LT-Std-Bold_48825.ttf' | asset_url }}") format('woff');
@@ -70,8 +61,8 @@ h1, h2, h3, h4, h5, h6, p {
 
 
 h1 {
-  font-family: "whitenights-Titling";
-  font-size: 29px;
+  font-family: "whitenights";
+  font-size: 24px;
   font-weight: bold;
   letter-spacing: 0.17em;
 }
