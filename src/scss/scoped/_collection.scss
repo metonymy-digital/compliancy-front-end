@@ -1,5 +1,8 @@
 // collection.liquid
 
 .template-list-collections {
-  @include page-paddings;
+  @include body-padding;
+  .main-content {
+    @include content-padding;
+  }
 }

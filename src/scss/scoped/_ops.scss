@@ -6,24 +6,25 @@
 .template-customers-login,
 .template-customers-reset_password
 {
-  @include page-paddings;
-  @include bg-img("{{ 'bg-hills.jpg' | asset_url }}");
+  @include body-padding;
   .main-content {
-    h1 {
-      margin: $space-lg 0;
-      font-size: 40px;
-    }
-    h2 {
-      margin: $space-md 0;
-      font-family: 'Whitenights';
-      font-size: 20px;
-    }
-    .hr {
-      @include hr--black;
-      margin-top: 0;
-      width: 60%;
-      margin: auto;
-    }
+    @include content-padding;
+  }
+  @include bg-img("{{ 'bg-hills.jpg' | asset_url }}");
+  h1 {
+    margin: $space-lg 0;
+    font-size: 40px;
+  }
+  h2 {
+    margin: $space-md 0;
+    font-family: 'Whitenights';
+    font-size: 20px;
+  }
+  .hr {
+    @include hr--black;
+    margin-top: 0;
+    width: 60%;
+    margin: auto;
   }
   .form-vertical {
     label {

@@ -2,7 +2,11 @@
 
 .template-page {
   .how-it-works {
-    padding-bottom: 2*$space-xl;
+    padding: $space-lg $space-md;
+    @include breakpoint-up(lg) {
+      padding: 0;
+      padding-bottom: 2*$space-xl;
+    }
     h1 {
       font-size: 46px;
       font-family: 'Whitenights';
@@ -16,7 +20,6 @@
       color: $brown;
     }
     .grid__item {
-      padding: 0;
       margin: $space-xl 0;
     }
     .hero {

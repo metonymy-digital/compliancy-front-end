@@ -6,7 +6,10 @@
 .template-customers-addresses,
 .template-customers-order
 {
-  @include page-paddings;
+  @include body-padding;
+  .main-content {
+    @include content-padding;
+  }
   // scoped nav bar styling
   @include bg-img("{{ 'bg-matte.jpg' | asset_url }}");
   h1 {

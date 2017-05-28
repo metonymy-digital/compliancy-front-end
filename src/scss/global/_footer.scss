@@ -1,9 +1,7 @@
 .site-footer {
   background-color: $dark-grey;
   color: $white;
-  @include breakpoint-down(sm) {
-    padding: $space-lg $space-md;
-  }
+  @include content-padding;
   h4, p, li {
     font-family: 'Whitenights';
     font-size: 24px;
