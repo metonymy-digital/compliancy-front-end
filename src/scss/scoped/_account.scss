@@ -7,7 +7,7 @@
 .template-customers-order
 {
   @include body-padding;
-  @include bg-img("{{ 'bg-matte.jpg' | asset_url }}");
+  @include bg-img($url:"{{ 'bg-matte.jpg' | asset_url }}", $size: auto, $repeat: repeat);
   .main-content {
     @include content-padding;
     h1 {
