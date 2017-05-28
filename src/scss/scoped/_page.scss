@@ -1,6 +1,7 @@
 // page.liquid
 
 .template-page {
+  @include bg-img($url:"{{ 'bg-matte.jpg' | asset_url }}", $size: auto, $repeat: repeat);
   .how-it-works {
     padding: $space-lg $space-md;
     @include breakpoint-up(lg) {
