@@ -1,13 +1,13 @@
 // *************************************
 //
-//   Home Nav
-//   -> sets styling logic for home top nav
+//   Variable Nav
+//   -> sets styling logic for nav bars that switch styles depending on scroll postion
 //
 // *************************************
-var homeNav = (function() {
 
-  // set logic to decide if the current page is home
-  var isHome = $('.template-index')[0];
+var variableNav = (function() {
+
+  var isVariable = $('.template-index')[0] || $('.how-it-works')[0];
 
   function styleSwap() {
     if ($(document.body).scrollTop() !== 0) {
@@ -17,7 +17,7 @@ var homeNav = (function() {
     }
   }
 
-  if (isHome) {
+  if (isVariable) {
     $(window).scroll(function() {
       styleSwap();
     });

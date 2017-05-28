@@ -1,5 +1,67 @@
 // page.liquid
 
 .template-page {
-  @include page-paddings;
+  .how-it-works {
+    padding-bottom: 2*$space-xl;
+    h1 {
+      font-size: 46px;
+      font-family: 'Whitenights';
+    }
+    h2 {
+      font-size: 38px;
+      color: $dark-grey;
+      margin-bottom: $space-lg;
+    }
+    p {
+      color: $brown;
+    }
+    .grid__item {
+      padding: 0;
+      margin: $space-xl 0;
+    }
+    .hero {
+      @include bg-img("{{ 'hero-2.jpg' | asset_url }}");
+      height: 450px;
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
+      margin-top: 0;
+      margin-bottom: $space-xl;
+    }
+    .hero__cta {
+      max-width: 1092px;
+      margin-top: 2*$space-xl;
+      margin-left: $space-xl;
+      p {
+        color: $white;
+      }
+    }
+    .curate, .enjoy {
+      @include breakpoint-up(lg) {
+        text-align: right;
+      }
+    }
+    .where-we-ship {
+      text-align: center;
+      p {
+        margin: 24px 0;
+      }
+      .hr {
+        @include hr--brown;
+        margin: $space-lg auto;
+        width: 4*$space-xl;
+      }
+      .leaf {
+        width: $space-xl;
+      }
+      .map {
+        width: 75%;
+      }
+      .text {
+        margin-bottom: $space-xl;
+      }
+      .btn__cta {
+        @include link-style($brown);
+        border: 0.8px solid rgba($brown,0.8);
+      }
+    }
+  }
 }
