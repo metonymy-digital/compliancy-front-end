@@ -2,6 +2,7 @@
 #NavDrawer {
   @include drawer-styles;
   .mobile-nav {
+    text-transform: capitalize;
     .mobile-nav__item {
       background-color: transparent;
       padding: $space-md $space-lg;
