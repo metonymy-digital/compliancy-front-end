@@ -1,4 +1,10 @@
-$(function() {
+// *************************************
+//
+//   Terms check
+//   -> check for zip code tax info
+//
+// *************************************
+var zipCheck = (function() {
   var $body = $(document.body)
     console.log($('.btn--secondary.btn--full.cart__checkout'));
     $('.btn--secondary.btn--full.cart__checkout').attr('id', 'checkout-btn')
@@ -57,5 +63,6 @@ $(function() {
         console.log('were done here');
       })
     })
-  })
-})
+  });
+
+})();
