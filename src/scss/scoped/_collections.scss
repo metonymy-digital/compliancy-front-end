@@ -3,6 +3,21 @@
 .template-list-collections {
   @include body-padding;
   .main-content {
-    @include content-padding;
+    .main-content {
+      .hero {
+        @include bg-img("{{ 'hero-2.jpg' | asset_url }}");
+        height: 450px;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
+        margin-top: 0;
+      }
+      .hero__cta {
+        max-width: 1092px;
+        margin-top: 2*$space-xl;
+        margin-left: $space-xl;
+        p {
+          color: $white;
+        }
+      }
+    }
   }
 }

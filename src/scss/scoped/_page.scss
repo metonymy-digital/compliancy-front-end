@@ -2,14 +2,9 @@
 
 .template-page {
   .main-content {
-    .hero {
-      @include bg-img("{{ 'hero-2.jpg' | asset_url }}");
-      height: 450px;
-      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
-      margin-top: 0;
-    }
+    @include hero-clipped("{{ 'hero-2.jpg' | asset_url }}");
     .hero__cta {
-      max-width: 1092px;
+      max-width: 770px;
       margin-top: 2*$space-xl;
       margin-left: $space-xl;
       p {

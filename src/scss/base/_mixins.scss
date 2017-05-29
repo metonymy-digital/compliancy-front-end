@@ -47,7 +47,7 @@
   justify-content: space-between;
 }
 
-// theme 
+// theme
 
 @mixin link--brown {
   color: $brown;
@@ -183,5 +183,14 @@
         }
       }
     }
+  }
+}
+
+@mixin hero-clipped($bg-url) {
+  .hero {
+    @include bg-img($bg-url);
+    height: 450px;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
+    margin-top: 0;
   }
 }

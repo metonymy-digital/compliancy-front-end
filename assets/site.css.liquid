@@ -926,7 +926,7 @@ body {
   margin-top: 0; }
 
 .template-page .main-content .hero__cta {
-  max-width: 1092px;
+  max-width: 770px;
   margin-top: 128px;
   margin-left: 64px; }
   .template-page .main-content .hero__cta p {
@@ -982,11 +982,19 @@ body {
   @media (min-width: 769px) {
     .template-list-collections {
       padding-top: 80px; } }
-  .template-list-collections .main-content {
-    padding: 32px 16px; }
-    @media (min-width: 769px) {
-      .template-list-collections .main-content {
-        padding: 64px 16px; } }
+  .template-list-collections .main-content .main-content .hero {
+    background: url("{{ 'hero-2.jpg' | asset_url }}") center center no-repeat;
+    background-size: cover;
+    height: 450px;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
+    margin-top: 0; }
+  .template-list-collections .main-content .main-content .hero__cta {
+    max-width: 1092px;
+    margin-top: 128px;
+    margin-left: 64px; }
+    .template-list-collections .main-content .main-content .hero__cta p {
+      color: #ffffff; }
 
 .template-customers-account,
 .template-customers-addresses,
