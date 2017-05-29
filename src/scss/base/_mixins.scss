@@ -20,6 +20,11 @@
   background-size: $size;
 }
 
+@mixin content-width($width) {
+  max-width: $width;
+  margin: 0 auto;
+}
+
 @mixin block-fill {
   display: block;
   height: 100%;

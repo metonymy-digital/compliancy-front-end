@@ -25,8 +25,7 @@ var preRegisterCheck = (function() {
 
 var variableNav = (function() {
 
-  var isVariable = $('.template-index')[0] || $('.how-it-works')[0];
-
+  // define style swap function
   function styleSwap() {
     if ($(document.body).scrollTop() !== 0) {
       $('#nav').css({'background-color': 'rgba(55, 55, 55, 0.5)'})
@@ -35,7 +34,13 @@ var variableNav = (function() {
     }
   }
 
-  if (isVariable) {
+  // scope to the pages that should have variable navbar
+  var navIsVariable =
+    $('.template-index')[0] ||
+    $('.how-it-works')[0] ||
+    $('.template-list-collections')[0];
+
+  if (navIsVariable) {
     $(window).scroll(function() {
       styleSwap();
     });
