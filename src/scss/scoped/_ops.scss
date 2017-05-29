@@ -69,3 +69,10 @@
     }
   }
 }
+
+#challenge {
+  @include body-padding;
+  .main-content {
+    @include content-padding;
+  }
+}
