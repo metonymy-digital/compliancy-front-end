@@ -1,7 +1,7 @@
 // collection.liquid
 
 .template-list-collections,
-.template-collection 
+.template-collection
 {
   .main-content {
     @include hero-clipped("{{ 'hero-2.jpg' | asset_url }}");

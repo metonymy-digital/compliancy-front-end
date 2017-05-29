@@ -26,6 +26,9 @@
   background-color: $grey;
   padding: 0 30px;
   transition: 200ms ease-out;
+  h1 {
+    letter-spacing: 0.17em;
+  }
   ul.site-nav {
     display: inline-flex;
     .site-nav__link {
@@ -40,7 +43,7 @@
       height: 100%;
       display: inline-flex;
       align-items: center;
-      justify-content: flex-end;
+      justify-content: center;
       .icon-cart {
         position: relative;
         width: 32px;
