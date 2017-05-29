@@ -91,7 +91,7 @@
     padding-bottom: $space-xl;
     padding-right: $space-md;
     text-transform: uppercase;
-    .pre-submit-check {
+    .terms-check, .zip-check {
       margin: $space-lg;
       @include flex-center-space-between;
       text-align: right;
@@ -100,6 +100,7 @@
       }
       input[type=checkbox] {
         transform: scale(1.8);
+        order: 2;
       }
     }
     .cart__checkout {
