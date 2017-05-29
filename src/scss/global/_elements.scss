@@ -1,12 +1,102 @@
-// classes
-.ops__logo {
-  width: 42px;
-}
-
 .hr {
   height: 8px;
   width: 100%;
   background-repeat: repeat-x;
+}
+
+.btn__cta {
+  border: 1px solid #fff;
+  font-family: "Whitenights";
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.23em;
+  border-radius: 5px;
+  padding: 10px 25px 5px;
+}
+
+.btn__subscribe, .btn__buy {
+  font-family: "Avenir";
+  font-size: 12px;
+  letter-spacing: 0.31em;
+  text-transform: uppercase;
+  border-radius: 5px;
+  width: 100%;
+  padding: 10px 0 7px;
+  margin-bottom: 15px;
+  max-width: 180px;
+}
+
+.btn__subscribe a, .btn__buy a {
+  color: $white;
+}
+
+.btn__subscribe {
+  color: $grey;
+  border: 1px solid $grey;
+  margin-top: 20px;
+}
+
+.btn__buy {
+  background-color: $brown;
+  color: $white;
+}
+
+.icon {
+  width: 32px;
+  font-size: 32px;
+  color: $white;
+}
+.icon--pineapple {
+  width: 25px;
+  margin-right: 20px
+}
+
+.icon--fleur {
+  width: 70px;
+  margin-top: -40px
+}
+
+.icon--leaves {
+  width: 40px;
+  height: 100%;
+  margin: 0 5px;
+}
+
+.icon--ops {
+  width: 42px;
+}
+
+.icon--separator-lg {
+  width: 225px;
+}
+
+.icon--separator-sm {
+  width: 150px;
+  margin: 15px 0;
+}
+
+.icon--leaf {
+  width: 60px;
+  margin-bottom: 15px;
+}
+
+.icon--map {
+  width: 80px;
+}
+
+.icon--somm {
+  width: 95px;
+}
+
+.icon--basket {
+  width: 85px;
+}
+
+.brace {
+  font-size: 50px;
+  line-height: 1;
+  margin: 0 5px;
+  font-family: 'Whitenights';
 }
 
 .form__buy {

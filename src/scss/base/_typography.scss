@@ -1,0 +1,88 @@
+@font-face {
+  font-family: 'Avenir';
+  src: url("{{ 'Avenir-Black.woff2' | asset_url }}") format('woff2'),
+       url("{{ 'Avenir-Black.woff' | asset_url }}") format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Whitenights';
+  src: url("{{ 'WhitenightsLTStd-Regular.woff' | asset_url }}") format('woff'),
+       url("{{ 'Whitenights-LT-Std_48829.woff2' | asset_url }}") format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Whitenights-Bold';
+  src: url("{{ 'Whitenights-LT-Std-Bold_48825.ttf' | asset_url }}") format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+p {
+  margin: 0;
+}
+.wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+
+
+h1 {
+  font-family: "whitenights";
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 0.17em;
+}
+
+h2 {
+  font-family: "Whitenights-Bold";
+  font-size: 48px;
+  letter-spacing: -0.05em;
+  margin: 0;
+}
+
+h3 {
+  font-family: "freight-display-pro",serif;
+  font-size: 33px;
+  letter-spacing: 0.03em;
+  font-weight: 400;
+}
+
+h4 {
+  font-family: "freight-display-pro",serif;
+  font-size: 24px;
+  letter-spacing: 0.01em;
+  font-weight: 700;
+}
+
+h5 {
+  font-family: "freight-display-pro",serif;
+  font-size: 28px;
+  letter-spacing: 0.01em;
+  color: $brown;
+  font-weight: 400;
+}
+
+h6 {
+  font-family: "Whitenights";
+  font-size: 24px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+p {
+  font-family: "freight-display-pro";
+  font-size: 20px;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  font-weight: 400;
+}
