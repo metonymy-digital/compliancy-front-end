@@ -39,6 +39,7 @@ body {
 }
 
 .product__price {
+  margin: $space-md 0;
   font-family: "Freight Bold";
   font-size: 18px;
   letter-spacing: 0.01em;

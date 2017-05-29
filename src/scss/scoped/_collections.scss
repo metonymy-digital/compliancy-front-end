@@ -1,6 +1,8 @@
 // collection.liquid
 
-.template-list-collections {
+.template-list-collections,
+.template-collection 
+{
   .main-content {
     @include hero-clipped("{{ 'hero-2.jpg' | asset_url }}");
     .hero__cta {
@@ -17,6 +19,24 @@
       @include breakpoint-up(lg) {
         padding: 0;
         padding-bottom: 2*$space-xl;
+      }
+      .section-header {
+        margin-top: $space-lg;
+        @include breakpoint-up(lg) {
+          margin-top: $space-xl;
+        }
+        a {
+          @include link-style($brown);
+        }
+        h2 {
+          font-size: 24px;
+        }
+        hr {
+          margin-top: 0;
+        }
+      }
+      .grid__item {
+        text-align: center;
       }
     }
   }

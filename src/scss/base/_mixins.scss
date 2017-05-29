@@ -1,7 +1,6 @@
 // utility
 @mixin link-style($color, $decor:none) {
-  color: $color;
-  &:hover,&:active,&:focus {
+  &,&:hover,&:active,&:focus {
     color: $color;
     text-decoration: $decor;
     background-color: transparent;
