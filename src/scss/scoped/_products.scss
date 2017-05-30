@@ -1,0 +1,9 @@
+// product.liquid
+
+.template-product
+{
+  @include body-padding;
+  .main-content {
+    @include content-padding;
+  }
+}

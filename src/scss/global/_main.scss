@@ -1,45 +1,10 @@
-$brown: #8b683e;
-$grey: #666;
-$dark-grey: #333;
-$white: #fff;
-
-@font-face {
-  font-family: 'Avenir';
-  src: url({{ 'Avenir-Black.woff2' | asset_url }}) format('woff2'),
-       url({{ 'Avenir-Black.woff' | asset_url }}) format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Whitenights';
-  src: url({{ 'WhitenightsLTStd-Regular.woff' | asset_url }}) format('woff'),
-       url({{ 'Whitenights-LT-Std_48829.woff2' | asset_url }}) format('woff2');
-  font-weight: normal;
-  font-style: normal;
-}
-
-
-@font-face {
-  font-family: 'Whitenights-Titling';
-  src: url({{ 'Whitenights-LT-Std-Titling_48828.woff2' | asset_url }}) format('woff2'),
-       url({{ 'WhitenightsLTStd-Titling.woff' | asset_url }}) format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Whitenights-Bold';
-  src: url({{ 'Whitenights-LT-Std-Bold_48825.ttf' | asset_url }}) format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
 body {
+  @include bg-img($url:"{{ 'bg-matte.jpg' | asset_url }}", $size: auto, $repeat: repeat);
   color: $dark-grey;
   text-rendering: optimizeLegibility;
 }
 
+<<<<<<< HEAD:assets/main.scss.liquid
 // TIMBER OVERRIDES
 
 .nav-bar {
@@ -61,10 +26,9 @@ body {
   padding: 15px 10px 5px;
   text-transform: uppercase;
 }
+=======
+>>>>>>> e40d24b910dd23d37940b5976a5aa6c1770752e0:src/scss/global/_main.scss
 
-.site-header {
-  display: none;
-}
 
 .main-content {
   padding-bottom: 0;
@@ -80,6 +44,7 @@ body {
   margin: 140px 0;
   font-family: 'Avenir';
 }
+<<<<<<< HEAD:assets/main.scss.liquid
 
 .section-header {
   margin-bottom: 60px;
@@ -140,30 +105,10 @@ h4 {
   letter-spacing: 0.01em;
   font-weight: 700;
 }
+=======
+>>>>>>> e40d24b910dd23d37940b5976a5aa6c1770752e0:src/scss/global/_main.scss
 
-h5 {
-  font-family: "freight-display-pro",serif;
-  font-size: 28px;
-  letter-spacing: 0.01em;
-  color: $brown;
-  font-weight: 400;
-}
 
-h6 {
-  font-family: "Whitenights";
-  font-size: 24px;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  font-weight: 400;
-}
-
-p {
-  font-family: "freight-display-pro";
-  font-size: 20px;
-  letter-spacing: -0.01em;
-  line-height: 1.2;
-  font-weight: 400;
-}
 
 .product__type {
   font-family: "Avenir";
@@ -182,11 +127,13 @@ p {
 }
 
 .product__price {
+  margin-top: 20px;
   font-family: "Freight Bold";
   font-size: 18px;
   letter-spacing: 0.01em;
 }
 
+<<<<<<< HEAD:assets/main.scss.liquid
 
 ////////////////////
 //BUTTONS AND ICONS
@@ -288,6 +235,8 @@ p {
   font-family: 'Whitenights';
 }
 
+=======
+>>>>>>> e40d24b910dd23d37940b5976a5aa6c1770752e0:src/scss/global/_main.scss
 ///////////
 //CONTENT
 //////////
@@ -302,7 +251,7 @@ p {
 }
 
 .hero__logo {
-  color: white;
+  @include link-style($white);
   display: flex;
   align-items: flex-end;
   line-height: 1;
@@ -311,7 +260,7 @@ p {
 }
 
 .hero--top {
-  background-image: url({{ 'hero.jpg' | asset_url }});
+  background-image: url("{{ 'hero.jpg' | asset_url }}");
   padding-right: 40px;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
@@ -333,11 +282,11 @@ p {
 }
 
 .hero--middle {
-  background-image: url({{ 'hero-2.jpg' | asset_url }});
+  background-image: url("{{ 'hero-2.jpg' | asset_url }}");
 }
 
 .hero--bottom {
-  background-image: url({{ 'hero-3.jpg' | asset_url }});
+  background-image: url("{{ 'hero-3.jpg' | asset_url }}");
   margin-bottom: 0;
 }
 
@@ -392,7 +341,7 @@ p {
   width: 100%;
   justify-content: space-between;
   margin-bottom: 90px;
-  border-image: url({{ 'separator-2.svg' | asset_url }}) 0 0 0 0 repeat;
+  border-image: url("{{ 'separator-brown.svg' | asset_url }}") 0 0 0 0 repeat;
 }
 
 .featured-wines__header:after {
@@ -402,7 +351,7 @@ p {
   left: 0;
   height: 4px;
   width: 100%;
-  border-image: url({{ 'separator-2.svg' | asset_url }}) 0 0 0 0 fill repeat;
+  border-image: url("{{ 'separator-brown.svg' | asset_url }}") 0 0 0 0 fill repeat;
 }
 
 .featured-wines__nav {
@@ -422,16 +371,17 @@ p {
 }
 
 .featured-wines__nav a {
-  font-family: 'Avenir';
+  @include link-style($brown);
+  font-family: 'Whitenights';
   font-weight: 400;
   text-transform: uppercase;
   font-size: 18px;
-  // padding-bottom: 2px;
+  line-height: 1.1;
   display: inline-block;
 }
 
 .featured-wines__nav a.active {
-  border-bottom: 2px solid $brown;
+  border-bottom: 1px solid $brown;
 }
 
 .wines {
@@ -653,8 +603,6 @@ p {
 }
 
 
-
-
 @media screen and (max-width: 480px) {
   h1 {
     font-size: 18px;
@@ -765,20 +713,6 @@ p {
     height: calc(100vh);
     margin-bottom: 40px;
   }
-
-  // .hero--cta > h2, button, p {
-  //   z-index: 1;
-  // }
-  //
-  // .hero--cta:before {
-  //   position: absolute;
-  //   content: '';
-  //   top: 0;
-  //   right: 0;
-  //   bottom: 0;
-  //   left: 0;
-  //   background-color: rgba(0, 0, 0, 0.4);
-  // }
 
   .hero--cta h2 {
     text-align: center;

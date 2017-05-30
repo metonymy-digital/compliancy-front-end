@@ -1,0 +1,14 @@
+<div class="account-left-content">
+  <h3>{{ customer.email }}</h3>
+  {{ 'layout.customer.log_out' | t | customer_logout_link }}
+  <h2>My Account</h2>
+  <div class="hr"></div>
+  <ul class="account-menu">
+    {% for link in linklists.account-menu.links %}
+    <li>
+      <a href="{{ link.url }}" class="account-menu__link">{{ link.title }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+  {% include 'fancy-corners' %}
+</div>

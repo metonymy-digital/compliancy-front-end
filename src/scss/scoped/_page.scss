@@ -1,0 +1,107 @@
+// page.liquid
+
+.template-page {
+  .main-content {
+    @include hero-clipped("{{ 'hero-2.jpg' | asset_url }}");
+    .hero__cta {
+      max-width: 770px;
+      margin-top: 2*$space-xl;
+      margin-left: $space-xl;
+      p {
+        color: $white;
+      }
+    }
+    .how-it-works {
+      max-width: 770px;
+      margin: 0 auto;
+      padding: $space-lg $space-md;
+      > div {
+        margin: $space-lg 0;
+      }
+      @include breakpoint-up(lg) {
+        padding: 0;
+        padding-bottom: 2*$space-xl;
+        > div {
+          margin: $space-xl 0;
+        }
+      }
+      h1 {
+        font-size: 46px;
+        font-family: 'Whitenights';
+      }
+      h2 {
+        font-size: 38px;
+        color: $dark-grey;
+        margin-bottom: $space-md;
+      }
+      p {
+        color: $brown;
+      }
+      .flex-container {
+        display: flex;
+        flex-direction: column;
+        .image {
+          margin-top: $space-md;
+        }
+        @include breakpoint-up(lg) {
+          flex-direction: row;
+          .flex-item-half {
+            max-width: 50%;
+          }
+          .image {
+            margin-top: 0;
+          }
+        }
+      }
+      .search, .receive {
+          .image {
+            order: 2;
+          }
+          .text {
+            order: 1;
+          }
+          @include breakpoint-up(lg) {
+            .image {
+              order: 1;
+            }
+            .text {
+              order: 2;
+              margin-left: $space-lg;
+            }
+          }
+      }
+      .curate, .enjoy {
+        @include breakpoint-up(lg) {
+          text-align: right;
+          .text {
+            margin-right: $space-lg;
+          }
+        }
+      }
+      .where-we-ship {
+        text-align: center;
+        p {
+          margin: 24px 0;
+        }
+        .hr {
+          @include hr--brown;
+          margin: $space-lg auto;
+          width: 4*$space-xl;
+        }
+        .leaf {
+          width: $space-xl;
+        }
+        .map {
+          width: 75%;
+        }
+        .text {
+          margin-bottom: $space-xl;
+        }
+        .btn__cta {
+          @include link-style($brown);
+          border: 0.8px solid rgba($brown,0.8);
+        }
+      }
+    }
+  }
+}

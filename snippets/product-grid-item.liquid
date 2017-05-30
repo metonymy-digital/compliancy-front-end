@@ -38,6 +38,7 @@
 {% endif %}
 
 <div class="grid__item {{ grid_item_width }}">
+<<<<<<< HEAD
 
   {% comment %}
     Link to your product with the 'within: collection' filter for the link to be aware of the collection.
@@ -89,4 +90,19 @@
     {% endif %}
   </p>
 
+=======
+  <div class="product">
+    {% for image in product.images %}
+      <a href="{{ product.url }}">
+        <img src={{ image.src | product_img_url: 'medium' }} alt="product" class="product__image" />
+      </a>
+    {% endfor %}
+    <p class="product__type">{{ product.type }}</p>
+    <h4>{{ product.title }}</h4>
+    <p class="product__location">{{ product.description }}</p>
+    <p class="product__price">{{ product.price | money }}</p>
+    <button class="btn__subscribe">subscribe</button>
+    {% include 'buy-now-button' %}
+  </div>  
+>>>>>>> e40d24b910dd23d37940b5976a5aa6c1770752e0
 </div>
