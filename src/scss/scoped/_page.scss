@@ -15,9 +15,15 @@
       max-width: 770px;
       margin: 0 auto;
       padding: $space-lg $space-md;
+      > div {
+        margin: $space-lg 0;
+      }
       @include breakpoint-up(lg) {
         padding: 0;
         padding-bottom: 2*$space-xl;
+        > div {
+          margin: $space-xl 0;
+        }
       }
       h1 {
         font-size: 46px;
@@ -26,17 +32,50 @@
       h2 {
         font-size: 38px;
         color: $dark-grey;
-        margin-bottom: $space-lg;
+        margin-bottom: $space-md;
       }
       p {
         color: $brown;
       }
-      .grid__item {
-        margin: $space-xl 0;
+      .flex-container {
+        display: flex;
+        flex-direction: column;
+        .image {
+          margin-top: $space-md;
+        }
+        @include breakpoint-up(lg) {
+          flex-direction: row;
+          .flex-item-half {
+            max-width: 50%;
+          }
+          .image {
+            margin-top: 0;
+          }
+        }
+      }
+      .search, .receive {
+          .image {
+            order: 2;
+          }
+          .text {
+            order: 1;
+          }
+          @include breakpoint-up(lg) {
+            .image {
+              order: 1;
+            }
+            .text {
+              order: 2;
+              margin-left: $space-lg;
+            }
+          }
       }
       .curate, .enjoy {
         @include breakpoint-up(lg) {
           text-align: right;
+          .text {
+            margin-right: $space-lg;
+          }
         }
       }
       .where-we-ship {
