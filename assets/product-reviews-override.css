@@ -1,0 +1,11 @@
+.spr-container {
+  border: none;
+}
+
+.spr-summary-actions-newreview, .spr-summary-actions-togglereviews {
+  font-family: 'Avenir';
+}
+
+.spr-summary-actions-togglereviews {
+
+}

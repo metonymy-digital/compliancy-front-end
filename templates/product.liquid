@@ -137,6 +137,7 @@
   </div>
   <section>
     <div class="product-description rte" itemprop="description">
+      <img src="{{ 'separator-1-brown.svg' | asset_url }}" alt="" class="icon--separator-lg"/>
       <ul class="product-tabs">
         <li><a href="#tab-tasting">Tasting notes</a></li>
         <li><a href="#tab-details">Details</a></li>
@@ -144,20 +145,38 @@
         <li><a href="#tab-about">About</a></li>
         <li><a href="#tab-recipes">Recipes</a></li>
       </ul>
-      <div id="tab-tasting">
-      {{ product.metafields.name.key }}
+      <div class="product-description__inner">
+        <div id="tab-tasting">
+        {{ product.metafields.product.tasting-notes }}
+        </div>
+        <div id="tab-details">
+          <ul class="product-description__details">
+            <li><span class="product-description__category">Appelation:</span>{{ product.metafields.product.appelation }}</li>
+            <li><span class="product-description__category">By:</span>{{ product.metafields.product.winery }}</li>
+            <li><span class="product-description__category">Color:</span>{{ product.metafields.product.color }}</li>
+            <li><span class="product-description__category">Blend:</span>{{ product.metafields.product.blend }}</li>
+            <li><span class="product-description__category">Alcohol </span>{{ product.metafields.product.alcohol }}</li>
+            <li><span class="product-description__category">Sweetness:</span>{{ product.metafields.product.sweetness }}</li>
+          </ul>
+        </div>
+        <div id="tab-reviews">
+          <div id="shopify-product-reviews" data-id="{{product.id}}">
+            {{ product.metafields.spr.reviews }}
+          </div>
+        </div>
+        <div id="tab-about">
+        <p><span class="product-description__category">The Vineyard:</span>{{ product.metafields.product.vineyard }}</p>
+        <p><span class="product-description__category">The Region:</span>{{ product.metafields.product.region }}</p>
+        <p><span class="product-description__category">Food Pairing:</span>{{ product.metafields.product.food-pairing }}</p>
+        </div>
+        <div id="tab-recipes">
+          {% include 'recipe' %}
+        </div>
       </div>
-      <div id="tab-details">
-      {% include 'shipping' %}
-      </div>
-      <div id="tab-reviews">
-      {{ pages.returns.content }}
-      </div>
-      <div id="tab-about">
-      {{ pages.returns.content }}
-      </div>
-      <div id="tab-recipes">
-        {% include 'recipe' %}
+
+      <div class="product-description__footer">
+        <object data="{{ 'pineapple--brown.svg' | asset_url }}" type="image/svg+xml" class="icon--pineapple"></object>
+        <h3>made with TLC</h3>
       </div>
     </div>
   </section>
