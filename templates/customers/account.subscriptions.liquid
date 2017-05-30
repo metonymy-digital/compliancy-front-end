@@ -1,0 +1,26 @@
+<!-- /templates/customers/account.liquid -->
+{% comment %}
+
+  For all available customer liquid tags:
+    - http://docs.shopify.com/themes/liquid-variables/customer
+
+{% endcomment %}
+
+<div class="grid">
+
+  <div class="grid__item large--one-third one-whole">
+    {% include 'account-nav' %}
+  </div>
+
+  <div class="grid__item large--two-thirds one-whole">
+    <div class="account-right-content">
+      <div class="title-row">
+        <h1>Manage Subscriptions</h1>
+        <div class="hr"></div>
+      </div>
+      {% include 'fancy-corners' %}
+      content
+    </div>
+  </div>
+
+</div>

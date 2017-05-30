@@ -14,7 +14,7 @@
 
   <!-- Title and description ================================================== -->
   <title>
-  {{ page_title }}{% if current_tags %}{% assign meta_tags = current_tags | join: ', ' %} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags }}{% endif %}{% if current_page != 1 %} &ndash; {{ 'general.meta.page' | t: page: current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}
+    {{ page_title }}{% if current_tags %}{% assign meta_tags = current_tags | join: ', ' %} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags }}{% endif %}{% if current_page != 1 %} &ndash; {{ 'general.meta.page' | t: page: current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}
   </title>
 
   {% if page_description %}
@@ -29,7 +29,9 @@
 
   <!-- CSS ================================================== -->
   {{ 'timber.scss.css' | asset_url | stylesheet_tag }}
-  {{ 'main.scss.css' | asset_url | stylesheet_tag }}
+
+  <!-- jerry's compiled css -->
+  {{ 'site.css' | asset_url | stylesheet_tag }}
 
 
   <!-- Header hook for plugins ================================================== -->
@@ -40,22 +42,21 @@
   {{ 'modernizr.min.js' | asset_url | script_tag }}
 
   {% comment %}
-    If you store has customer accounts disabled, you can remove the following JS file
+  If you store has customer accounts disabled, you can remove the following JS file
   {% endcomment %}
   {% if template contains 'customers' %}
-    {{ 'shopify_common.js' | shopify_asset_url | script_tag }}
+  {{ 'shopify_common.js' | shopify_asset_url | script_tag }}
   {% endif %}
   {{ 'product-reviews-override.css' | asset_url | stylesheet_tag }}
 </head>
 
 {% comment %}
-  Add the page template as a class for easy page or template specific styling.
+Add the page template as a class for easy page or template specific styling.
 {% endcomment %}
 <body id="{{ page_title | handle }}" class="{% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}" >
 
   <div id="NavDrawer" class="drawer drawer--left">
     <div class="drawer__header">
-      <div class="drawer__title h3">{{ 'layout.drawers.browse' | t }}</div>
       <div class="drawer__close js-drawer-close">
         <button type="button" class="icon-fallback-text">
           <span class="icon icon-x" aria-hidden="true"></span>
@@ -66,196 +67,85 @@
     <!-- begin mobile-nav -->
     <ul class="mobile-nav">
       {% for link in linklists.main-menu.links %}
-        {% comment %}
-          Create a dropdown menu by naming a linklist the same as a link in the parent nav
-
-          More info on dropdowns:
-            - http://docs.shopify.com/manual/your-website/navigation/create-drop-down-menu
-        {% endcomment %}
-        {% assign child_list_handle = link.title | handleize %}
-        {% if linklists[child_list_handle].links != blank %}
-          <li class="mobile-nav__item{% if link.active %} mobile-nav__item--active{% endif %}" aria-haspopup="true">
-            <div class="mobile-nav__has-sublist">
-              <a href="{{ link.url }}" class="mobile-nav__link">{{ link.title }}</a>
-              <div class="mobile-nav__toggle">
-                <button type="button" class="icon-fallback-text mobile-nav__toggle-open">
-                  <span class="icon icon-plus" aria-hidden="true"></span>
-                  <span class="fallback-text">See More</span>
-                </button>
-                <button type="button" class="icon-fallback-text mobile-nav__toggle-close">
-                  <span class="icon icon-minus" aria-hidden="true"></span>
-                  <span class="fallback-text">{{ 'cart.general.close_cart' | t | json }}</span>
-                </button>
-              </div>
-            </div>
-            <ul class="mobile-nav__sublist">
-              {% for childlink in linklists[child_list_handle].links %}
-                <li class="mobile-nav__item {% if childlink.active %} mobile-nav__item--active{% endif %}">
-                  <a href="{{ childlink.url }}" class="mobile-nav__link">{{ childlink.title | escape }}</a>
-                </li>
-              {% endfor %}
-            </ul>
-          </li>
-        {% else %}
-          <li class="mobile-nav__item{% if link.active %} mobile-nav__item--active{% endif %}">
-            <a href="{{ link.url }}" class="mobile-nav__link">{{ link.title }}</a>
-          </li>
-        {% endif %}
+      <li class="mobile-nav__item{% if link.active %} mobile-nav__item--active{% endif %}">
+        <a href="{{ link.url }}" class="mobile-nav__link">{{ link.title }}</a>
+      </li>
       {% endfor %}
-
-      {% comment %}
-        If customer accounts are enabled, provide login and create account links
-      {% endcomment %}
       {% if shop.customer_accounts_enabled %}
-        {% if customer %}
-          <li class="mobile-nav__item">
-            {% if customer.first_name != blank %}
-              {% capture first_name %}{{ customer.first_name }}{% endcapture %}
-              <a href="/account">{{ 'layout.customer.logged_in_as_html' | t: first_name: first_name }}</a>
-            {% else %}
-              <a href="/account">{{ 'layout.customer.account' | t }}</a>
-            {% endif %}
-          </li>
-          <li class="mobile-nav__item">
-            {{ 'layout.customer.log_out' | t | customer_logout_link }}
-          </li>
-        {% else %}
-          <li class="mobile-nav__item">
-            {{ 'layout.customer.log_in' | t | customer_login_link }}
-          </li>
-          <li class="mobile-nav__item">
-            {{ 'layout.customer.create_account' | t | customer_register_link }}
-          </li>
-        {% endif %}
+      {% if customer %}
+      <li class="mobile-nav__item">
+        <a href="/account">{{ 'layout.customer.account' | t }}</a>
+      </li>
+      <li class="mobile-nav__item">
+        {{ 'layout.customer.log_out' | t | customer_logout_link }}
+      </li>
+      {% else %}
+      <li class="mobile-nav__item">
+        {{ 'layout.customer.log_in' | t | customer_login_link }}
+      </li>
+      <li class="mobile-nav__item">
+        {{ 'layout.customer.create_account' | t | customer_register_link }}
+      </li>
+      {% endif %}
       {% endif %}
     </ul>
     <!-- //mobile-nav -->
   </div>
   {% if settings.ajax_cart_method == "drawer" %}
-    <div id="CartDrawer" class="drawer drawer--right">
-      <div class="drawer__header">
-        <div class="drawer__title h3">{{ 'cart.general.title' | t }}</div>
-        <div class="drawer__close js-drawer-close">
-          <button type="button" class="icon-fallback-text">
-            <span class="icon icon-x" aria-hidden="true"></span>
-            <span class="fallback-text">{{ 'cart.general.close_cart' | t | json }}</span>
-          </button>
-        </div>
+  <div id="CartDrawer" class="drawer drawer--right">
+    <div class="drawer__header">
+      <div class="drawer__close js-drawer-close">
+        <button type="button" class="icon-fallback-text">
+          <span class="icon icon-x" aria-hidden="true"></span>
+          <span class="fallback-text">{{ 'cart.general.close_cart' | t | json }}</span>
+        </button>
       </div>
-      <div id="CartContainer"></div>
     </div>
+    <div id="CartContainer"></div>
+  </div>
   {% endif %}
-  <div id="PageContainer" class="is-moved-by-drawer">
-    <header class="site-header" role="banner">
-      <div class="wrapper">
-
-        <div class="grid--full grid--table">
-          <div class="grid__item large--one-half">
-            {% comment %}
-              Use the uploaded logo from theme settings if enabled.
-              Site name gets precedence with H1 tag on homepage, div on other pages.
-            {% endcomment %}
-              {% if settings.logo_use_image %}
-                <a href="/" itemprop="url" class="site-header__logo-link">
-                  <img src="{{ 'logo.png' | asset_url }}" alt="{{ shop.name }}" itemprop="logo">
-                </a>
-              {% else %}
-                <a href="/" itemprop="url">{{ shop.name }}</a>
-              {% endif %}
-            {% if template == 'index' %}
-              </h1>
-            {% else %}
-              </div>
-            {% endif %}
-          </div>
-          <div class="grid__item large--one-half large--text-right medium-down--hide">
-            {% comment %}
-              Show number of items in the cart and total cost in the /cart link
-
-              Ajax Cart Notes:
-                - #cartCount updates the total number of items in the cart
-                - #cartCost updates the total cost of the cart
-                - Documentation:  http://shopify.com/timber#ajax-cart
-            {% endcomment %}
-            <div>
-              <a href="/cart" class="site-header__cart-toggle js-drawer-open-right" aria-controls="CartDrawer" aria-expanded="false">
-                <span class="icon icon-cart" aria-hidden="true"></span>
-                {{ 'layout.cart.title' | t }}
-                (<span id="CartCount">{{ cart.item_count }}</span>
-                {{ 'layout.cart.items_count' | t: count: cart.item_count }}
-                <span id="CartCost">{{ cart.total_price | money }}</span>)
-              </a>
-            </div>
-
-            {% comment %}
-              If customer accounts are enabled, provide login and create account links
-            {% endcomment %}
-            {% if shop.customer_accounts_enabled %}
-              <div>
-                {% if customer %}
-                  {% if customer.first_name != blank %}
-                    {% capture first_name %}<a href="/account">{{ customer.first_name }}</a>{% endcapture %}
-                    {{ 'layout.customer.logged_in_as_html' | t: first_name: first_name }}
-                  {% else %}
-                    <a href="/account">{{ 'layout.customer.account' | t }}</a>
-                  {% endif %}
-                  | {{ 'layout.customer.log_out' | t | customer_logout_link }}
-                {% else %}
-                  {{ 'layout.customer.log_in' | t | customer_login_link }}
-                  | {{ 'layout.customer.create_account' | t | customer_register_link }}
-                {% endif %}
-              </div>
-            {% endif %}
-
-          </div>
-        </div>
-
-      </div>
-    </header>
-
+  <div id="PageContainer">
     <nav class="nav-bar" role="navigation" id="nav">
       <div class="wrapper nav-wrapper">
         <div class="medium-down--hide">
-          {% comment %}
-            List out your main-menu linklist (default)
-
-            More info on linklists:
-              - http://docs.shopify.com/themes/liquid-variables/linklists
-          {% endcomment %}
           <!-- begin site-nav -->
-          <div class="hero__logo">
+          <a href="/" class="hero__logo">
             <img src="{{ 'pineapple.svg' | asset_url }}" alt="pineapple" class="icon icon--pineapple" />
             <h1>Deen Brothers Wines</h1>
-          </div>
+          </a>
           <ul class="site-nav" id="AccessibleNav">
             {% for link in linklists.main-menu.links %}
-              {% comment %}
-                Create a dropdown menu by naming a linklist the same as a link in the parent nav
-
-                More info on dropdowns:
-                  - http://docs.shopify.com/manual/your-website/navigation/create-drop-down-menu
-              {% endcomment %}
-              {% assign child_list_handle = link.title | handleize %}
-              {% if linklists[child_list_handle].links != blank %}
-                <li class="site-nav--has-dropdown{% if link.active %} site-nav--active{% endif %}" aria-haspopup="true">
-                  <a href="{{ link.url }}" class="site-nav__link">
-                    {{ link.title }}
-                    <span class="icon icon-arrow-down" aria-hidden="true"></span>
-                  </a>
-                  <ul class="site-nav__dropdown">
-                    {% for childlink in linklists[child_list_handle].links %}
-                      <li{% if childlink.active %} class="site-nav--active"{% endif %}>
-                        <a href="{{ childlink.url }}" class="site-nav__link">{{ childlink.title | escape }}</a>
-                      </li>
-                    {% endfor %}
-                  </ul>
-                </li>
-              {% else %}
-                <li {% if link.active %}class="site-nav--active"{% endif %}>
-                  <a href="{{ link.url }}" class="site-nav__link">{{ link.title }}</a>
-                </li>
-              {% endif %}
+            <li {% if link.active %}class="site-nav--active"{% endif %}>
+              <a href="{{ link.url }}" class="site-nav__link">{{ link.title }}</a>
+            </li>
             {% endfor %}
+            {% if shop.customer_accounts_enabled %}
+            {% if customer %}
+            <li {% if link.active %}class="site-nav--active"{% endif %}>
+              <a href="/account" class="site-nav__link">{{ 'layout.customer.account' | t }}</a>
+            </li>
+            <li {% if link.active %}class="site-nav--active"{% endif %} >
+              <a href="/account/logout" class="site-nav__link">{{ 'layout.customer.log_out' | t }}</a>
+            </li>
+            {% else %}
+            <li {% if link.active %}class="site-nav--active"{% endif %}>
+              <a href="/account/login" class="site-nav__link">
+                {{ 'layout.customer.log_in' | t }}
+              </a>
+            </li>
+            <li {% if link.active %}class="site-nav--active"{% endif %}>
+              <a href="/account/register" class="site-nav__link">
+                {{ 'layout.customer.create_account' | t }}
+              </a>
+            </li>
+            {% endif %}
+            {% endif %}
+            <li>
+              <a href="/cart" class="site-header__cart-toggle js-drawer-open-right" aria-controls="CartDrawer" aria-expanded="false">
+                <span class="icon icon-cart" aria-hidden="true"></span>
+                <span id="CartCount">{{ cart.item_count }}</span>
+              </a>
+            </li>
           </ul>
           <!-- //site-nav -->
         </div>
@@ -294,92 +184,49 @@
     <footer class="site-footer small--text-center" role="contentinfo">
       <div class="wrapper">
         <div class="grid">
-          {% if settings.footer_social_enable %}
-            <div class="grid__item large--one-third medium--one-half">
-              <h3>{{ 'layout.footer.social_title' | t }}</h3>
-                <ul class="inline-list social-icons">
-                  {% if settings.social_twitter_link != blank %}
-                    <li>
-                      <a class="icon-fallback-text" href="{{ settings.social_twitter_link }}" title="{{ shop.name }} on Twitter">
-                        <span class="icon icon-twitter" aria-hidden="true"></span>
-                        <span class="fallback-text">Twitter</span>
-                      </a>
-                    </li>
-                  {% endif %}
-                  {% if settings.social_facebook_link != blank %}
-                    <li>
-                      <a class="icon-fallback-text" href="{{ settings.social_facebook_link }}" title="{{ shop.name }} on Facebook">
-                        <span class="icon icon-facebook" aria-hidden="true"></span>
-                        <span class="fallback-text">Facebook</span>
-                      </a>
-                    </li>
-                  {% endif %}
-                </ul>
-            </div>
-          {% endif %}
-          {% if settings.footer_newsletter_enable %}
-            <div class="grid__item large--one-third push--large--one-third medium--one-half">
-              {% comment %}
-                MailChimp is the go-to newsletter service for Shopify.
-                Use the link below to find your MailChimp form action
-                and insert it in your site settings.
-
-                If the form action URL is not set in the theme settings,
-                it will fallback to a customer form so you can still capture the email.
-
-                MailChimp newsletter integration and requirement:
-                 - http://docs.shopify.com/support/configuration/store-customization/where-do-i-get-my-mailchimp-form-action
-              {% endcomment %}
-              <h3>{{ 'layout.footer.newsletter_title' | t }}</h3>
-              {% if settings.newsletter_form_action != blank %}
-                <form action="{{ settings.newsletter_form_action }}" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" class="input-group">
-                  <input type="email" value="{% if customer %}{{ customer.email }}{% endif %}" placeholder="{{ 'general.newsletter_form.newsletter_email' | t }}" name="EMAIL" id="mail" class="input-group-field" aria-label="{{ 'general.newsletter_form.newsletter_email' | t }}" autocorrect="off" autocapitalize="off">
-                  <span class="input-group-btn">
-                    <input type="submit" class="btn" name="subscribe" id="subscribe" value="{{ 'general.newsletter_form.submit' | t }}">
-                  </span>
-                </form>
+          <div class="grid__item one-whole large--one-third">
+            <ul class="footer-nav">
+              <li class="footer-nav__item">
+                <a href="/">Home</a>
+              </li>
+              <li class="footer-nav__item">
+                <a href="/">Affliate</a>
+              </li>
+              <li class="footer-nav__item">
+                <a href="/">Subscribe</a>
+              </li>
+              {% if shop.customer_accounts_enabled %}
+              {% if customer %}
+              <li class="footer-nav__item">
+                <a href="/account">{{ 'layout.customer.account' | t }}</a>
+              </li>
+              <li class="footer-nav__item">
+                {{ 'layout.customer.log_out' | t | customer_logout_link }}
+              </li>
               {% else %}
-                {% form 'customer' %}
-                  {{ form.errors | default_errors }}
-                  {% if form.posted_successfully? %}
-                    <p class="note form-success">{{ 'general.newsletter_form.confirmation' | t }}</p>
-                  {% else %}
-                    <div class="input-group">
-                      <input type="email" value="{% if customer %}{{ customer.email }}{% endif %}" placeholder="{{ 'general.newsletter_form.newsletter_email' | t }}" name="contact[email]" id="Email" class="input-group-field" aria-label="{{ 'general.newsletter_form.newsletter_email' | t }}" autocorrect="off" autocapitalize="off">
-                      <input type="hidden" name="contact[tags]" value="newsletter">
-                      <span class="input-group-btn">
-                        <input type="submit" class="btn" name="subscribe" id="subscribe" value="{{ 'general.newsletter_form.submit' | t }}">
-                      </span>
-                    </div>
-                  {% endif %}
-                {% endform %}
+              <li class="footer-nav__item">
+                {{ 'layout.customer.log_in' | t | customer_login_link }}
+              </li>
+              <li class="footer-nav__item">
+                {{ 'layout.customer.create_account' | t | customer_register_link }}
+              </li>
               {% endif %}
+              {% endif %}
+            </ul>
+          </div>
 
+          <div class="grid__item one-whole large--one-third push--large--one-third">
+            <div class="footer-contact">
+              <h4>Contact</h4>
+              <p>{{ shop.address.street }}</p>
+              <p>{{ shop.address.city }}, {{ shop.address.province_code }} {{ shop.address.zip }}</p>
+              <p> (123) 456-7890 (O)</p>
+              <p> (123) 456-7890 (F)</p>
             </div>
-          {% endif %}
-          <div class="grid__item text-center">
-            <hr>
-            {% comment %}
-              Loop through available payment methods and show their icons.
-            {% endcomment %}
-            {% unless shop.enabled_payment_types == empty %}
-              {% assign payment_icons_available = 'amazon_payments,american_express,bitcoin,cirrus,dankort,diners_club,discover,dogecoin,dwolla,forbrugsforeningen,interac,jcb,litecoin,maestro,master,paypal,visa' | split: ',' %}
-              <h4 class="text-center">{{ 'layout.footer.accepted_payments' | t }}</h4>
-              <ul class="inline-list payment-icons">
-                {% for type in shop.enabled_payment_types %}
-                  {% if payment_icons_available contains type %}
-                    <li>
-                      <span class="icon-fallback-text">
-                        <span class="icon icon-{{type}}" aria-hidden="true"></span>
-                        <span class="fallback-text">{{ type | replace: '_',' '}}</span>
-                      </span>
-                    </li>
-                  {% endif %}
-                {% endfor %}
-              </ul>
-            {% endunless %}
-            <a href="http://shopify.com/timber">Timber Theme Framework</a> by <a href="http://www.shopify.com?ref=Timber" title="Shopify.com">Shopify</a><br>
-            <small>{{ powered_by_link }}</small>
+            {% include 'footer-newsletter' %}
+          </div>
+          <div class="grid__item one-whole">
+            <p class="copyright"> &copy; Copyright {{ 'now' | date: "%Y" }} <span class="uppercase">Deen Brothers, LLC.</span> All Rights Reserved.</p>
           </div>
         </div>
       </div>
@@ -391,57 +238,58 @@
   {{ 'timber.js' | asset_url | script_tag }}
 
   {% comment %}
-    Template-specific js
+  Template-specific js
   {% endcomment %}
   <script>
-    {% if resetPassword %}
-      $(function() {
-        timber.resetPasswordSuccess();
-      });
-    {% endif %}
+  {% if resetPassword %}
+  $(function() {
+    timber.resetPasswordSuccess();
+  });
+  {% endif %}
   </script>
 
 
   {% comment %}
-    Ajaxify your cart with this plugin.
-    Documentation:
-      - http://shopify.com/timber#ajax-cart
+  Ajaxify your cart with this plugin.
+  Documentation:
+  - http://shopify.com/timber#ajax-cart
   {% endcomment %}
   {% if settings.ajax_cart_method == "drawer" %}
-    {{ 'handlebars.min.js' | asset_url | script_tag }}
-    {% include 'ajax-cart-template' %}
-    {{ 'ajax-cart.js' | asset_url | script_tag }}
-    <script>
-      jQuery(function($) {
-        ajaxCart.init({
-          formSelector: '#AddToCartForm',
-          cartContainer: '#CartContainer',
-          addToCartSelector: '#AddToCart',
-          cartCountSelector: '#CartCount',
-          cartCostSelector: '#CartCost',
-          moneyFormat: {{ shop.money_format | json }}
-        });
-      });
+  {{ 'handlebars.min.js' | asset_url | script_tag }}
+  {% include 'ajax-cart-template' %}
+  {{ 'ajax-cart.js' | asset_url | script_tag }}
+  <script>
+  jQuery(function($) {
+    ajaxCart.init({
+      formSelector: '#AddToCartForm',
+      cartContainer: '#CartContainer',
+      addToCartSelector: '#AddToCart',
+      cartCountSelector: '#CartCount',
+      cartCostSelector: '#CartCost',
+      moneyFormat: {{ shop.money_format | json }}
+    });
+  });
 
-      jQuery(document.body).on('afterCartLoad.ajaxCart', function(evt, cart) {
-        // Bind to 'afterCartLoad.ajaxCart' to run any javascript after the cart has loaded in the DOM
-        timber.RightDrawer.open();
-      });
-    </script>
-    {{ 'zip-check.js' | asset_url | script_tag }}
-    {{ 'app.js' | asset_url | script_tag }}
+  jQuery(document.body).on('afterCartLoad.ajaxCart', function(evt, cart) {
+    // Bind to 'afterCartLoad.ajaxCart' to run any javascript after the cart has loaded in the DOM
+    timber.RightDrawer.open();
+  });
+  </script>
+  
+  {{ 'app.js' | asset_url | script_tag }}
   {% endif %}
   <script>
-    (function(d) {
-      var config = {
-        kitId: 'kid6cvp',
-        scriptTimeout: 3000,
-        async: true
-      },
-      h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
-    })(document);
+  (function(d) {
+    var config = {
+      kitId: 'kid6cvp',
+      scriptTimeout: 3000,
+      async: true
+    },
+    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+  })(document);
   </script>
 
-
+  <!-- jerry's compile js -->
+  {{ 'site.js' | asset_url | script_tag }}
 </body>
 </html>

@@ -1,0 +1,121 @@
+// customers/account.*.liquid
+// customers/addresses.liquid
+// customers/order.liquid
+
+.template-customers-account,
+.template-customers-addresses,
+.template-customers-order
+{
+  @include body-padding;
+  .main-content {
+    @include content-padding;
+    h1 {
+      font-size: 38px;
+      letter-spacing: 0;
+    }
+    h2 {
+      font-size: 38px;
+    }
+    h3 {
+      font-size: 20px;
+      font-family: 'Whitenights-bold';
+      margin: $space-md 0;
+    }
+    .hr {
+      @include hr--brown;
+      margin-top: $space-sm;
+    }
+    .btn {
+      background-color: $brown;
+      margin-top: $space-md;
+      margin-bottom: $space-md;
+    }
+  }
+  .account-left-content {
+    h2 {
+      margin-top: $space-md;
+    }
+    padding: 24px 42px;
+    background-color: $white;
+    @include breakpoint-up(lg){
+      @include fancy-corners(42px);
+    }
+    #customer_logout_link {
+      @include link--brown;
+      font-family: 'Avenir-Black';
+    }
+    ul.account-menu {
+      @include list-no-style;
+      li {
+        a {
+          @include link-style($brown);
+        }
+        font-size: 20px;
+        line-height: 1.2;
+        text-transform: uppercase;
+        font-family: 'Whitenights';
+        margin: $space-lg 0;
+        letter-spacing: 0.15em;
+      }
+    }
+  }
+  .new-address {
+    @include account-content-styles;
+  }
+  .account-right-content {
+    @include account-content-styles;
+    @include breakpoint-up(lg){
+      @include fancy-corners(56px);
+    }
+    font-family: 'Whitenights';
+    h3 {
+      color: $brown;
+      font-family: 'Whitenights-bold';
+      font-size: 22px;
+      margin-top: $space-xl;
+      margin-bottom: $space-sm;
+    }
+
+    // general
+    .title-row {
+      margin-bottom: $space-md;
+    }
+
+    // address
+    .link--add-new {
+      margin-top: $space-md;
+      a {
+        @include link--brown;
+      }
+    }
+    .link--actions a {
+      @include link--brown;
+      font-size: 16px;
+    }
+    .address-display {
+      margin-top: $space-md;
+    }
+    .edit-address {
+      margin-top: $space-lg;
+    }
+
+    // order history
+    table.full {
+      margin: $space-lg 0;
+      th, td {
+        padding: $space-xs $space-md;
+        border: 1px solid $brown;
+        color: $grey;
+        a {
+          text-decoration: underline;
+        }
+      }
+      th {
+        background-color: rgba($brown, 0.7);
+        color: $white;
+        text-transform: uppercase;
+        font-weight: normal;
+      }
+    }
+  }
+}

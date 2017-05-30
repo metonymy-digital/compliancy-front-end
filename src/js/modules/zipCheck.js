@@ -1,4 +1,10 @@
-$(function() {
+// *************************************
+//
+//   Terms check
+//   -> check for zip code tax info
+//
+// *************************************
+var zipCheck = (function() {
   var $body = $(document.body)
     console.log($('.btn--secondary.btn--full.cart__checkout'));
     $('.btn--secondary.btn--full.cart__checkout').attr('id', 'checkout-btn')
@@ -24,7 +30,7 @@ $(function() {
 
     })
   })
-  $body.on('submit', '#zip-form', function(e) {
+  $body.on('submit', '#cart-form', function(e) {
     e.preventDefault()
     var zipCode = $('#zip-input').val()
 
@@ -57,5 +63,6 @@ $(function() {
         console.log('were done here');
       })
     })
-  })
-})
+  });
+
+})();

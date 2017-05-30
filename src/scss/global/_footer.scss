@@ -1,0 +1,56 @@
+.site-footer {
+  background-color: $dark-grey;
+  color: $white;
+  @include content-padding;
+  h4, p, li {
+    font-family: 'Whitenights';
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-bottom: $space-md;
+  }
+
+  .footer-nav {
+    @include list-no-style;
+    text-transform: uppercase;
+    text-align: center;
+    li a {
+      @include link-style($white);
+    }
+    margin-bottom: 3*$space-md;
+  }
+  .footer-contact {
+    text-transform: uppercase;
+    text-align: center;
+    @include breakpoint-up(lg) {
+      text-align: right;
+    }
+    margin-bottom: 3*$space-md;
+  }
+
+  .footer-newsletter {
+    text-align: center;
+    @include breakpoint-up(lg) {
+      text-align: right;
+    }
+    input {
+      font-family: 'Whitenights';
+    }
+    #subscribe {
+      background-color: $burgundy;
+    }
+  }
+
+  .copyright {
+    margin-top: $space-lg;
+    text-transform: capitalize;
+    text-align: center;
+    .uppercase {
+      text-transform: uppercase;
+    }
+    @include breakpoint-up(lg) {
+      text-align: left;
+    }
+
+  }
+
+}

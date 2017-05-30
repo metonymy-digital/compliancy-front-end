@@ -1,0 +1,24 @@
+// 404.liquid
+
+.template-404
+{
+  @include body-padding;
+  .main-content {
+    @include content-padding;
+    p {
+      font-size: 24px;
+      margin-bottom: $space-xl;
+    }
+    img {
+      max-width: 400px;
+    }
+    .hr {
+      @include hr--black;
+      margin: $space-md auto;
+      width: 50%;
+    }
+    .icon--ops {
+      width: $space-xl;
+    }
+  }
+}
