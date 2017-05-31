@@ -201,5 +201,30 @@
         "info": "https:\/\/www.facebook.com\/shopify"
       }
     ]
+  },
+  {
+    "name": "Recurring Orders by Bold",
+    "settings": [
+      {
+        "type": "text",
+        "id": "recurring-orders-loading",
+        "label": "Widget loading text:",
+        "default": "Loading subscription info...",
+        "info": "Text to display while widget is loading"
+      },
+      {
+        "type": "checkbox",
+        "id": "recurring-orders-inherit-classes",
+        "label": "Copy the classes from the add-to-cart button for the 'Complete Subscription' button?",
+        "default": false,
+        "info": "If checked, Recurring Orders will attempt to automatically match the style of our 'Complete Subscription' button with your theme's 'Add-to-cart' button. The 'Complete Subscription' button is used when Recurring Orders is in Single-Product mode and for subscriptions that have a 'Prepaid' option."
+      },
+      {
+        "type": "text",
+        "id": "recurring-orders-additional-button-classes",
+        "label": "Additional classes for the 'Complete Subscription' button",
+        "info": "Enter any additional class names that you would like to use to style the 'Complete Subscription' button."
+      }
+    ]
   }
 ]

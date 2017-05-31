@@ -282,6 +282,12 @@ var ajaxCart = (function(module, $) {
   };
 
   buildCart = function (cart) {
+    
+    // Include this at the beginning of the function that builds the cart in Javascript
+//Bold: Ensure the cart's line items have been updated with their option information
+  if(typeof(BOLD) === 'object' && BOLD.helpers && typeof(BOLD.helpers.cleanCart) === 'function' )
+    cart = BOLD.helpers.cleanCart(cart);
+    
     // Start with a fresh cart div
     $cartContainer.empty();
 
@@ -321,6 +327,7 @@ var ajaxCart = (function(module, $) {
         line: index + 1, // Shopify uses a 1+ index in the API
         url: cartItem.url,
         img: prodImg,
+        recurring: cartItem.formatted_recurring_desc,
         name: cartItem.product_title,
         variation: cartItem.variant_title,
         properties: cartItem.properties,

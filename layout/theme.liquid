@@ -36,6 +36,15 @@
 
   <!-- Header hook for plugins ================================================== -->
   {{ content_for_header }}
+{%- include 'bold-common' -%}
+
+{%- include 'bold-product' with product, hide_action: 'header' -%}
+
+{%- include 'bold-ro-init' -%}
+
+{{ 'bold.css' | asset_url | stylesheet_tag }}
+  {{ 'bold-helper-functions.js' | asset_url | script_tag }}
+
   {% include 'oldIE-js' %}
 
   {{ '//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js' | script_tag }}
