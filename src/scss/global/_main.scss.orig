@@ -4,6 +4,33 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+<<<<<<< HEAD
+<<<<<<< HEAD:assets/main.scss.liquid
+// TIMBER OVERRIDES
+
+.nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0);
+  padding: 0 30px;
+  transition: 200ms ease-out;
+}
+
+.site-nav__link {
+  color: $white;
+  font-family: "Whitenights";
+  font-size: 16px;
+  letter-spacing: 0.25em;
+  padding: 15px 10px 5px;
+  text-transform: uppercase;
+}
+=======
+>>>>>>> e40d24b910dd23d37940b5976a5aa6c1770752e0:src/scss/global/_main.scss
+=======
+>>>>>>> e8735dd5cb1e5b29d3a1f25ad489f7c648acc02c
 
 
 .main-content {
@@ -17,8 +44,77 @@ body {
 }
 
 .breadcrumb {
+<<<<<<< HEAD
+  margin: 140px 0;
+  font-family: 'Avenir';
+}
+<<<<<<< HEAD:assets/main.scss.liquid
+
+.section-header {
+  margin-bottom: 60px;
+}
+
+//
+// .nav-wrapper {
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   z-index: 100;
+//   width: 100vw;
+// }
+////////////////
+//TYPEOGRAPHY//
+//////////////
+
+p {
+  margin: 0;
+}
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+
+
+h1 {
+  font-family: "whitenights-Titling";
+  font-size: 29px;
+  font-weight: bold;
+  letter-spacing: 0.17em;
+}
+
+h2 {
+  font-family: "Whitenights-Bold";
+  font-size: 48px;
+  letter-spacing: -0.05em;
+  margin: 0;
+}
+
+h3 {
+  font-family: "freight-display-pro",serif;
+  font-size: 33px;
+  letter-spacing: 0.03em;
+  font-weight: 400;
+  margin: 0;
+}
+
+h4 {
+  font-family: "freight-display-pro",serif;
+  font-size: 24px;
+  letter-spacing: 0.01em;
+  font-weight: 700;
+}
+=======
+>>>>>>> e40d24b910dd23d37940b5976a5aa6c1770752e0:src/scss/global/_main.scss
+=======
   margin-top: 60px;
 }
+>>>>>>> e8735dd5cb1e5b29d3a1f25ad489f7c648acc02c
 
 
 
@@ -45,6 +141,113 @@ body {
   letter-spacing: 0.01em;
 }
 
+<<<<<<< HEAD
+<<<<<<< HEAD:assets/main.scss.liquid
+
+////////////////////
+//BUTTONS AND ICONS
+///////////////////
+
+.btn__cta {
+  border: 1px solid #fff;
+  font-family: "Whitenights";
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.23em;
+  border-radius: 5px;
+  padding: 10px 25px 5px;
+}
+
+.btn__subscribe, .btn__buy {
+  font-family: "Avenir";
+  font-size: 12px;
+  letter-spacing: 0.31em;
+  text-transform: uppercase;
+  border-radius: 5px;
+  width: 100%;
+  padding: 10px 0 7px;
+  margin-bottom: 15px;
+  max-width: 180px;
+}
+
+.btn__subscribe a, .btn__buy a {
+  color: $white;
+}
+
+.btn__subscribe {
+  color: $grey;
+  border: 1px solid $grey;
+  margin-top: 20px;
+}
+
+.btn__buy {
+  background-color: $brown;
+  color: $white;
+}
+
+.icon {
+  width: 32px;
+  font-size: 32px;
+  color: $white;
+}
+.icon--pineapple {
+  width: 25px;
+  height: 50px;
+  margin-right: 20px
+}
+
+.icon--fleur {
+  width: 70px;
+  margin-top: -40px
+}
+
+.icon--leaves {
+  width: 40px;
+  height: 100%;
+  margin: 0 5px;
+}
+
+.icon--separator-lg {
+  width: 225px;
+}
+
+.icon--separator-sm {
+  width: 150px;
+  margin: 15px 0;
+}
+
+.icon--leaf {
+  width: 60px;
+  margin-bottom: 15px;
+}
+
+.icon--map {
+  width: 80px;
+}
+
+.icon--somm {
+  width: 95px;
+}
+
+.icon--basket {
+  width: 85px;
+}
+
+.icon--brown > svg {
+  fill: $brown;
+}
+
+.brace {
+  font-size: 50px;
+  line-height: 1;
+  margin: 0 5px;
+  font-family: 'Whitenights';
+}
+
+=======
+>>>>>>> e40d24b910dd23d37940b5976a5aa6c1770752e0:src/scss/global/_main.scss
+=======
+>>>>>>> e8735dd5cb1e5b29d3a1f25ad489f7c648acc02c
 ///////////
 //CONTENT
 //////////
