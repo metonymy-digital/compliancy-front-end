@@ -15,6 +15,17 @@
       .js-qty {
         display: none;
       }
+      .button, .btn {
+        color: $white;
+        background-color: $brown;
+        letter-spacing: 0.31em;
+        text-transform: uppercase;
+        height: 48px;
+        width: 360px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
     }
     .product-tabs {
       a {
