@@ -5,6 +5,14 @@
   @include body-padding;
   .main-content {
     @include content-padding;
+    h2 {
+      margin-top: $space-md;
+    }
+    #AddToCartForm {
+      .js-qty {
+        display: none;
+      }
+    }
     .product-description {
       color: $brown;
     }

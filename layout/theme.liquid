@@ -41,8 +41,13 @@
 {%- include 'bold-product' with product, hide_action: 'header' -%}
 
 {%- include 'bold-ro-init' -%}
+  {% comment %}
 
-{{ 'bold.css' | asset_url | stylesheet_tag }}
+  don't use bold default style for now
+  {{ 'bold.css' | asset_url | stylesheet_tag }}
+
+  {% endcomment %}
+
   {{ 'bold-helper-functions.js' | asset_url | script_tag }}
 
   {% include 'oldIE-js' %}
@@ -284,7 +289,7 @@ Add the page template as a class for easy page or template specific styling.
     timber.RightDrawer.open();
   });
   </script>
-  
+
   {{ 'app.js' | asset_url | script_tag }}
   {% endif %}
   <script>
