@@ -12,10 +12,10 @@
       margin-top: $space-md;
     }
     #AddToCartForm {
-      .js-qty {
-        display: none;
+      .js-qty, .bold_add_to_orders {
+          display: none !important;
       }
-      .button, .btn {
+      .btn {
         color: $white;
         background-color: $brown;
         letter-spacing: 0.31em;
@@ -25,6 +25,65 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        margin-top: $space-lg;
+      }
+    }
+    // bold overrides
+    .product_rp_div {
+      color: $brown;
+      font-family: "freight-display-pro";
+      font-weight: bold;
+      .recurring_title {
+        color: $brown;
+        padding: 0;
+        font-size: 24px;
+        margin-bottom: $space-md;
+      }
+      .one_time_div, .recurring_div {
+        border: none;
+        padding: 0;
+        font-size: 18px;
+        color: $light-grey;
+        label {
+          display: flex !important;
+          align-items: center;
+          margin-bottom: $space-md;
+        }
+        input {
+          min-width: 28px;
+          min-height: 28px;
+          display: block;
+          border: 1px solid $light-grey;
+          appearance: none;
+          margin: 0;
+          margin-right: $space-md;
+        }
+      }
+      .bold_active {
+        color: $brown;
+        background-color: inherit;
+        border: none;
+        input {
+          border-color: $brown;
+          position: relative;
+          &::before {
+            content: '';
+            @include absolute-center;
+            background-image: url("{{ 'pineapple--brown.svg' | asset_url }}");
+            background-size: 20px 15px;
+            background-repeat: no-repeat;
+            background-position: center;
+          }
+        }
+      }
+      .frequency_label {
+        align-items: center;
+        display: flex;
+        .frequency_num {
+          width: $space-md;
+          padding: $space-xs $space-md;
+          box-sizing: content-box;
+        }
       }
     }
     .product-tabs {

@@ -104,8 +104,8 @@ input {
   color: #ffffff; }
 
 .btn__subscribe {
-  color: #666;
-  border: 1px solid #666;
+  color: #666666;
+  border: 1px solid #666666;
   margin-top: 20px; }
 
 .btn__buy {
@@ -166,7 +166,7 @@ input {
 body {
   background: url("{{ 'bg-matte.jpg' | asset_url }}") center center repeat;
   background-size: auto;
-  color: #333;
+  color: #333333;
   text-rendering: optimizeLegibility; }
 
 .main-content {
@@ -543,7 +543,7 @@ body {
   margin-bottom: 30px; }
 
 .text-section .btn__cta {
-  border-color: #666; }
+  border-color: #666666; }
 
 @media screen and (max-width: 769px) {
   h2 {
@@ -968,7 +968,7 @@ body {
   left: 0;
   z-index: 100;
   width: 100vw;
-  background-color: #666;
+  background-color: #666666;
   padding: 0 30px;
   -webkit-transition: 200ms ease-out;
   transition: 200ms ease-out; }
@@ -1019,7 +1019,7 @@ body {
         margin-left: 8px; }
 
 .site-footer {
-  background-color: #333;
+  background-color: #333333;
   color: #ffffff;
   padding: 32px 16px; }
   @media (min-width: 769px) {
@@ -1100,7 +1100,7 @@ body {
     font-family: 'Whitenights'; }
   .template-page .main-content .how-it-works h2 {
     font-size: 38px;
-    color: #333;
+    color: #333333;
     margin-bottom: 16px; }
   .template-page .main-content .how-it-works p {
     color: #8b683e; }
@@ -1507,7 +1507,7 @@ body {
       .template-customers-order .account-right-content table.full td {
         padding: 4px 16px;
         border: 1px solid #8b683e;
-        color: #666; }
+        color: #666666; }
         .template-customers-account .account-right-content table.full th a, .template-customers-account .account-right-content table.full td a,
         .template-customers-addresses .account-right-content table.full th a,
         .template-customers-addresses .account-right-content table.full td a,
@@ -1579,7 +1579,7 @@ body {
       margin-top: 4px;
       margin-bottom: 32px;
       background-color: transparent;
-      border-color: #666; }
+      border-color: #666666; }
     .template-customers-register .main-content .form-vertical .btn--full,
     .template-customers-login .main-content .form-vertical .btn--full,
     .template-customers-reset_password .main-content .form-vertical .btn--full {
@@ -1673,9 +1673,9 @@ body {
       margin-top: 0; }
     .template-product .main-content h2 {
       margin-top: 16px; }
-    .template-product .main-content #AddToCartForm .js-qty {
-      display: none; }
-    .template-product .main-content #AddToCartForm .button, .template-product .main-content #AddToCartForm .btn {
+    .template-product .main-content #AddToCartForm .js-qty, .template-product .main-content #AddToCartForm .bold_add_to_orders {
+      display: none !important; }
+    .template-product .main-content #AddToCartForm .btn {
       color: #ffffff;
       background-color: #8b683e;
       letter-spacing: 0.31em;
@@ -1693,7 +1693,75 @@ body {
       -webkit-box-pack: center;
       -webkit-justify-content: center;
           -ms-flex-pack: center;
-              justify-content: center; }
+              justify-content: center;
+      margin-top: 32px; }
+    .template-product .main-content .product_rp_div {
+      color: #8b683e;
+      font-family: "freight-display-pro";
+      font-weight: bold; }
+      .template-product .main-content .product_rp_div .recurring_title {
+        color: #8b683e;
+        padding: 0;
+        font-size: 24px;
+        margin-bottom: 16px; }
+      .template-product .main-content .product_rp_div .one_time_div, .template-product .main-content .product_rp_div .recurring_div {
+        border: none;
+        padding: 0;
+        font-size: 18px;
+        color: #888888; }
+        .template-product .main-content .product_rp_div .one_time_div label, .template-product .main-content .product_rp_div .recurring_div label {
+          display: -webkit-box !important;
+          display: -webkit-flex !important;
+          display: -ms-flexbox !important;
+          display: flex !important;
+          -webkit-box-align: center;
+          -webkit-align-items: center;
+              -ms-flex-align: center;
+                  align-items: center;
+          margin-bottom: 16px; }
+        .template-product .main-content .product_rp_div .one_time_div input, .template-product .main-content .product_rp_div .recurring_div input {
+          min-width: 28px;
+          min-height: 28px;
+          display: block;
+          border: 1px solid #888888;
+          -webkit-appearance: none;
+             -moz-appearance: none;
+                  appearance: none;
+          margin: 0;
+          margin-right: 16px; }
+      .template-product .main-content .product_rp_div .bold_active {
+        color: #8b683e;
+        background-color: inherit;
+        border: none; }
+        .template-product .main-content .product_rp_div .bold_active input {
+          border-color: #8b683e;
+          position: relative; }
+          .template-product .main-content .product_rp_div .bold_active input::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            background-image: url("{{ 'pineapple--brown.svg' | asset_url }}");
+            background-size: 20px 15px;
+            background-repeat: no-repeat;
+            background-position: center; }
+      .template-product .main-content .product_rp_div .frequency_label {
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+            -ms-flex-align: center;
+                align-items: center;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex; }
+        .template-product .main-content .product_rp_div .frequency_label .frequency_num {
+          width: 16px;
+          padding: 4px 16px;
+          -webkit-box-sizing: content-box;
+                  box-sizing: content-box; }
     .template-product .main-content .product-tabs a, .template-product .main-content .product-tabs a:hover, .template-product .main-content .product-tabs a:active, .template-product .main-content .product-tabs a:focus {
       color: #8b683e;
       text-decoration: none;
@@ -1754,7 +1822,7 @@ body {
     background-color: transparent;
     outline: none; }
   #CartDrawer input {
-    background-color: #666;
+    background-color: #666666;
     color: #ffffff; }
     #CartDrawer input ::-webkit-input-placeholder {
       /* Chrome/Opera/Safari */
@@ -1776,10 +1844,10 @@ body {
   #CartDrawer .ajaxcart__inner {
     padding-bottom: 64px; }
   #CartDrawer .ajaxcart__product:not(:last-of-type) {
-    border-bottom: 1.5px solid #666; }
+    border-bottom: 1.5px solid #666666; }
   #CartDrawer .ajaxcart__row {
     margin: 0;
-    border-color: #666;
+    border-color: #666666;
     padding: 32px 0;
     padding-right: 16px;
     border: none;
