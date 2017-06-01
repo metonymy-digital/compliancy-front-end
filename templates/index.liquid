@@ -25,7 +25,7 @@
     <div class="grid__item featured-wines__header">
       <h3>featured wines</h3>
       <ul class="featured-wines__nav">
-        <li><a href="#bundles">bundles</a></li>
+        <li><a href="#mixed">bundles</a></li>
         <li><a href="#whites">whites</a></li>
         <li><a href="#reds">reds</a></li>
       </ul>
@@ -33,8 +33,8 @@
     <!-- pull wines in this category and run a loop -->
     <div class="grid__item">
       <div class="grid">
-        <div id="bundles">
-            {% for product in collections.bundles.products %}
+        <div id="mixed">
+            {% for product in collections.mixed.products %}
               <div class="grid__item large--one-quarter medium--one-half small--one-whole">
                 <div class="product">
                   {% for image in product.images %}
