@@ -13,8 +13,25 @@
         display: none;
       }
     }
+    .product-tabs {
+      a {
+        @include link-style($brown);
+        &.active {
+          border-bottom: 1px solid rgba($brown,0.5);
+        }
+      }
+    }
     .product-description {
       color: $brown;
+    }
+    .product-description__footer {
+      padding: 0;
+      p {
+        margin: 12px 0;
+      }
+      .icon--pineapple {
+        margin: 0;
+      }
     }
   }
 }
