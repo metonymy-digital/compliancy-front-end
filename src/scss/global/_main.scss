@@ -1,5 +1,5 @@
 body {
-  @include bg-img($url:"{{ 'bg-matte.jpg' | asset_url }}", $size: auto, $repeat: repeat);
+  @include bg-img($url:"{{ 'bg-matte.png' | asset_url }}", $size: auto, $repeat: repeat);
   color: $dark-grey;
   text-rendering: optimizeLegibility;
 }
