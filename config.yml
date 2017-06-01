@@ -1,8 +1,8 @@
-development:
+production:
   password: 166b7686add9d2e537ff01954fb57d11
   theme_id: "177534223"
   store: ship-compliant-dev.myshopify.com
-production:
+development:
   password: c8217f76096fbf5811323f9cce05d9bb
   theme_id: "174645648"
   store: deen-brothers-wine-2.myshopify.com
