@@ -710,9 +710,11 @@ body {
 
 .related-products__product {
   text-align: center;
-  display: flex;
-  justify-content: center;
   margin-bottom: 60px;
+  @include breakpoint-up(lg) {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .recipe-list li {

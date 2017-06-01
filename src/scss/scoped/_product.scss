@@ -5,6 +5,9 @@
   @include body-padding;
   .main-content {
     @include content-padding;
+    .breadcrumb {
+      margin-top: 0;
+    }
     h2 {
       margin-top: $space-md;
     }

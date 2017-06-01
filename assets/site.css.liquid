@@ -878,15 +878,17 @@ body {
 
 .related-products__product {
   text-align: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   margin-bottom: 60px; }
+  @media (min-width: 769px) {
+    .related-products__product {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+          -ms-flex-pack: center;
+              justify-content: center; } }
 
 .recipe-list li {
   display: -webkit-box;
@@ -1667,6 +1669,8 @@ body {
     @media (min-width: 769px) {
       .template-product .main-content {
         padding: 64px 16px; } }
+    .template-product .main-content .breadcrumb {
+      margin-top: 0; }
     .template-product .main-content h2 {
       margin-top: 16px; }
     .template-product .main-content #AddToCartForm .js-qty {

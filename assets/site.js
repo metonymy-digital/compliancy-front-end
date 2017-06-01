@@ -60,7 +60,7 @@ var variableNav = (function() {
 
 // *************************************
 //
-//   Terms check
+//   Zip check
 //   -> check for zip code tax info
 //
 // *************************************
