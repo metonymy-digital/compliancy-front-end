@@ -1,14 +1,6 @@
 <!-- /templates/list-collections.liquid -->
 
-<div class="grid">
-  <div class="grid__item hero">
-    <div class="hero__cta">
-      <h1>shop all wines</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-      <p><i>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</i></p>
-    </div>
-  </div>
-</div>
+{% include 'collections-hero' %}
 
 {% comment %}
   Loop through each collection, except 'frontpage'
@@ -20,18 +12,8 @@
   {% unless collection.handle == 'frontpage' %}
     {% capture collection_title %}{{ collection.title | escape }}{% endcapture %}
 
-    <div class="section-header">
-      <a href="{{ collection.url }}" title="{{ 'collections.general.link_title' | t: title: collection_title }}">
-        <h2>{{ collection_title }}</h2>
-      </a>
-      <hr>
-    </div>
-    <div class="grid">
-      {% for product in collection.products limit:3 %}
-        {% assign grid_item_width = 'large--one-third' %}
-        {% include 'product-grid-item' %}
-      {% endfor %}
-    </div>
+    {% include 'collection-products' %}
+
   {% endunless %}
 
 {% endfor %}

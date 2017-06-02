@@ -1,0 +1,11 @@
+{% capture collection_title %}{{ collection.title | escape }}{% endcapture %}
+<div class="section-header">
+  <h2>{{ collection_title }}</h2>
+  <hr>
+</div>
+<div class="grid">
+  {% for product in collection.products limit:3 %}
+    {% assign grid_item_width = 'large--one-third' %}
+      {% include 'product-grid-item' %}
+  {% endfor %}
+</div>
