@@ -20,7 +20,8 @@ var variableNav = (function() {
   var navIsVariable =
     $('.template-index')[0] ||
     $('.how-it-works')[0] ||
-    $('.template-list-collections')[0];
+    $('.template-list-collections')[0]||
+    $('.template-collection');
 
   if (navIsVariable) {
     $(window).scroll(function() {
