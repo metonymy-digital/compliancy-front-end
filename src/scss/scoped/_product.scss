@@ -5,11 +5,14 @@
   @include body-padding;
   .main-content {
     @include content-padding;
+    h2 {
+      margin-top: $space-md;
+    }
     .breadcrumb {
       margin-top: 0;
     }
-    h2 {
-      margin-top: $space-md;
+    .product-single__photos img {
+      margin: 0;
     }
     #AddToCartForm {
       .js-qty, .bold_add_to_orders {
@@ -37,6 +40,7 @@
         color: $brown;
         padding: 0;
         font-size: 24px;
+        margin-top: $space-xl;
         margin-bottom: $space-md;
       }
       .one_time_div, .recurring_div {
