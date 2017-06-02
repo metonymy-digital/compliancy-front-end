@@ -339,6 +339,10 @@ body {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
@@ -346,6 +350,15 @@ body {
   margin-bottom: 90px;
   -webkit-border-image: url("{{ 'separator-brown.svg' | asset_url }}") 0 0 0 0 repeat;
           border-image: url("{{ 'separator-brown.svg' | asset_url }}") 0 0 0 0 repeat; }
+  @media (max-width: 768px) {
+    .featured-wines__header {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column; }
+      .featured-wines__header .featured-wines__nav {
+        padding-bottom: 16px; } }
 
 .featured-wines__header:after {
   content: '';
@@ -1776,7 +1789,8 @@ body {
         margin-top: 64px;
         padding: 0;
         padding-bottom: 16px;
-        position: relative; }
+        position: relative;
+        display: block; }
         .template-product .main-content .product_rp_div .recurring_title::after {
           -webkit-border-image: url("{{ 'squiggs.svg' | asset_url }}") 0 0 0 0 repeat;
                   border-image: url("{{ 'squiggs.svg' | asset_url }}") 0 0 0 0 fill repeat;

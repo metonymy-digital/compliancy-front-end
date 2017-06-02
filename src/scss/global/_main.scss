@@ -154,9 +154,16 @@ body {
   position: relative;
   display: flex;
   width: 100%;
+  align-items: center;
   justify-content: space-between;
   margin-bottom: 90px;
   border-image: url("{{ 'separator-brown.svg' | asset_url }}") 0 0 0 0 repeat;
+  @include breakpoint-down(md) {
+    flex-direction: column;
+    .featured-wines__nav {
+      padding-bottom: $space-md;
+    }
+  }
 }
 
 .featured-wines__header:after {
