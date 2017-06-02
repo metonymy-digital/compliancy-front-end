@@ -45,7 +45,7 @@ var variableNav = (function() {
     $('.template-index')[0] ||
     $('.how-it-works')[0] ||
     $('.template-list-collections')[0]||
-    $('.template-collection');
+    $('.template-collection')[0];
 
   if (navIsVariable) {
     $(window).scroll(function() {
