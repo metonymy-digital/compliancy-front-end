@@ -102,6 +102,14 @@
       }
     }
     .product-tabs {
+      display: block;
+      margin: 0 auto;
+      li {
+        @include breakpoint-down(md) {
+          font-size: 16px;
+          margin-right: $space-sm;
+        }
+      }
       a {
         @include link-style($brown);
         &.active {
