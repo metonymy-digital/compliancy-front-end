@@ -38,10 +38,20 @@
       font-weight: bold;
       .recurring_title {
         color: $brown;
-        padding: 0;
         font-size: 24px;
         margin-top: $space-xl;
-        margin-bottom: $space-md;
+        padding: 0;
+        padding-bottom: $space-md;
+        position: relative;
+        &::after {
+          border-image: url("{{ 'squiggs.svg' | asset_url }}") 0 0 0 0 fill repeat;
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          height: 4px;
+          width: 100%;
+        }
       }
       .one_time_div, .recurring_div {
         border: none;
