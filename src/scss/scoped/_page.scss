@@ -7,6 +7,7 @@
       max-width: 770px;
       margin-top: 2*$space-xl;
       margin-left: $space-xl;
+      padding: 0 $space-md;
       p {
         color: $white;
       }
@@ -19,7 +20,7 @@
         margin: $space-lg 0;
       }
       @include breakpoint-up(lg) {
-        padding: 0;
+        padding: 0 $space-md;
         padding-bottom: 2*$space-xl;
         > div {
           margin: $space-xl 0;

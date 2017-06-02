@@ -12,12 +12,13 @@
         max-width: 600px;
         color: $white;
       }
+      padding: 0 $space-md;
     }
     .shop-all {
       @include content-width(1092px);
       padding: $space-lg $space-md;
       @include breakpoint-up(lg) {
-        padding: 0;
+        padding: 0 $space-md;
         padding-bottom: 2*$space-xl;
       }
       .section-header {
