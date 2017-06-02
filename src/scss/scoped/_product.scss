@@ -29,6 +29,10 @@
         align-items: center;
         justify-content: center;
         margin-top: $space-lg;
+        @include breakpoint-down(md) {
+          margin: $space-lg auto;
+          margin-bottom: 0; 
+        }
       }
     }
     // bold overrides
