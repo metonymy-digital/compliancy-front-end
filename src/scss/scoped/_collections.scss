@@ -4,15 +4,17 @@
 .template-collection
 {
   .main-content {
-    @include hero-clipped("{{ 'hero-2.jpg' | asset_url }}");
-    .hero__cta {
-      @include content-width(1092px);
-      margin-top: 2*$space-xl;
-      p {
-        max-width: 600px;
-        color: $white;
+    .hero {
+      @include hero--clipped("{{ 'hero-2.jpg' | asset_url }}");
+      .hero__cta {
+        @include content-width(1092px);
+        margin-top: 2*$space-xl;
+        p {
+          max-width: 600px;
+          color: $white;
+        }
+        padding: 0 $space-md;
       }
-      padding: 0 $space-md;
     }
     .shop-all {
       @include content-width(1092px);

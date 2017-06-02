@@ -1,7 +1,12 @@
 // index.liquid
 
 .template-index {
-  .hero--bottom {
-    margin: 0;
+  .hero {
+    &.hero--top {
+      @include hero--mobile-overlay;
+    }
+    &.hero--bottom {
+      margin: 0;
+    }
   }
 }

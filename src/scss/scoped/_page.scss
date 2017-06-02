@@ -2,14 +2,16 @@
 
 .template-page {
   .main-content {
-    @include hero-clipped("{{ 'hero-2.jpg' | asset_url }}");
-    .hero__cta {
-      max-width: 770px;
-      margin-top: 2*$space-xl;
-      margin-left: $space-xl;
-      padding: 0 $space-md;
-      p {
-        color: $white;
+    .hero {
+      @include hero--clipped("{{ 'hero-2.jpg' | asset_url }}");
+      .hero__cta {
+        max-width: 770px;
+        margin-top: 2*$space-xl;
+        margin-left: $space-xl;
+        padding: 0 $space-md;
+        p {
+          color: $white;
+        }
       }
     }
     .how-it-works {
