@@ -10,10 +10,28 @@
     }
     .breadcrumb {
       margin-top: 0;
+      padding-left: $space-md;
     }
-    .product-single__photos img {
-      margin: 0;
+    .product-single {
+      .product-single__images {
+        padding-left: 0;
+        display: flex;
+        .product-single__thumbnails {
+          @include list-no-style;
+          width: 16%;
+          display: block;
+        }
+        .product-single__photos {
+          width: 84%;
+          margin: 0;
+          img {
+            width: 100%;
+            margin: 0;
+          }
+        }
+      }
     }
+
     #AddToCartForm {
       .js-qty, .bold_add_to_orders {
           display: none !important;
