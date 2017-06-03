@@ -178,6 +178,14 @@ body {
   border-bottom: 1px solid $brown;
 }
 
+.featured-wines__tab {
+  @include breakpoint-up(md) {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+
 .wines {
   display: flex;
 }

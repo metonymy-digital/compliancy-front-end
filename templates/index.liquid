@@ -37,7 +37,7 @@
         {% assign all_collections = "mixed|whites|reds" | split: "|" %}
         {% for handle in all_collections %}
           <!-- pull wines in this category and run a loop -->
-          <div id="{{ handle }}">
+          <div id="{{ handle }}" class="featured-wines__tab">
             {% for product in collections[handle].products %}
               {% include 'product-grid-item' %}
             {% endfor %}
