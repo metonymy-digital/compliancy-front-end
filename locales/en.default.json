@@ -276,7 +276,7 @@
       "on_sale": "On Sale",
       "on_sale_from_html": "<strong>On Sale<\/strong> from {{ price }}",
       "unavailable": "Unavailable",
-      "compare_at": "Compare at",
+      "compare_at": "",
       "quantity": "Quantity",
       "add_to_cart": "Add To Cart"
     }

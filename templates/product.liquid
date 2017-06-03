@@ -90,17 +90,16 @@
             {% endfor %}
           </select>
 
-          <span class="visually-hidden">{{ 'products.general.regular_price' | t }}</span>
+          <div class="product__pricing">
+          {% if product.compare_at_price_max > product.price %}
+            <p id="ComparePrice" class="h2">
+              {{ current_variant.compare_at_price | money }}
+            </p>
+          {% endif %}
           <span id="ProductPrice" class="h2" itemprop="price" content="{{ current_variant.price | divided_by: 100.00 }}">
             {{ current_variant.price | money }}
           </span>
-
-          {% if product.compare_at_price_max > product.price %}
-            <span class="visually-hidden">{{ 'products.general.sale_price' | t }}</span>
-            <p id="ComparePrice">
-              {{ 'products.product.compare_at' | t }} {{ current_variant.compare_at_price | money }}
-            </p>
-          {% endif %}
+          </div>
 
           <input type="number" id="Quantity" name="quantity" value="1" min="1" class="quantity-selector">
 
