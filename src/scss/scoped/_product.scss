@@ -79,9 +79,10 @@
           position: absolute;
           bottom: 0;
           left: 0;
-          height: 2px;
+          height: 4px;
           width: 100%;
-          border-image: url("{{ 'squiggs.png' | asset_url }}") 0 0 0 0 fill repeat;
+          border-image: url("{{ 'squiggs.png' | asset_url }}") 0 0 0 0 fill;
+          border-image-width: 10;
         }
       }
       .one_time_div, .recurring_div {

@@ -1845,10 +1845,11 @@ body {
           position: absolute;
           bottom: 0;
           left: 0;
-          height: 2px;
+          height: 4px;
           width: 100%;
-          -webkit-border-image: url("{{ 'squiggs.png' | asset_url }}") 0 0 0 0 repeat;
-                  border-image: url("{{ 'squiggs.png' | asset_url }}") 0 0 0 0 fill repeat; }
+          -webkit-border-image: url("{{ 'squiggs.png' | asset_url }}") 0 0 0 0 fill;
+                  border-image: url("{{ 'squiggs.png' | asset_url }}") 0 0 0 0 fill;
+          border-image-width: 10; }
       .template-product .main-content .product_rp_div .one_time_div, .template-product .main-content .product_rp_div .recurring_div {
         border: none;
         padding: 0;
