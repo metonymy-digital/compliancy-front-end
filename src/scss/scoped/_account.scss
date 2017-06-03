@@ -21,9 +21,13 @@
       font-family: 'Whitenights-bold';
       margin: $space-md 0;
     }
+    label {
+      font-family: 'Whitenights';
+      text-transform: uppercase;
+    }
     .hr {
       @include hr--brown;
-      margin-top: $space-sm;
+      margin: $space-md 0;
     }
     .btn {
       background-color: $brown;
@@ -59,9 +63,6 @@
       }
     }
   }
-  .new-address {
-    @include account-content-styles;
-  }
   .account-right-content {
     @include account-content-styles;
     @include breakpoint-up(lg){
@@ -75,13 +76,20 @@
       margin-top: $space-xl;
       margin-bottom: $space-sm;
     }
-
     // general
     .title-row {
       margin-bottom: $space-md;
     }
-
     // address
+    .address-display {
+      margin-top: $space-md;
+    }
+    .edit-address, .new-address {
+      margin-top: $space-lg;
+      .input-full {
+        margin-bottom: $space-lg;
+      }
+    }
     .link--add-new {
       margin-top: $space-md;
       a {
@@ -92,13 +100,6 @@
       @include link--brown;
       font-size: 16px;
     }
-    .address-display {
-      margin-top: $space-md;
-    }
-    .edit-address {
-      margin-top: $space-lg;
-    }
-
     // order history
     table.full {
       margin: $space-lg 0;

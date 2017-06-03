@@ -1,6 +1,7 @@
 {% form 'customer_address', address %}
 <div id="EditAddress_{{ address.id }}" class="form-vertical edit-address" {% unless form.errors %}style="display:none;"{% endunless %}>
-  <h4>{{ 'customer.addresses.edit_address' | t }}</h4>
+  <h2>{{ 'customer.addresses.edit_address' | t }}</h2>
+  <div class="hr"></div>
   {{ form.errors | default_errors }}
 
   <div class="grid">
@@ -54,7 +55,5 @@
 
   <p><input type="submit" class="btn" value="{{ 'customer.addresses.update' | t }}"></p>
   <p><a href="#" onclick="Shopify.CustomerAddress.toggleForm({{ form.id }}); return false;">{{ 'customer.addresses.cancel' | t }}</a></p>
-
-  <hr>
 </div>
 {% endform %}

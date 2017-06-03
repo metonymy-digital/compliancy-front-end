@@ -1368,11 +1368,16 @@ body {
       font-size: 20px;
       font-family: 'Whitenights-bold';
       margin: 16px 0; }
+    .template-customers-account .main-content label,
+    .template-customers-addresses .main-content label,
+    .template-customers-order .main-content label {
+      font-family: 'Whitenights';
+      text-transform: uppercase; }
     .template-customers-account .main-content .hr,
     .template-customers-addresses .main-content .hr,
     .template-customers-order .main-content .hr {
       background-image: url("{{ 'separator-brown.svg' | asset_url }}");
-      margin-top: 8px; }
+      margin: 16px 0; }
     .template-customers-account .main-content .btn,
     .template-customers-addresses .main-content .btn,
     .template-customers-order .main-content .btn {
@@ -1482,16 +1487,6 @@ body {
           text-decoration: none;
           background-color: transparent;
           outline: none; }
-  .template-customers-account .new-address,
-  .template-customers-addresses .new-address,
-  .template-customers-order .new-address {
-    padding: 42px;
-    background-color: #ffffff; }
-    @media (min-width: 1092px) {
-      .template-customers-account .new-address,
-      .template-customers-addresses .new-address,
-      .template-customers-order .new-address {
-        margin-left: 64px; } }
   .template-customers-account .account-right-content,
   .template-customers-addresses .account-right-content,
   .template-customers-order .account-right-content {
@@ -1573,6 +1568,22 @@ body {
     .template-customers-addresses .account-right-content .title-row,
     .template-customers-order .account-right-content .title-row {
       margin-bottom: 16px; }
+    .template-customers-account .account-right-content .address-display,
+    .template-customers-addresses .account-right-content .address-display,
+    .template-customers-order .account-right-content .address-display {
+      margin-top: 16px; }
+    .template-customers-account .account-right-content .edit-address, .template-customers-account .account-right-content .new-address,
+    .template-customers-addresses .account-right-content .edit-address,
+    .template-customers-addresses .account-right-content .new-address,
+    .template-customers-order .account-right-content .edit-address,
+    .template-customers-order .account-right-content .new-address {
+      margin-top: 32px; }
+      .template-customers-account .account-right-content .edit-address .input-full, .template-customers-account .account-right-content .new-address .input-full,
+      .template-customers-addresses .account-right-content .edit-address .input-full,
+      .template-customers-addresses .account-right-content .new-address .input-full,
+      .template-customers-order .account-right-content .edit-address .input-full,
+      .template-customers-order .account-right-content .new-address .input-full {
+        margin-bottom: 32px; }
     .template-customers-account .account-right-content .link--add-new,
     .template-customers-addresses .account-right-content .link--add-new,
     .template-customers-order .account-right-content .link--add-new {
@@ -1592,14 +1603,6 @@ body {
       text-transform: uppercase;
       letter-spacing: 0.2em;
       font-size: 16px; }
-    .template-customers-account .account-right-content .address-display,
-    .template-customers-addresses .account-right-content .address-display,
-    .template-customers-order .account-right-content .address-display {
-      margin-top: 16px; }
-    .template-customers-account .account-right-content .edit-address,
-    .template-customers-addresses .account-right-content .edit-address,
-    .template-customers-order .account-right-content .edit-address {
-      margin-top: 32px; }
     .template-customers-account .account-right-content table.full,
     .template-customers-addresses .account-right-content table.full,
     .template-customers-order .account-right-content table.full {

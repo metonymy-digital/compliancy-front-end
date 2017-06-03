@@ -4,7 +4,7 @@ Add address form, hidden by default
 {% form 'customer_address', customer.new_address %}
 <div id="AddAddress" class="form-vertical new-address" {% unless form.errors %}style="display:none;"{% endunless %}>
   <h2>{{ 'customer.addresses.add_new' | t }}</h2>
-
+  <div class="hr"></div>
   {{ form.errors | default_errors }}
 
   <div class="grid">
@@ -64,7 +64,5 @@ Add address form, hidden by default
 
   <p><input type="submit" class="btn" value="{{ 'customer.addresses.add' | t }}"></p>
   <p><a href="#" onclick="Shopify.CustomerAddress.toggleNewForm(); return false;">{{ 'customer.addresses.cancel' | t }}</a></p>
-
-  <hr>
 </div>
 {% endform %}
