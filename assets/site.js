@@ -63,64 +63,53 @@ var variableNav = (function() {
 //   -> check for zip code tax info
 //
 // *************************************
-const zipCheck = (function() {
+const zipCheck = (() => {
   const $body = $(document.body);
   $('.btn--secondary.btn--full.cart__checkout').attr('id', 'checkout-btn');
   $body.on('submit', '.cart.ajaxcart', function(e) {
     e.preventDefault();
-    $('.btn--secondary.btn--full.cart__checkout')
-      .attr('disabled', 'disabled')
-      .addClass('disabled');
+    disable();
     $('#warning-container').empty();
 
     const zipCode = $('#zip-input').val();
     const zipRegex = /^\d{5}$/;
     const isValidZip = zipRegex.test(zipCode);
     const id = parseInt(window.localStorage.getItem('taxId'));
-    console.log('ID', id);
     if (id) {
       $.ajax({
         url: '/cart.js',
         contentType: 'application/json',
         dataType: 'json'
       })
-        .then(function(data) {
+        .then(data => {
           return data.items.filter(function(data) {
             return data.variant_id === id;
           });
         })
-        .done(function(data) {
-          // if taxid in local storage, but not in cart, or localstorage item doesn't match tax product in cart
+        .done(data => {
           if (data.length === 0) {
-            $('#warning-container').empty();
-            $('#warning-container').append(
-              '<p class="warning">please enter a valid zip code to continue</p>'
-            );
-            $('.btn--secondary.btn--full.cart__checkout')
-              .removeAttr('disabled', 'disabled')
-              .removeClass('disabled');
-            return false;
+            window.localStorage.removeItem('taxId');
+            getTaxProduct(zipCode);
           } else {
             $('.cart.ajaxcart')[0].submit();
           }
         });
     } else if (isValidZip && !id) {
+      getTaxProduct(zipCode);
     } else {
-      $('#warning-container').empty();
-      $('#warning-container').append(
-        '<p class="warning">please enter a valid zip code to continue</p>'
-      );
+      const message = 'please enter a valid zip code to continue';
+      validation(message);
     }
   });
 })();
 
-function getTaxProduct(zip) {
+const getTaxProduct = zip => {
   $.ajax({
     url: '/cart.js',
     contentType: 'application/json',
     dataType: 'json'
   })
-    .then(function(data) {
+    .then(data => {
       const total = JSON.parse(data.total_price);
       return $.ajax({
         method: 'POST',
@@ -128,15 +117,11 @@ function getTaxProduct(zip) {
         data: { zip, total }
       });
     })
-    .then(function(response) {
+    .then(response => {
       if (!response.data.compliant) {
-        $('#warning-container').empty();
-        $('#warning-container').append(
-          '<p class="warning">we do not currently ship to that location.</p>'
-        );
-        $('.btn--secondary.btn--full.cart__checkout')
-          .removeAttr('disabled')
-          .removeClass('disabled');
+        const message = 'please enter a valid zip code to continue';
+        validation(message);
+        enable();
         return;
       }
       localStorage.setItem('taxId', response.data.id);
@@ -148,8 +133,25 @@ function getTaxProduct(zip) {
           quantity: 1,
           id: response.data.id
         }
-      }).done(function() {
+      }).done(() => {
         $('.cart.ajaxcart')[0].submit();
       });
     });
-}
+};
+
+const validation = message => {
+  $('#warning-container').empty();
+  $('#warning-container').append(`<p class="warning">${message}</p>`);
+};
+
+const disable = () => {
+  $('.btn--secondary.btn--full.cart__checkout')
+    .attr('disabled', 'disabled')
+    .addClass('disabled');
+};
+
+const enable = () => {
+  $('.btn--secondary.btn--full.cart__checkout')
+    .removeAttr('disabled')
+    .removeClass('disabled');
+};
