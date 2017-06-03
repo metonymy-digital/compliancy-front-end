@@ -4,12 +4,32 @@
   .hero {
     &.hero--top {
       @include hero--mobile-overlay;
+      height: 650px;
+      background-image: url("{{ 'hero.jpg' | asset_url }}");
+      padding-right: 40px;
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+      margin-bottom: 45px;
+      .hero__cta {
+        margin-top: 225px;
+        margin-bottom: 200px;
+        display: flex;
+        flex-flow: column;
+        align-items: flex-end;
+        p {
+          max-width: 550px;
+          text-align: right;
+          margin-bottom: 65px;
+        }
+      }
     }
     &.hero--middle {
       @include hero--mobile-overlay;
+      background-image: url("{{ 'hero-2.jpg' | asset_url }}");
     }
     &.hero--bottom {
-      margin: 0;
+      background-image: url("{{ 'hero-3.jpg' | asset_url }}");
+      margin-bottom: 0;
     }
     .hero__cta {
       display: flex;

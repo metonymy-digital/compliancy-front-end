@@ -77,37 +77,6 @@ body {
   }
 }
 
-.hero--top {
-  background-image: url("{{ 'hero.jpg' | asset_url }}");
-  padding-right: 40px;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
-  margin-bottom: 45px;
-}
-
-.hero--top .hero__cta {
-  margin-top: 225px;
-  margin-bottom: 200px;
-  display: flex;
-  flex-flow: column;
-  align-items: flex-end;
-}
-
-.hero--top .hero__cta p {
-  max-width: 550px;
-  text-align: right;
-  margin-bottom: 65px;
-}
-
-.hero--middle {
-  background-image: url("{{ 'hero-2.jpg' | asset_url }}");
-}
-
-.hero--bottom {
-  background-image: url("{{ 'hero-3.jpg' | asset_url }}");
-  margin-bottom: 0;
-}
-
 .value-prop .btn__cta {
   color: $brown;
   border-color: $brown;

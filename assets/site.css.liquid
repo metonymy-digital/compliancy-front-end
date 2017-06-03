@@ -242,42 +242,6 @@ body {
   .hero__logo .icon--logo {
     height: 50px; }
 
-.hero--top {
-  background-image: url("{{ 'hero.jpg' | asset_url }}");
-  padding-right: 40px;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
-  margin-bottom: 45px; }
-
-.hero--top .hero__cta {
-  margin-top: 225px;
-  margin-bottom: 200px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-flow: column;
-      -ms-flex-flow: column;
-          flex-flow: column;
-  -webkit-box-align: end;
-  -webkit-align-items: flex-end;
-      -ms-flex-align: end;
-          align-items: flex-end; }
-
-.hero--top .hero__cta p {
-  max-width: 550px;
-  text-align: right;
-  margin-bottom: 65px; }
-
-.hero--middle {
-  background-image: url("{{ 'hero-2.jpg' | asset_url }}"); }
-
-.hero--bottom {
-  background-image: url("{{ 'hero-3.jpg' | asset_url }}");
-  margin-bottom: 0; }
-
 .value-prop .btn__cta {
   color: #8b683e;
   border-color: #8b683e; }
@@ -983,48 +947,78 @@ body {
       .site-footer .copyright {
         text-align: left; } }
 
-@media (max-width: 768px) {
-  .template-index .hero.hero--top {
-    position: relative; }
-    .template-index .hero.hero--top::before {
-      content: '';
-      display: block;
-      height: 100%;
-      width: 100%;
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      margin: auto;
-      background-color: rgba(0, 0, 0, 0.5);
-      z-index: 1; }
-    .template-index .hero.hero--top .hero__cta {
-      position: relative;
-      z-index: 2; } }
+.template-index .hero.hero--top {
+  height: 650px;
+  background-image: url("{{ 'hero.jpg' | asset_url }}");
+  padding-right: 40px;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+  margin-bottom: 45px; }
+  @media (max-width: 768px) {
+    .template-index .hero.hero--top {
+      position: relative; }
+      .template-index .hero.hero--top::before {
+        content: '';
+        display: block;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1; }
+      .template-index .hero.hero--top .hero__cta {
+        position: relative;
+        z-index: 2; } }
+  .template-index .hero.hero--top .hero__cta {
+    margin-top: 225px;
+    margin-bottom: 200px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-flow: column;
+        -ms-flex-flow: column;
+            flex-flow: column;
+    -webkit-box-align: end;
+    -webkit-align-items: flex-end;
+        -ms-flex-align: end;
+            align-items: flex-end; }
+    .template-index .hero.hero--top .hero__cta p {
+      max-width: 550px;
+      text-align: right;
+      margin-bottom: 65px; }
 
-@media (max-width: 768px) {
-  .template-index .hero.hero--middle {
-    position: relative; }
-    .template-index .hero.hero--middle::before {
-      content: '';
-      display: block;
-      height: 100%;
-      width: 100%;
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      margin: auto;
-      background-color: rgba(0, 0, 0, 0.5);
-      z-index: 1; }
-    .template-index .hero.hero--middle .hero__cta {
-      position: relative;
-      z-index: 2; } }
+.template-index .hero.hero--middle {
+  background-image: url("{{ 'hero-2.jpg' | asset_url }}"); }
+  @media (max-width: 768px) {
+    .template-index .hero.hero--middle {
+      position: relative; }
+      .template-index .hero.hero--middle::before {
+        content: '';
+        display: block;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1; }
+      .template-index .hero.hero--middle .hero__cta {
+        position: relative;
+        z-index: 2; } }
 
 .template-index .hero.hero--bottom {
-  margin: 0; }
+  background-image: url("{{ 'hero-3.jpg' | asset_url }}");
+  margin-bottom: 0; }
 
 .template-index .hero .hero__cta {
   display: -webkit-box;
