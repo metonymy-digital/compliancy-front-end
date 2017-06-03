@@ -1081,13 +1081,13 @@ body {
       .site-footer .copyright {
         text-align: left; } }
 
-.template-index .hero.hero--top {
+.template-index .hero {
   position: relative; }
-  .template-index .hero.hero--top::before {
+  .template-index .hero::before {
     content: '';
     display: none; }
     @media (max-width: 768px) {
-      .template-index .hero.hero--top::before {
+      .template-index .hero::before {
         display: block;
         height: 100%;
         width: 100%;
@@ -1099,12 +1099,11 @@ body {
         margin: auto;
         background-color: rgba(0, 0, 0, 0.5);
         z-index: 1; } }
-  .template-index .hero.hero--top .hero__cta {
+  .template-index .hero .hero__cta {
     position: relative;
     z-index: 2; }
-
-.template-index .hero.hero--bottom {
-  margin: 0; }
+  .template-index .hero.hero--bottom {
+    margin: 0; }
 
 .template-page .main-content .hero {
   background: url("{{ 'hero-2.jpg' | asset_url }}") center center no-repeat;

@@ -2,9 +2,7 @@
 
 .template-index {
   .hero {
-    &.hero--top {
-      @include hero--mobile-overlay;
-    }
+    @include hero--mobile-overlay;
     &.hero--bottom {
       margin: 0;
     }
