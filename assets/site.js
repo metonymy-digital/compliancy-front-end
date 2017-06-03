@@ -5,21 +5,19 @@
 //
 // *************************************
 var termsCheck = (function() {
-
   function requireChecked($toSubmit) {
-    $toSubmit.submit(function(e){
+    $toSubmit.submit(function(e) {
       var $checkbox = $(this).find('.terms-check input:checkbox');
       var $label = $(this).find('.terms-check label');
       if (!$checkbox.is(':checked')) {
         e.preventDefault();
-        $label.css({color:'red'});
+        $label.css({ color: '#B33A3A' });
       }
     });
   }
 
   requireChecked($('#create_customer'));
   requireChecked($('#CartContainer'));
-
 })();
 
 // *************************************
@@ -95,37 +93,47 @@ var zipCheck = (function() {
   $body.on('submit', '#cart-form', function(e) {
     e.preventDefault();
     var zipCode = $('#zip-input').val();
+    const zipRegex = /^\d{5}$/;
+    const isValidZip = zipRegex.test(zipCode);
 
-    $.ajax({
-      url: '/cart.js',
-      contentType: 'application/json',
-      dataType: 'json'
-    })
-      .then(function(data) {
-        var total = JSON.parse(data.total_price);
-        return $.ajax({
-          method: 'POST',
-          url: 'http://fb426d6e.ngrok.io/compliance/check',
-          data: { zip: zipCode, total: total }
-        });
+    console.log('VALID ZIP', isValidZip);
+
+    if (isValidZip) {
+      $.ajax({
+        url: '/cart.js',
+        contentType: 'application/json',
+        dataType: 'json'
       })
-      .then(function(response) {
-        if (!response.data.compliant) {
-          console.log('NOT COMPLIANT');
-          return;
-        }
-        localStorage.setItem('taxId', response.data.id);
-        $.ajax({
-          method: 'POST',
-          url: '/cart/add.js',
-          dataType: 'json',
-          data: {
-            quantity: 1,
-            id: response.data.id
+        .then(function(data) {
+          var total = JSON.parse(data.total_price);
+          return $.ajax({
+            method: 'POST',
+            url: 'http://fb426d6e.ngrok.io/compliance/check',
+            data: { zip: zipCode, total: total }
+          });
+        })
+        .then(function(response) {
+          if (!response.data.compliant) {
+            console.log('NOT COMPLIANT');
+            return;
           }
-        }).then(function() {
-          console.log('were done here');
+          localStorage.setItem('taxId', response.data.id);
+          $.ajax({
+            method: 'POST',
+            url: '/cart/add.js',
+            dataType: 'json',
+            data: {
+              quantity: 1,
+              id: response.data.id
+            }
+          }).then(function() {
+            console.log('were done here');
+          });
         });
-      });
+    } else {
+      $('.zip-check').append(
+        '<p class="warning">please enter a valid zip code to continue</p>'
+      );
+    }
   });
 })();
