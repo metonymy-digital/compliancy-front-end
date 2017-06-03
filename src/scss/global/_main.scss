@@ -215,6 +215,9 @@ body {
   flex-flow: column nowrap;
   align-items: center;
   text-align: center;
+  @include breakpoint-down(md) {
+    margin: $space-lg 0;
+  }
 }
 
 .product__image {
