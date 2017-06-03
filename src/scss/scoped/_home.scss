@@ -2,6 +2,7 @@
 
 .template-index {
   .hero {
+    height: 550px;
     &.hero--top {
       @include hero--mobile-overlay;
       height: 650px;
@@ -21,6 +22,20 @@
           margin-bottom: 65px;
         }
       }
+      @include breakpoint-down(md) {
+          height: 850px;
+          .hero__cta {
+          margin-top: 300px;
+          margin-bottom: 100px;
+          align-items: flex-start;
+          padding-left: 30px;
+          p {
+            max-width: 600px;
+            text-align: left;
+            margin-bottom: 30px;
+          }
+        }
+      }
     }
     &.hero--middle {
       @include hero--mobile-overlay;
@@ -35,7 +50,7 @@
       flex-flow: column;
       align-items: center;
       justify-content: center;
-      height: 600px;
+      height: 550px;
       margin-bottom: 80px;
     }
     .hero__cta .icon--fleur {
@@ -50,6 +65,23 @@
       display: flex;
       justify-content: center;
       align-items: center;
+    }
+    @include breakpoint-down(md) {
+      .hero--cta {
+        padding: 0 30px 0 60px;
+        p {
+          max-width: 600px;
+        }
+        h2 {
+          text-align: center;
+        }
+        .hero__title {
+          align-items: center;
+        }
+        .icon--fleur {
+          width: 60px;
+        }
+      }
     }
   }
   .main-content {
