@@ -34,7 +34,7 @@ const zipCheck = (function() {
           if (data.length === 0) {
             $('#warning-container').empty();
             $('#warning-container').append(
-              '<p class="warning">please enter a valid zip code to continue!!</p>'
+              '<p class="warning">please enter a valid zip code to continue</p>'
             );
             $('.btn--secondary.btn--full.cart__checkout')
               .removeAttr('disabled', 'disabled')

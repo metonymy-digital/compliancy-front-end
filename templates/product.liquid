@@ -111,6 +111,12 @@
               <span id="AddToCartText">{{ 'products.product.add_to_cart' | t }}</span>
             </button>
             <!-- bold-ro-liquid --><div class="bold_add_to_orders"></div><!-- bold-ro-liquid -->
+
+            <!--Spice Product Kits Child Product Lists Starts-->
+            <div id="spicegems_metafields_data_div" data-default_variant="{{product.selected_or_first_available_variant.id}}" style="display:none;visibility:hidden;">
+            {{ product.metafields['spice_product_kits'] | json }}
+            </div>
+            <!--Spice Product Kits Child Product Lists End--> 
             </form>
 
       </div>
