@@ -31,10 +31,11 @@ const zipCheck = (function() {
           });
         })
         .done(function(data) {
+          // if taxid in local storage, but not in cart, or localstorage item doesn't match tax product in cart
           if (data.length === 0) {
             $('#warning-container').empty();
             $('#warning-container').append(
-              '<p class="warning">please enter a valid zip code to continue!!</p>'
+              '<p class="warning">please enter a valid zip code to continue</p>'
             );
             $('.btn--secondary.btn--full.cart__checkout')
               .removeAttr('disabled', 'disabled')
@@ -45,43 +46,6 @@ const zipCheck = (function() {
           }
         });
     } else if (isValidZip && !id) {
-      $.ajax({
-        url: '/cart.js',
-        contentType: 'application/json',
-        dataType: 'json'
-      })
-        .then(function(data) {
-          const total = JSON.parse(data.total_price);
-          return $.ajax({
-            method: 'POST',
-            url: 'http://fb426d6e.ngrok.io/compliance/check',
-            data: { zip: zipCode, total: total }
-          });
-        })
-        .then(function(response) {
-          if (!response.data.compliant) {
-            $('#warning-container').empty();
-            $('#warning-container').append(
-              '<p class="warning">we do not currently ship to that location.</p>'
-            );
-            $('.btn--secondary.btn--full.cart__checkout')
-              .removeAttr('disabled')
-              .removeClass('disabled');
-            return;
-          }
-          localStorage.setItem('taxId', response.data.id);
-          $.ajax({
-            method: 'POST',
-            url: '/cart/add.js',
-            dataType: 'json',
-            data: {
-              quantity: 1,
-              id: response.data.id
-            }
-          }).done(function() {
-            $('.cart.ajaxcart')[0].submit();
-          });
-        });
     } else {
       $('#warning-container').empty();
       $('#warning-container').append(
@@ -90,3 +54,43 @@ const zipCheck = (function() {
     }
   });
 })();
+
+function getTaxProduct(zip) {
+  $.ajax({
+    url: '/cart.js',
+    contentType: 'application/json',
+    dataType: 'json'
+  })
+    .then(function(data) {
+      const total = JSON.parse(data.total_price);
+      return $.ajax({
+        method: 'POST',
+        url: 'http://fb426d6e.ngrok.io/compliance/check',
+        data: { zip, total }
+      });
+    })
+    .then(function(response) {
+      if (!response.data.compliant) {
+        $('#warning-container').empty();
+        $('#warning-container').append(
+          '<p class="warning">we do not currently ship to that location.</p>'
+        );
+        $('.btn--secondary.btn--full.cart__checkout')
+          .removeAttr('disabled')
+          .removeClass('disabled');
+        return;
+      }
+      localStorage.setItem('taxId', response.data.id);
+      $.ajax({
+        method: 'POST',
+        url: '/cart/add.js',
+        dataType: 'json',
+        data: {
+          quantity: 1,
+          id: response.data.id
+        }
+      }).done(function() {
+        $('.cart.ajaxcart')[0].submit();
+      });
+    });
+}
