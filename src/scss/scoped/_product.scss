@@ -69,6 +69,7 @@
       .recurring_title {
         color: $brown;
         font-size: 24px;
+        display: inline-block;
         margin-top: $space-xl;
         padding: 0;
         margin-bottom: $space-md;
@@ -78,9 +79,9 @@
           position: absolute;
           bottom: 0;
           left: 0;
-          height: 4px;
+          height: 2px;
           width: 100%;
-          border-image: url("{{ 'separator-brown.svg' | asset_url }}") 0 0 0 0 fill repeat;
+          border-image: url("{{ 'squiggs.png' | asset_url }}") 0 0 0 0 fill repeat;
         }
       }
       .one_time_div, .recurring_div {
