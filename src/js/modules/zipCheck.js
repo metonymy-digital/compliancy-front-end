@@ -16,7 +16,14 @@ const zipCheck = (() => {
     const zipRegex = /^\d{5}$/;
     const isValidZip = zipRegex.test(zipCode);
     const id = parseInt(window.localStorage.getItem('taxId'));
-    if (id) {
+
+    if (!isValidZip) {
+      const message = 'please enter a valid zip code to continue';
+      validation(message);
+      enable();
+    } else if (isValidZip && !id) {
+      getTaxProduct(zipCode);
+    } else if (id) {
       $.ajax({
         url: '/cart.js',
         contentType: 'application/json',
@@ -35,8 +42,6 @@ const zipCheck = (() => {
             $('.cart.ajaxcart')[0].submit();
           }
         });
-    } else if (isValidZip && !id) {
-      getTaxProduct(zipCode);
     } else {
       const message = 'please enter a valid zip code to continue';
       validation(message);
@@ -60,7 +65,7 @@ const getTaxProduct = zip => {
     })
     .then(response => {
       if (!response.data.compliant) {
-        const message = 'please enter a valid zip code to continue';
+        const message = 'we currently do not ship to your location.';
         validation(message);
         enable();
         return;
