@@ -8,36 +8,36 @@ var zipCheck = (function() {
   var $body = $(document.body);
   console.log($('.btn--secondary.btn--full.cart__checkout'));
   $('.btn--secondary.btn--full.cart__checkout').attr('id', 'checkout-btn');
+  // $body.on('submit', '.cart.ajaxcart', function(e) {
+  //   e.preventDefault();
+  //   var id = parseInt(window.localStorage.getItem('taxId'));
+  //   $.ajax({
+  //     url: '/cart.js',
+  //     contentType: 'application/json',
+  //     dataType: 'json'
+  //   })
+  //     .then(function(data) {
+  //       return data.items.filter(function(data) {
+  //         return data.variant_id === id;
+  //       });
+  //     })
+  //     .done(function(data) {
+  //       if (data.length === 0) {
+  //         console.log('tax id not present');
+  //         return false;
+  //       } else {
+  //         console.log('submitting...');
+  //       }
+  //     });
+  // });
   $body.on('submit', '.cart.ajaxcart', function(e) {
     e.preventDefault();
-    var id = parseInt(window.localStorage.getItem('taxId'));
-    $.ajax({
-      url: '/cart.js',
-      contentType: 'application/json',
-      dataType: 'json'
-    })
-      .then(function(data) {
-        return data.items.filter(function(data) {
-          return data.variant_id === id;
-        });
-      })
-      .done(function(data) {
-        if (data.length === 0) {
-          console.log('tax id not present');
-          return false;
-        } else {
-          console.log('submitting...');
-          $('.cart.ajaxcart')[0].submit();
-        }
-      });
-  });
-  $body.on('submit', '#cart-form', function(e) {
-    e.preventDefault();
+    $('.btn--secondary.btn--full.cart__checkout')
+      .attr('disabled', 'disabled')
+      .addClass('disabled');
     var zipCode = $('#zip-input').val();
     const zipRegex = /^\d{5}$/;
     const isValidZip = zipRegex.test(zipCode);
-
-    console.log('VALID ZIP', isValidZip);
 
     if (isValidZip) {
       $.ajax({
@@ -55,7 +55,9 @@ var zipCheck = (function() {
         })
         .then(function(response) {
           if (!response.data.compliant) {
-            console.log('NOT COMPLIANT');
+            $('.zip-check').append(
+              '<p class="warning">we do not currently ship to that location.</p>'
+            );
             return;
           }
           localStorage.setItem('taxId', response.data.id);
@@ -67,8 +69,8 @@ var zipCheck = (function() {
               quantity: 1,
               id: response.data.id
             }
-          }).then(function() {
-            console.log('were done here');
+          }).done(function() {
+            $('.cart.ajaxcart')[0].submit();
           });
         });
     } else {
