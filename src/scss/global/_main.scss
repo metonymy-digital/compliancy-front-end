@@ -105,7 +105,6 @@ body {
 }
 
 .featured-wines {
-  padding: 0 80px 0 80px;
   margin-bottom: 60px;
 }
 
@@ -117,6 +116,7 @@ body {
 }
 
 .featured-wines__header {
+  padding: 0 30px;
   position: relative;
   display: flex;
   width: 100%;
@@ -127,7 +127,7 @@ body {
   @include breakpoint-down(md) {
     flex-direction: column;
     .featured-wines__nav {
-      padding-bottom: $space-md;
+      margin: $space-md 0;
     }
   }
 }
