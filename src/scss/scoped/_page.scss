@@ -3,7 +3,7 @@
 .template-page {
   .main-content {
     .hero {
-      @include hero--clipped("{{ 'hero-2.jpg' | asset_url }}");
+      @include hero--clipped("{{ 'hero-how-it-works.jpg' | asset_url }}");
       .hero__cta {
         max-width: 770px;
         margin-top: 2*$space-xl;

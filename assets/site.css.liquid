@@ -1136,31 +1136,12 @@ body {
   border-color: #666666; }
 
 .template-page .main-content .hero {
-  background: url("{{ 'hero-2.jpg' | asset_url }}") center center no-repeat;
+  background: url("{{ 'hero-how-it-works.jpg' | asset_url }}") center center no-repeat;
   background-size: cover;
   height: 450px;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
           clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
   margin-top: 0; }
-  @media (max-width: 768px) {
-    .template-page .main-content .hero {
-      position: relative; }
-      .template-page .main-content .hero::before {
-        content: '';
-        display: block;
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        margin: auto;
-        background-color: rgba(0, 0, 0, 0.5);
-        z-index: 1; }
-      .template-page .main-content .hero .hero__cta {
-        position: relative;
-        z-index: 2; } }
   .template-page .main-content .hero .hero__cta {
     max-width: 770px;
     margin-top: 128px;
@@ -1264,7 +1245,7 @@ body {
 
 .template-list-collections .main-content .hero,
 .template-collection .main-content .hero {
-  background: url("{{ 'hero-2.jpg' | asset_url }}") center center no-repeat;
+  background: url("{{ 'hero-shop-all.jpg' | asset_url }}") center center no-repeat;
   background-size: cover;
   height: 450px;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);

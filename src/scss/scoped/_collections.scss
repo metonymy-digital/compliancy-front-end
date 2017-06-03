@@ -5,7 +5,8 @@
 {
   .main-content {
     .hero {
-      @include hero--clipped("{{ 'hero-2.jpg' | asset_url }}");
+      @include hero--clipped("{{ 'hero-shop-all.jpg' | asset_url }}");
+      @include hero--mobile-overlay;
       .hero__cta {
         @include content-width(1092px);
         margin-top: 2*$space-xl;
