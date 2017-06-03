@@ -30,62 +30,19 @@
         <li><a href="#reds">reds</a></li>
       </ul>
     </div>
-    <!-- pull wines in this category and run a loop -->
+
     <div class="grid__item">
+      {% assign grid_item_width = "large--one-quarter medium--one-half small--one-whole" %}
       <div class="grid">
-        <div id="mixed">
-            {% for product in collections.mixed.products %}
-              <div class="grid__item large--one-quarter medium--one-half small--one-whole">
-                <div class="product">
-                  {% for image in product.images %}
-                    <a href="{{ product.url }}">
-                      <img src={{ image.src | product_img_url: 'medium' }} alt="product" class="product__image" />
-                    </a>
-                  {% endfor %}
-                  <p class="product__type">{{ product.type }}</p>
-                  <h4>{{ product.title }}</h4>
-                  <p class="product__location">{{ product.description }}</p>
-                  <p class="product__price">{{ product.price | money }}</p>
-                  <button class="btn__subscribe">subscribe</button>
-                  {% include 'buy-now-button' %}
-                </div>
-              </div>
-          {% endfor %}
-        </div>
-        <div id="whites">
-            {% for product in collections.whites.products %}
-              <div class="grid__item large--one-quarter medium--one-half small--one-whole">
-                <div class="product">
-                  {% for image in product.images %}
-                    <img src={{ image.src | product_img_url: 'medium' }} alt="product" class="product__image" />
-                  {% endfor %}
-                  <p class="product__type">{{ product.type }}</p>
-                  <h4>{{ product.title }}</h4>
-                  <p class="product__location">{{ product.description }}</p>
-                  <p class="product__price">{{ product.price | money }}</p>
-                  <button class="btn__subscribe">subscribe</button>
-                  <button class="btn__buy">buy now</button>
-                </div>
-              </div>
-          {% endfor %}
-        </div>
-        <div id="reds">
-            {% for product in collections.reds.products %}
-              <div class="grid__item large--one-quarter medium--one-half small--one-whole">
-                <div class="product">
-                  {% for image in product.images %}
-                    <img src={{ image.src | product_img_url: 'medium' }} alt="product" class="product__image" />
-                  {% endfor %}
-                  <p class="product__type">{{ product.type }}</p>
-                  <h4>{{ product.title }}</h4>
-                  <p class="product__location">{{ product.description }}</p>
-                  <p class="product__price">{{ product.price | money }}</p>
-                  <button class="btn__subscribe">subscribe</button>
-                  <button class="btn__buy">buy now</button>
-                </div>
-              </div>
-          {% endfor %}
-        </div>
+        {% assign all_collections = "mixed|whites|reds" | split: "|" %}
+        {% for handle in all_collections %}
+          <!-- pull wines in this category and run a loop -->
+          <div id="{{ handle }}">
+            {% for product in collections[handle].products %}
+              {% include 'product-grid-item' %}
+            {% endfor %}
+          </div>
+        {% endfor %}
       </div>
     </div>
 </div>

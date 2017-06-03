@@ -39,16 +39,17 @@
 
 <div class="grid__item {{ grid_item_width }}">
   <div class="product">
-    {% for image in product.images %}
-      <a href="{{ product.url }}">
-        <img src={{ image.src | product_img_url: 'medium' }} alt="product" class="product__image" />
-      </a>
-    {% endfor %}
+    <a href="{{ product.url }}">
+      <img src={{ product.images[0].src | product_img_url: 'medium' }} alt="product" class="product__image" />
+    </a>
     <p class="product__type">{{ product.type }}</p>
     <h4>{{ product.title }}</h4>
     <p class="product__location">{{ product.description }}</p>
     <p class="product__price">{{ product.price | money }}</p>
+    {% comment %}
+    hide the subscribe button until a more elegant solution is built
     <button class="btn__subscribe">subscribe</button>
+    {% endcomment %}
     {% include 'buy-now-button' %}
-  </div>  
+  </div>
 </div>
