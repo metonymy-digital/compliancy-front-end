@@ -1830,25 +1830,75 @@ body {
       display: -webkit-flex;
       display: -ms-flexbox;
       display: flex;
+      -webkit-box-pack: start;
+      -webkit-justify-content: flex-start;
+          -ms-flex-pack: start;
+              justify-content: flex-start;
       -webkit-box-align: center;
       -webkit-align-items: center;
           -ms-flex-align: center;
               align-items: center;
-      -webkit-box-pack: justify;
-      -webkit-justify-content: space-between;
-          -ms-flex-pack: justify;
-              justify-content: space-between;
-      text-align: right; }
+      text-align: right;
+      position: relative; }
       #CartDrawer .ajaxcart__footer .terms-check label, #CartDrawer .ajaxcart__footer .zip-check label {
-        margin-right: 16px; }
+        margin-right: 16px;
+        font-family: "Avenir"; }
       #CartDrawer .ajaxcart__footer .terms-check input[type=checkbox], #CartDrawer .ajaxcart__footer .zip-check input[type=checkbox] {
-        -webkit-transform: scale(1.8);
-            -ms-transform: scale(1.8);
-                transform: scale(1.8);
-        -webkit-box-ordinal-group: 3;
-        -webkit-order: 2;
-            -ms-flex-order: 2;
-                order: 2; }
+        position: absolute;
+        opacity: 0;
+        z-index: 10;
+        top: 0;
+        left: 14px;
+        font-size: 20px;
+        cursor: pointer; }
+        #CartDrawer .ajaxcart__footer .terms-check input[type=checkbox] + label, #CartDrawer .ajaxcart__footer .zip-check input[type=checkbox] + label {
+          position: relative;
+          cursor: pointer;
+          padding: 0; }
+        #CartDrawer .ajaxcart__footer .terms-check input[type=checkbox] + label:before, #CartDrawer .ajaxcart__footer .zip-check input[type=checkbox] + label:before {
+          content: '';
+          margin-right: 10px;
+          display: inline-block;
+          vertical-align: text-top;
+          width: 20px;
+          height: 20px;
+          background: white; }
+        #CartDrawer .ajaxcart__footer .terms-check input[type=checkbox]:hover + label:before, #CartDrawer .ajaxcart__footer .zip-check input[type=checkbox]:hover + label:before {
+          background: #7c0e29; }
+        #CartDrawer .ajaxcart__footer .terms-check input[type=checkbox]:checked + label:before, #CartDrawer .ajaxcart__footer .zip-check input[type=checkbox]:checked + label:before {
+          background: #7c0e29; }
+        #CartDrawer .ajaxcart__footer .terms-check input[type=checkbox]:checked + label:after, #CartDrawer .ajaxcart__footer .zip-check input[type=checkbox]:checked + label:after {
+          content: '\2713';
+          position: absolute;
+          left: 20px;
+          top: 0px;
+          color: #ffffff;
+          font-size: 16px; }
+      #CartDrawer .ajaxcart__footer .terms-check input::-webkit-input-placeholder, #CartDrawer .ajaxcart__footer .zip-check input::-webkit-input-placeholder {
+        color: #fff; }
+      #CartDrawer .ajaxcart__footer .terms-check input::-moz-placeholder, #CartDrawer .ajaxcart__footer .zip-check input::-moz-placeholder {
+        color: #fff; }
+      #CartDrawer .ajaxcart__footer .terms-check input:-ms-input-placeholder, #CartDrawer .ajaxcart__footer .zip-check input:-ms-input-placeholder {
+        color: #fff; }
+      #CartDrawer .ajaxcart__footer .terms-check input::placeholder, #CartDrawer .ajaxcart__footer .zip-check input::placeholder {
+        color: #fff; }
+    #CartDrawer .ajaxcart__footer .zip-check {
+      -webkit-flex-wrap: wrap;
+          -ms-flex-wrap: wrap;
+              flex-wrap: wrap; }
+      #CartDrawer .ajaxcart__footer .zip-check .warning {
+        -webkit-box-flex: 0;
+        -webkit-flex: none;
+            -ms-flex: none;
+                flex: none;
+        margin-top: 30px;
+        color: #B33A3A;
+        font-family: "Avenir";
+        font-size: 14px;
+        -webkit-align-self: center;
+            -ms-flex-item-align: center;
+                    -ms-grid-row-align: center;
+                align-self: center; }
     #CartDrawer .ajaxcart__footer .cart__checkout {
       display: -webkit-box;
       display: -webkit-flex;

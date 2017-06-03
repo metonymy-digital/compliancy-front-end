@@ -93,14 +93,72 @@
     text-transform: uppercase;
     .terms-check, .zip-check {
       margin: $space-lg;
-      @include flex-center-space-between;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
       text-align: right;
+      position: relative;
       label {
         margin-right: $space-md;
+        font-family: "Avenir";
       }
       input[type=checkbox] {
-        transform: scale(1.8);
-        order: 2;
+        position: absolute;
+        opacity: 0;
+        z-index: 10;
+        top: 0;
+        left: 14px;
+        font-size: 20px;
+        cursor: pointer;
+
+        & + label {
+          position: relative;
+          cursor: pointer;
+          padding: 0;
+        }
+
+        & + label:before {
+          content: '';
+          margin-right: 10px;
+          display: inline-block;
+          vertical-align: text-top;
+          width: 20px;
+          height: 20px;
+          background: white;
+        }
+
+        &:hover + label:before {
+          background: $burgundy;
+        }
+
+        &:checked + label:before {
+          background: $burgundy;
+        }
+
+        &:checked + label:after {
+          content: '\2713';
+          position: absolute;
+          left: 20px;
+          top: 0px;
+          color: $white;
+          font-size: 16px;
+        }
+      }
+
+      input::placeholder {
+        color: #fff;
+      }
+    }
+
+    .zip-check {
+      flex-wrap: wrap;
+      .warning {
+        flex: none;
+        margin-top: 30px;
+        color: #B33A3A;
+        font-family: "Avenir";
+        font-size: 14px;
+        align-self: center;
       }
     }
     .cart__checkout {
