@@ -65,6 +65,7 @@ var variableNav = (function() {
 // *************************************
 const zipCheck = (() => {
   const $body = $(document.body);
+  BOLD.helpers.triggerCheckoutEvent();
   $('.btn--secondary.btn--full.cart__checkout').attr('id', 'checkout-btn');
   $body.on('submit', '.cart.ajaxcart', function(e) {
     e.preventDefault();
@@ -99,6 +100,7 @@ const zipCheck = (() => {
             getTaxProduct(zipCode);
           } else {
             $('.cart.ajaxcart')[0].submit();
+            BOLD.helpers.triggerCheckoutEvent(true, e);
           }
         });
     } else {
@@ -123,8 +125,13 @@ const getTaxProduct = zip => {
       });
     })
     .then(response => {
-      if (!response.data.compliant) {
-        const message = 'we currently do not ship to your location.';
+      if (response.data.compliant === false) {
+        const message = 'We currently do not ship to your state.';
+        validation(message);
+        enable();
+        return;
+      } else if (response.data.validZip === false) {
+        const message = 'The zip code you entered is not a valid US zip code.';
         validation(message);
         enable();
         return;
@@ -139,7 +146,7 @@ const getTaxProduct = zip => {
           id: response.data.id
         }
       }).done(() => {
-        $('.cart.ajaxcart')[0].submit();
+        BOLD.helpers.triggerCheckoutEvent(true, e);
       });
     });
 };

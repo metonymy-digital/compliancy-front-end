@@ -214,7 +214,8 @@ BOLD.helpers.triggerCommonEvent = function(bold_event_name, original_event, addi
   }
 };
 
-BOLD.helpers.triggerCheckoutEvent = function(evt){
+BOLD.helpers.triggerCheckoutEvent = function(submit, evt){
+	console.log('TRA TRA TRA TRIGGER', submit);
   var original_target = evt.target;
   var form = (original_target.tagName == 'FORM' ? original_target : (original_target.form ? original_target.form : null));
   if(form){
@@ -222,7 +223,9 @@ BOLD.helpers.triggerCheckoutEvent = function(evt){
     form.appendChild(checkoutInput);
   }
   var cart = (BOLD.common && BOLD.common.cartDoctor ? BOLD.common.cartDoctor.rawCart : BOLD.rawCart);
-  BOLD.helpers.triggerCommonEvent('checkout', evt, {form:form, cart:cart});
+	if (submit) {
+		BOLD.helpers.triggerCommonEvent('checkout', evt, {form:form, cart:cart});
+	}
 };
 
 BOLD.helpers.triggerAddToCartEvent = function(evt){
@@ -299,6 +302,7 @@ BOLD.recurring_orders.preventSubscriptionOnlyWithoutSubscription = function(evt)
 };
 
 BOLD.recurring_orders.onCheckout = function(evt){
+	console.log(evt);
   if(evt && evt.data && evt.data.form){
     BOLD.recurring_orders.redirectToRecurringCheckout(evt.data.form);
   }else{
