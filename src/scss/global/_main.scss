@@ -4,8 +4,6 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-
-
 .main-content {
   padding-bottom: 0;
 }
@@ -84,11 +82,7 @@ body {
 
 
 .value-prop {
-  padding: 0 120px 0 120px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 80px;
+  padding-right: 60px;
 }
 
 .value-prop__content {
@@ -111,7 +105,6 @@ body {
 }
 
 .featured-wines {
-  padding: 0 80px 0 80px;
   margin-bottom: 60px;
 }
 
@@ -123,6 +116,7 @@ body {
 }
 
 .featured-wines__header {
+  padding: 0 30px;
   position: relative;
   display: flex;
   width: 100%;
@@ -133,7 +127,7 @@ body {
   @include breakpoint-down(md) {
     flex-direction: column;
     .featured-wines__nav {
-      padding-bottom: $space-md;
+      margin: $space-md 0;
     }
   }
 }
@@ -229,6 +223,43 @@ body {
   letter-spacing: -0.05em;
 }
 
+.value-item .icon {
+  margin-bottom: 40px;
+}
+.value-item__title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.value-item p {
+  text-align: center;
+  margin-bottom: 0.5em;
+  max-width: 250px;
+}
+.value-item__cta {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-left: 30px;
+  padding-top: 50px;
+}
+.text-section {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+.text-section h2 {
+  margin-bottom: 15px;
+}
+.text-section p {
+  max-width: 800px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.text-section .btn__cta {
+  border-color: $grey;
+}
+
 @media screen and (max-width: 769px) {
   h2 {
     font-size: 38px;
@@ -248,10 +279,17 @@ body {
   }
 
   .value-prop {
-    flex-flow: column;
-    align-items: center;
     padding: 0 30px 0 60px;
-
+    p {
+      text-align: justify;
+      margin-bottom: 30px;
+      max-width: 600px;
+    }
+    h2 {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 15px;
+    }
   }
 
   .value-prop__content {
@@ -259,48 +297,8 @@ body {
     margin-bottom: 60px;
   }
 
-  .value-prop h2 {
-    text-align: center;
-    font-size: 36px;
-    margin-bottom: 15px;
-  }
-
-  .value-prop p {
-    text-align: justify;
-    margin-bottom: 30px;
-    max-width: 600px;
-  }
-
-  .hero--top .hero__cta {
-    margin-bottom: 100px;
-    align-items: flex-start;
-    padding-left: 30px;
-  }
-
-  .hero--top .hero__cta p {
-    max-width: 600px;
-    text-align: left;
-    margin-bottom: 30px;
-  }
-
-  .hero--cta {
-    padding: 0 30px 0 60px
-  }
-
-  .hero--cta p {
-    max-width: 600px;
-  }
-
-  .hero--cta h2 {
-    text-align: center;
-  }
-
-  .hero--cta .hero__title {
-    align-items: center;
-  }
-
-  .hero--cta .icon--fleur {
-    width: 60px;
+  .value-prop__image {
+    display: none;
   }
 
   .text-section {
@@ -411,29 +409,23 @@ body {
     padding: 0 30px 0 60px;
     flex-flow: column;
     align-items: center;
+    h2 {
+      font-size: 28px;
+      line-height: 1.2;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    p {
+      text-align: center;
+      width: 100%;
+      margin-bottom: 30px;
+      line-height: 1.5;
+    }
   }
 
   .value-prop__content {
     align-items: center;
     margin-bottom: 30px;
-  }
-
-  .value-prop h2 {
-    font-size: 28px;
-    line-height: 1.2;
-    text-align: center;
-    margin-bottom: 15px;
-  }
-
-  .value-prop p {
-    text-align: center;
-    width: 100%;
-    margin-bottom: 30px;
-    line-height: 1.5;
-  }
-
-  .value-prop img {
-    display: none;
   }
 
   .value-item .icon {

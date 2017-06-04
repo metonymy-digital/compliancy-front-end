@@ -2,6 +2,7 @@
 
 .template-index {
   .hero {
+    height: 550px;
     &.hero--top {
       @include hero--mobile-overlay;
       height: 650px;
@@ -21,6 +22,20 @@
           margin-bottom: 65px;
         }
       }
+      @include breakpoint-down(md) {
+          height: 850px;
+          .hero__cta {
+          margin-top: 300px;
+          margin-bottom: 100px;
+          align-items: flex-start;
+          padding-left: 30px;
+          p {
+            max-width: 600px;
+            text-align: left;
+            margin-bottom: 30px;
+          }
+        }
+      }
     }
     &.hero--middle {
       @include hero--mobile-overlay;
@@ -35,7 +50,7 @@
       flex-flow: column;
       align-items: center;
       justify-content: center;
-      height: 600px;
+      height: 550px;
       margin-bottom: 80px;
     }
     .hero__cta .icon--fleur {
@@ -51,46 +66,27 @@
       justify-content: center;
       align-items: center;
     }
+    @include breakpoint-down(md) {
+      .hero--cta {
+        padding: 0 30px 0 60px;
+        p {
+          max-width: 600px;
+        }
+        h2 {
+          text-align: center;
+        }
+        .hero__title {
+          align-items: center;
+        }
+        .icon--fleur {
+          width: 60px;
+        }
+      }
+    }
   }
   .main-content {
     > .grid:not(:first-of-type):not(:last-of-type) {
       margin: $space-xl 0;
-    }
-    .value-item .icon {
-      margin-bottom: 40px;
-    }
-    .value-item__title {
-      display: flex;
-      align-items: center;
-      margin-bottom: 15px;
-    }
-    .value-item p {
-      text-align: center;
-      margin-bottom: 0.5em;
-      max-width: 250px;
-    }
-    .value-item__cta {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      padding-left: 30px;
-      padding-top: 50px;
-    }
-    .text-section {
-      display: flex;
-      flex-flow: column nowrap;
-      align-items: center;
-    }
-    .text-section h2 {
-      margin-bottom: 15px;
-    }
-    .text-section p {
-      max-width: 800px;
-      text-align: center;
-      margin-bottom: 30px;
-    }
-    .text-section .btn__cta {
-      border-color: $grey;
     }
   }
 }
