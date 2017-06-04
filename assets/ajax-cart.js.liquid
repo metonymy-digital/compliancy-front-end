@@ -245,7 +245,7 @@ var ajaxCart = (function(module, $) {
   };
 
   formOverride = function () {
-    $formContainer.on('submit', function(evt) {
+    $(document.body).on('submit', $formContainer, function(evt) {
       evt.preventDefault();
 
       // Add class to be styled if desired
@@ -282,12 +282,12 @@ var ajaxCart = (function(module, $) {
   };
 
   buildCart = function (cart) {
-    
+
     // Include this at the beginning of the function that builds the cart in Javascript
 //Bold: Ensure the cart's line items have been updated with their option information
   if(typeof(BOLD) === 'object' && BOLD.helpers && typeof(BOLD.helpers.cleanCart) === 'function' )
     cart = BOLD.helpers.cleanCart(cart);
-    
+
     // Start with a fresh cart div
     $cartContainer.empty();
 
