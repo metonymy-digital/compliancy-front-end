@@ -25,3 +25,11 @@
   </div>
   <!--Spice Product Kits Child Product Lists End-->
 </form>
+
+
+<form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm" class="form__buy">
+    <select name="id">
+      <option selected="selected" value="{{ variant.id }}"></option>
+      <input type="text" value="1" name="quantity">
+  </select>
+</form>

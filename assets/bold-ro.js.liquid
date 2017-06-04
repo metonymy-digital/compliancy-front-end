@@ -214,24 +214,25 @@ BOLD.helpers.triggerCommonEvent = function(bold_event_name, original_event, addi
   }
 };
 
-BOLD.helpers.triggerCheckoutEvent = function(submit, evt){
-	console.log('TRA TRA TRA TRIGGER', submit);
-  var original_target = evt.target;
-  var form = (original_target.tagName == 'FORM' ? original_target : (original_target.form ? original_target.form : null));
-  if(form){
-    var checkoutInput = BOLD.helpers.newHiddenInput('checkout','checkout');
-    form.appendChild(checkoutInput);
-  }
-  var cart = (BOLD.common && BOLD.common.cartDoctor ? BOLD.common.cartDoctor.rawCart : BOLD.rawCart);
-	if (submit) {
-		BOLD.helpers.triggerCommonEvent('checkout', evt, {form:form, cart:cart});
+BOLD.helpers.triggerCheckoutEvent = function(evt){
+	var original_target = evt.target;
+	var form = (original_target.tagName == 'FORM' ? original_target : (original_target.form ? original_target.form : null));
+	if(form){
+		var checkoutInput = BOLD.helpers.newHiddenInput('checkout','checkout');
+		form.appendChild(checkoutInput);
 	}
+	var cart = (BOLD.common && BOLD.common.cartDoctor ? BOLD.common.cartDoctor.rawCart : BOLD.rawCart);
+	BOLD.helpers.triggerCommonEvent('checkout', evt, {form:form, cart:cart, success: true});
+
+
 };
 
 BOLD.helpers.triggerAddToCartEvent = function(evt){
+	console.log('ADD CART EVENT TRIGGERED', evt);
   var original_target = evt.target;
   var form = (original_target.tagName == 'FORM' ? original_target : (original_target.form ? original_target.form : null));
   var variant = (form && form.variant ? form.variant : (form ? BOLD.helpers.getVariantByForm(form) : null));
+	console.log('VARIANT', variant);
   BOLD.helpers.triggerCommonEvent('add_to_cart', evt, {form:form, variant:variant});
 };
 
@@ -302,7 +303,6 @@ BOLD.recurring_orders.preventSubscriptionOnlyWithoutSubscription = function(evt)
 };
 
 BOLD.recurring_orders.onCheckout = function(evt){
-	console.log(evt);
   if(evt && evt.data && evt.data.form){
     BOLD.recurring_orders.redirectToRecurringCheckout(evt.data.form);
   }else{
@@ -324,10 +324,12 @@ BOLD.recurring_orders.onCheckout = function(evt){
 BOLD.recurring_orders.redirectToRecurringCheckout = function(form){
   var current_mode = BOLD.recurring_orders.modes.current_mode;
   if((current_mode == BOLD.recurring_orders.modes.mixed_cart && window.mixed_cart) || (current_mode == BOLD.recurring_orders.modes.recurring_cart && form.recurring_radio_btn && form.recurring_radio_btn.value == 1)){
+		console.log('WE SHOULD BE REDIRECTING HERE');
     var url = 'https://recurringcheckout.com/s/' + BOLD.common.Shopify.shop.permanent_domain.replace('.myshopify.com','') + '/checkout/recurring' + (current_mode == BOLD.recurring_orders.modes.mixed_cart ? '/' + BOLD.common.Shopify.cart.token : '_full_cart') + '?shop_url=' + BOLD.common.Shopify.shop.permanent_domain + (typeof google_analytics_get_param_string === 'function' ? google_analytics_get_param_string() : '');
     form.setAttribute('action', url);
 
     if(!form['shopify_cart']){
+			console.log('NO CART');
       var cart_field = document.createElement('input');
       cart_field.setAttribute('type','hidden');
       cart_field.setAttribute('name','shopify_cart');

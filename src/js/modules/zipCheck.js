@@ -6,52 +6,37 @@
 // *************************************
 const zipCheck = (() => {
   const $body = $(document.body);
-  BOLD.helpers.triggerCheckoutEvent();
-  $('.btn--secondary.btn--full.cart__checkout').attr('id', 'checkout-btn');
-  $body.on('submit', '.cart.ajaxcart', function(e) {
-    e.preventDefault();
-    disable();
-    $('#warning-container').empty();
-
+  // $('.btn--secondary.btn--full.cart__checkout').attr('id', 'checkout-btn');
+  $body.on('click', '#check-zip', function(e) {
     const zipCode = $('#zip-input').val();
-    const zipRegex = /^\d{5}$/;
-    const isValidZip = zipRegex.test(zipCode);
     const id = parseInt(window.localStorage.getItem('taxId'));
+    const isValidZip = validateZip(zipCode);
+
+    console.log(createForm(id));
+
+    disable();
 
     if (!isValidZip) {
       const message = 'please enter a valid zip code to continue';
-      validation(message);
+      displayError(message);
       enable();
     } else if (isValidZip && !id) {
       getTaxProduct(zipCode);
     } else if (id) {
-      $.ajax({
-        url: '/cart.js',
-        contentType: 'application/json',
-        dataType: 'json'
-      })
-        .then(data => {
-          return data.items.filter(function(data) {
-            return data.variant_id === id;
-          });
-        })
-        .done(data => {
-          if (data.length === 0) {
-            window.localStorage.removeItem('taxId');
-            getTaxProduct(zipCode);
-          } else {
-            $('.cart.ajaxcart')[0].submit();
-            BOLD.helpers.triggerCheckoutEvent(true, e);
-          }
-        });
+      verifyId(id, zipCode);
     } else {
       const message = 'please enter a valid zip code to continue';
-      validation(message);
+      displayError(message);
     }
+  });
+
+  $body.on('submit', '.add-tax-form', e => {
+    e.preventDefault();
+    BOLD.helpers.triggerAddToCartEvent(e);
   });
 })();
 
-const getTaxProduct = zip => {
+const getTaxProduct = (zip, evt) => {
   $.ajax({
     url: '/cart.js',
     contentType: 'application/json',
@@ -68,36 +53,57 @@ const getTaxProduct = zip => {
     .then(response => {
       if (response.data.compliant === false) {
         const message = 'We currently do not ship to your state.';
-        validation(message);
+        displayError(message);
         enable();
         return;
       } else if (response.data.validZip === false) {
         const message = 'The zip code you entered is not a valid US zip code.';
-        validation(message);
+        displayError(message);
         enable();
         return;
       }
       localStorage.setItem('taxId', response.data.id);
-      $.ajax({
-        method: 'POST',
-        url: '/cart/add.js',
-        dataType: 'json',
-        data: {
-          quantity: 1,
-          id: response.data.id
-        }
-      }).done(() => {
-        BOLD.helpers.triggerCheckoutEvent(true, e);
-      });
+      createForm(response.data.id).submit();
+      enable();
+      return;
     });
 };
 
-const validation = message => {
+const verifyId = (id, zip) => {
+  $.ajax({
+    url: '/cart.js',
+    contentType: 'application/json',
+    dataType: 'json'
+  })
+    .then(data => {
+      return data.items.filter(function(data) {
+        return data.variant_id === id;
+      });
+    })
+    .done(data => {
+      if (data.length === 0) {
+        window.localStorage.removeItem('taxId');
+        getTaxProduct(zip);
+      } else {
+        console.log('tax has already been calculated.');
+        enable();
+        return;
+      }
+    });
+};
+
+const validateZip = zip => {
+  const zipRegex = /^\d{5}$/;
+  return zipRegex.test(zip);
+};
+
+const displayError = message => {
   $('#warning-container').empty();
   $('#warning-container').append(`<p class="warning">${message}</p>`);
 };
 
 const disable = () => {
+  $('#warning-container').empty();
   $('.btn--secondary.btn--full.cart__checkout')
     .attr('disabled', 'disabled')
     .addClass('disabled');
@@ -107,4 +113,26 @@ const enable = () => {
   $('.btn--secondary.btn--full.cart__checkout')
     .removeAttr('disabled')
     .removeClass('disabled');
+};
+
+const createForm = id => {
+  $form = $('<form></form>')
+    .addClass('form__buy hide add-tax-form')
+    .attr('id', `${id}`)
+    .attr('method', 'POST')
+    .attr('action', '/cart/add')
+    .attr('enctype', 'multipart/form-data');
+  $select = $('<select></select>')
+    .addClass('product-single__variants no_ro_widge')
+    .attr('name', 'id')
+    .attr('id', 'productSelect');
+  $option = $('<option></option>')
+    .attr('selected', 'selected')
+    .attr('value', id)
+    .attr('data-sku', 'TAX');
+
+  $select.append($option);
+  $form.append($select);
+  $(document.body).append($form);
+  return $form;
 };
