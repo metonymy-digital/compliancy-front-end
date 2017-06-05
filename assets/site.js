@@ -71,8 +71,6 @@ const zipCheck = (() => {
     const id = parseInt(window.localStorage.getItem('taxId'));
     const isValidZip = validateZip(zipCode);
 
-    console.log(createForm(id));
-
     disable();
 
     if (!isValidZip) {
@@ -88,11 +86,6 @@ const zipCheck = (() => {
       displayError(message);
     }
   });
-
-  // $body.on('submit', '.add-tax-form', e => {
-  //   e.preventDefault();
-  //   BOLD.helpers.triggerAddToCartEvent(e);
-  // });
 })();
 
 const getTaxProduct = (zip, evt) => {

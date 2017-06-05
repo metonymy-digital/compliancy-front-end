@@ -245,7 +245,19 @@ var ajaxCart = (function(module, $) {
   };
 
   formOverride = function () {
-    $(document.body).on('submit', $formContainer, function(evt) {
+    $formContainer.on('submit', function(evt) {
+      evt.preventDefault();
+
+      // Add class to be styled if desired
+      $addToCart.removeClass('is-added').addClass('is-adding');
+
+      // Remove any previous quantity errors
+      $('.qty-error').remove();
+
+      ShopifyAPI.addItemFromForm(evt.target, itemAddedCallback, itemErrorCallback);
+    });
+
+    $(document.body).on('submit', '.add-tax-form', function(evt) {
       evt.preventDefault();
 
       // Add class to be styled if desired
