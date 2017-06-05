@@ -355,17 +355,6 @@ body {
 .featured-wines__nav a.active {
   border-bottom: 1px solid #8b683e; }
 
-@media (min-width: 768px) {
-  .featured-wines__tab {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-        -ms-flex-pack: center;
-            justify-content: center; } }
-
 .wines {
   display: -webkit-box;
   display: -webkit-flex;
@@ -386,10 +375,8 @@ body {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  text-align: center; }
-  @media (max-width: 768px) {
-    .product {
-      margin: 32px 0; } }
+  text-align: center;
+  margin-bottom: 32px; }
 
 .product__image {
   width: 230px;
@@ -638,6 +625,8 @@ body {
     padding-bottom: 15px; }
   .featured-wines__header h3 {
     line-height: 2; }
+  .featured-wines__tab .grid_item {
+    padding: 0; }
   .product__image {
     width: 160px; }
   .product__location {
