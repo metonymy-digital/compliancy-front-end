@@ -30,10 +30,10 @@ const zipCheck = (() => {
     }
   });
 
-  $body.on('submit', '.add-tax-form', e => {
-    e.preventDefault();
-    BOLD.helpers.triggerAddToCartEvent(e);
-  });
+  // $body.on('submit', '.add-tax-form', e => {
+  //   e.preventDefault();
+  //   BOLD.helpers.triggerAddToCartEvent(e);
+  // });
 })();
 
 const getTaxProduct = (zip, evt) => {
@@ -118,7 +118,7 @@ const enable = () => {
 const createForm = id => {
   $form = $('<form></form>')
     .addClass('form__buy hide add-tax-form')
-    .attr('id', `${id}`)
+    .attr('id', 'AddToCartForm')
     .attr('method', 'POST')
     .attr('action', '/cart/add')
     .attr('enctype', 'multipart/form-data');
@@ -130,9 +130,15 @@ const createForm = id => {
     .attr('selected', 'selected')
     .attr('value', id)
     .attr('data-sku', 'TAX');
+  $input = $('<input />')
+    .addClass('js-qty__num')
+    .attr('name', 'quantity')
+    .attr('id', 'Quantity')
+    .attr('value', '1');
 
   $select.append($option);
   $form.append($select);
+  $form.append($input);
   $(document.body).append($form);
   return $form;
 };
