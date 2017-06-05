@@ -176,14 +176,6 @@ body {
   border-bottom: 1px solid $brown;
 }
 
-.featured-wines__tab {
-  @include breakpoint-up(md) {
-    display: flex;
-    justify-content: center;
-  }
-}
-
-
 .wines {
   display: flex;
 }
@@ -193,9 +185,7 @@ body {
   flex-flow: column nowrap;
   align-items: center;
   text-align: center;
-  @include breakpoint-down(md) {
-    margin: $space-lg 0;
-  }
+  margin-bottom: $space-lg;
 }
 
 .product__image {
@@ -466,6 +456,10 @@ body {
 
   .featured-wines__header h3 {
     line-height: 2;
+  }
+
+  .featured-wines__tab .grid_item {
+    padding: 0;
   }
 
   .product__image {
