@@ -13,28 +13,35 @@
       margin-bottom: 45px;
       .hero__cta {
         margin-bottom: 200px;
+        height: 600px;
         display: flex;
         flex-flow: column;
         align-items: flex-end;
+      justify-content: center;
         p {
           max-width: 550px;
           text-align: right;
           margin-bottom: 65px;
         }
       }
+      // Test
       @include breakpoint-down(md) {
-          height: 850px;
+          height: 550px;
           .hero__cta {
-          margin-top: 300px;
           margin-bottom: 100px;
-          align-items: flex-start;
-          padding-left: 30px;
+          align-items: center;
+          padding-left: 10px;
+          height:550px;
           p {
             max-width: 600px;
-            text-align: left;
+            text-align: center;
             margin-bottom: 30px;
           }
         }
+      }
+      @include breakpoint-down(sm) {
+          background-position: -150px 0px;
+          height:550px;
       }
     }
     &.hero--middle {
@@ -44,14 +51,6 @@
     &.hero--bottom {
       background-image: url("{{ 'hero-3.jpg' | asset_url }}");
       margin-bottom: 0;
-    }
-    .hero__cta {
-      display: flex;
-      flex-flow: column;
-      align-items: center;
-      justify-content: center;
-      height: 550px;
-      margin-bottom: 80px;
     }
     .hero__cta .icon--fleur {
       margin-bottom: 20px;
