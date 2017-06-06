@@ -185,4 +185,9 @@
       margin: $space-lg 0;
     }
   }
+  @include breakpoint-down(md) {
+    .product-home {
+      padding: 0px; 
+    }
+  }
 }

@@ -37,7 +37,7 @@
   {% assign sold_out = false %}
 {% endif %}
 
-<div class="grid__item {{ grid_item_width }}">
+<div class="grid__item product-home {{ grid_item_width }}">
   <div class="product">
     <a href="{{ product.url }}">
       <img src={{ product.images[0].src | product_img_url: 'medium' }} alt="product" class="product__image" />

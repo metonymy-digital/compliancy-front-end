@@ -246,7 +246,7 @@ body {
   display: flex;
   justify-content: center;
   padding-left: 30px;
-  padding-top: 50px;
+  padding: 50px 0 50px 0;
 }
 .text-section {
   display: flex;
@@ -490,6 +490,7 @@ body {
   .text-section {
     padding: 0 30px 0 30px;
     margin-bottom: 30px;
+    margin-left: 15px;
   }
 
   .text-section h2 {
