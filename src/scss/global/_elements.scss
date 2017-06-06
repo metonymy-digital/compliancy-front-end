@@ -18,7 +18,7 @@ input {
   padding: 10px 25px 5px;
 }
 
-.btn__subscribe, .btn__buy {
+.btn__subscribe, .btn__buy, .btn__shopnow {
   font-family: "Avenir";
   font-size: 12px;
   letter-spacing: 0.31em;
@@ -30,7 +30,7 @@ input {
   max-width: 180px;
 }
 
-.btn__subscribe a, .btn__buy a {
+.btn__subscribe a, .btn__buy a, .btn__shopnow a {
   color: $white;
 }
 
@@ -39,6 +39,19 @@ input {
   border: 1px solid $grey;
   margin-top: 20px;
 }
+
+.btn__shopnow {
+  color: $grey;
+  margin-top: 20px;
+  letter-spacing: 0.31em;
+  text-transform: uppercase;
+  border-radius: 5px;
+  font-family: "Avenir";
+  font-size: 12px;
+  padding: 10px 0 7px;
+  border: 1px solid $grey;
+}
+
 
 .btn__buy {
   background-color: $brown;
