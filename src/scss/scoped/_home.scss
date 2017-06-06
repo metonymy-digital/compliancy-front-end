@@ -10,7 +10,6 @@
       padding-right: 40px;
       -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
       clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
-      margin-bottom: 45px;
       .hero__cta {
         margin-bottom: 200px;
         height: 600px;
@@ -85,7 +84,7 @@
   }
   .main-content {
     > .grid:not(:first-of-type):not(:last-of-type) {
-      margin: $space-xl 0;
+      margin: $space-lg 0;
     }
   }
 }
