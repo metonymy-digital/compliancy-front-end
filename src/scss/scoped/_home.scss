@@ -51,6 +51,14 @@
       background-image: url("{{ 'hero-3.jpg' | asset_url }}");
       margin-bottom: 0;
     }
+    .hero__cta {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+        height: 550px;
+        margin-bottom: 80px;
+     }
     .hero__cta .icon--fleur {
       margin-bottom: 20px;
     }
@@ -74,6 +82,96 @@
           text-align: center;
         }
         .hero__title {
+          align-items: center;
+        }
+        .icon--fleur {
+          width: 60px;
+        }
+      }
+    }
+  }
+  .support {
+    height: 550px;
+    &.support--top {
+      @include support--mobile-overlay;
+      height: 650px;
+      background-image: url("{{ 'hero.jpg' | asset_url }}");
+      padding-right: 40px;
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+      .support__cta {
+        margin-bottom: 200px;
+        height: 600px;
+        display: flex;
+        flex-flow: column;
+        align-items: flex-end;
+      justify-content: center;
+        p {
+          max-width: 550px;
+          text-align: right;
+          margin-bottom: 65px;
+        }
+      }
+      // Test
+      @include breakpoint-down(md) {
+          height: 550px;
+          .support__cta {
+          margin-bottom: 100px;
+          align-items: center;
+          padding-left: 10px;
+          height:550px;
+          p {
+            max-width: 600px;
+            text-align: center;
+            margin-bottom: 30px;
+          }
+        }
+      }
+      @include breakpoint-down(sm) {
+          background-position: -150px 0px;
+          height:550px;
+      }
+    }
+    &.support--middle {
+      @include support--mobile-overlay;
+      background-image: url("{{ 'hero-2.jpg' | asset_url }}");
+      padding: 0 20px 0 20px;
+    }
+    &.support--bottom {
+      background-image: url("{{ 'hero-3.jpg' | asset_url }}");
+      margin-bottom: 0;
+    }
+    .support__cta {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+        height: 550px;
+        margin-bottom: 80px;
+     }
+    .support__cta .icon--fleur {
+      margin-bottom: 20px;
+    }
+    .support__cta p {
+      max-width: 800px;
+      text-align: center;
+      margin: 30px 0 50px;
+    }
+    .support__cta .support__title {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    @include breakpoint-down(md) {
+      .support--cta {
+        padding: 0 30px 0 60px;
+        p {
+          max-width: 600px;
+        }
+        h2 {
+          text-align: center;
+        }
+        .support__title {
           align-items: center;
         }
         .icon--fleur {

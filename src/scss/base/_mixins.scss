@@ -208,6 +208,23 @@
   }
 }
 
+@mixin support--mobile-overlay {
+  @include breakpoint-down(md) {
+    position: relative;
+    &::before {
+      content: '';
+      @include block-fill;
+      @include absolute-center;
+      background-color: rgba($black,0.5);
+      z-index: 1;
+    }
+    .support__cta {
+      position: relative;
+      z-index: 2;
+    }
+  }
+}
+
 @mixin hero--clipped($bg-url) {
   @include bg-img($bg-url);
   height: 450px;

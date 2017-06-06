@@ -59,6 +59,15 @@ body {
     color: $white;
 }
 
+.support .btn__cta {
+    color: $white;
+}
+
+.support {
+    background-size: cover;
+    color: $white;
+}
+
 .hero .btn__cta {
   color: $white;
 }
@@ -203,6 +212,8 @@ body {
   border-color: #8b683e;
 }
 
+
+
 .value-item {
   display: flex;
   flex-flow: column nowrap;
@@ -251,8 +262,10 @@ body {
   margin-bottom: 30px;
 }
 .text-section .btn__cta {
-  border-color: $grey;
+  color: $brown;
+  border-color: $brown;
 }
+
 
 @media screen and (max-width: 769px) {
   h2 {
@@ -295,8 +308,12 @@ body {
     display: none;
   }
 
+  .value-item__cta {
+  padding: 20px 0 20px 0;
+  }
+
   .text-section {
-    padding: 0 30px 0 60px;
+    padding: 0 30px 0 30px;
   }
 
   .text-section h2 {
@@ -400,7 +417,7 @@ body {
   }
 
   .value-prop {
-    padding: 0 30px 0 60px;
+    padding: 0 30px 0 30px;
     flex-flow: column;
     align-items: center;
     h2 {
@@ -471,7 +488,7 @@ body {
   }
 
   .text-section {
-    padding: 0 30px 0 60px;
+    padding: 0 30px 0 30px;
     margin-bottom: 30px;
   }
 
@@ -491,6 +508,7 @@ body {
 
   .value-item {
     margin-bottom: 40px;
+    padding: 0px; 
   }
 
   .value-item__title {
