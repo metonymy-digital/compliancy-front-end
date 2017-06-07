@@ -24,13 +24,13 @@ handlebar.js template tags as available hooks.
                 {{#if variation}}
                 <span class="ajaxcart__product-meta">{{variation}}</span>
                 {{/if}}
-                {{#properties}}
+                <!-- {{#properties}}
                 {{#each this}}
                 {{#if this}}
                 <span class="ajaxcart__product-meta">{{@key}}: {{this}}</span>
                 {{/if}}
                 {{/each}}
-                {{/properties}}
+                {{/properties}} -->
                 {{{recurring}}}
                 {% endraw %}{% if settings.cart_vendor_enable %}{% raw %}
                 <span class="ajaxcart__product-meta">{{ vendor }}</span>

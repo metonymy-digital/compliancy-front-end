@@ -189,8 +189,7 @@ BOLD.recurring_orders.setupEventListeners = function(){
       jQuery(document).on('change', '[name^="id"],[class*="single-option"]', BOLD.helpers.triggerVariantChange);
       jQuery(document).on('submit', 'form[action*="/cart/add"]', BOLD.helpers.triggerAddToCartEvent);
       jQuery(document).on('click', 'form[action*="/cart/add"] [type="submit"]:not(.bold_clone)', BOLD.helpers.triggerAddToCartEvent);
-      jQuery(document).on('submit', 'form[action*="/checkout"]:not([action*="/tools/checkout"], [action*="/checkout/recurring_product"])', BOLD.helpers.triggerCheckoutEvent);
-      jQuery(document).on('click', '[name="checkout"]:not(.bold_clone):not([action*="/tools/checkout"]),[href*="/checkout"]:not(.bold_clone):not([action*="/tools/checkout"]):not([href*="/tools/checkout"])', BOLD.helpers.triggerCheckoutEvent);
+
       jQuery(document).on('change', '[name=quantity]', BOLD.helpers.triggerProductQuantityChange);
       jQuery(document).on('change', '[name^="updates"]', BOLD.helpers.triggerCartQuantityChange );
 
@@ -215,6 +214,7 @@ BOLD.helpers.triggerCommonEvent = function(bold_event_name, original_event, addi
 };
 
 BOLD.helpers.triggerCheckoutEvent = function(evt){
+	console.log('FROM BOLD');
 	var original_target = evt.target;
 	var form = (original_target.tagName == 'FORM' ? original_target : (original_target.form ? original_target.form : null));
 	if(form){
@@ -335,6 +335,7 @@ BOLD.recurring_orders.redirectToRecurringCheckout = function(form){
       for(var i=0; i < recurring_cart.items.length; i++){
         recurring_cart.items[i].properties = recurring_cart.items[i].properties_all || recurring_cart.items[i].properties;
       }
+
       cart_field.setAttribute('value',encodeURIComponent(JSON.stringify(recurring_cart)));
       form.appendChild(cart_field);
     }
