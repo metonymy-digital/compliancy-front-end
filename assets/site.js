@@ -98,7 +98,7 @@ const getTaxProduct = zip => {
       const total = JSON.parse(data.total_price);
       return $.ajax({
         method: 'POST',
-        url: 'http://a9e19b84.ngrok.io/compliance/check',
+        url: 'https://vinelink-167517.appspot.com/compliance/check',
         data: { zip, total }
       });
     })
