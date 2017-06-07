@@ -164,6 +164,16 @@
         align-self: center;
         transition: 200ms ease-out;
       }
+
+      #check-zip {
+        background-color: #7c0e29;
+        padding: 5px 10px;
+        border-radius: 3px;
+        color: $white;
+        font-family: 'Whitenights';
+        text-transform: uppercase;
+        margin-left: 15px;
+      }
     }
     .cart__checkout {
       @include flex-center;

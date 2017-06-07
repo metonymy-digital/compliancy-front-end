@@ -189,7 +189,8 @@ BOLD.recurring_orders.setupEventListeners = function(){
       jQuery(document).on('change', '[name^="id"],[class*="single-option"]', BOLD.helpers.triggerVariantChange);
       jQuery(document).on('submit', 'form[action*="/cart/add"]', BOLD.helpers.triggerAddToCartEvent);
       jQuery(document).on('click', 'form[action*="/cart/add"] [type="submit"]:not(.bold_clone)', BOLD.helpers.triggerAddToCartEvent);
-
+      jQuery(document).on('submit', 'form[action*="/checkout"]:not([action*="/tools/checkout"], [action*="/checkout/recurring_product"])', BOLD.helpers.triggerCheckoutEvent);
+      jQuery(document).on('click', '[name="checkout"]:not(.bold_clone):not([action*="/tools/checkout"]),[href*="/checkout"]:not(.bold_clone):not([action*="/tools/checkout"]):not([href*="/tools/checkout"])', BOLD.helpers.triggerCheckoutEvent);
       jQuery(document).on('change', '[name=quantity]', BOLD.helpers.triggerProductQuantityChange);
       jQuery(document).on('change', '[name^="updates"]', BOLD.helpers.triggerCartQuantityChange );
 
@@ -214,15 +215,26 @@ BOLD.helpers.triggerCommonEvent = function(bold_event_name, original_event, addi
 };
 
 BOLD.helpers.triggerCheckoutEvent = function(evt){
-	console.log('FROM BOLD');
-	var original_target = evt.target;
-	var form = (original_target.tagName == 'FORM' ? original_target : (original_target.form ? original_target.form : null));
-	if(form){
-		var checkoutInput = BOLD.helpers.newHiddenInput('checkout','checkout');
-		form.appendChild(checkoutInput);
+	var hasZip = window.localStorage.getItem('verified')
+	if (hasZip) {
+		var original_target = evt.target;
+		var form = (original_target.tagName == 'FORM' ? original_target : (original_target.form ? original_target.form : null));
+		if(form){
+			var checkoutInput = BOLD.helpers.newHiddenInput('checkout','checkout');
+			form.appendChild(checkoutInput);
+		}
+		var cart = (BOLD.common && BOLD.common.cartDoctor ? BOLD.common.cartDoctor.rawCart : BOLD.rawCart);
+		BOLD.helpers.triggerCommonEvent('checkout', evt, {form:form, cart:cart, success: true});
 	}
-	var cart = (BOLD.common && BOLD.common.cartDoctor ? BOLD.common.cartDoctor.rawCart : BOLD.rawCart);
-	BOLD.helpers.triggerCommonEvent('checkout', evt, {form:form, cart:cart, success: true});
+
+	else {
+		evt.preventDefault()
+		console.log('please enter zip')
+		$('#warning-container').empty();
+	  $('#warning-container').append(`<p class="warning">Please complete the zip check before checking out.</p>`);
+		return;
+	}
+
 
 
 };
