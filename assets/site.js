@@ -63,32 +63,45 @@ var variableNav = (function() {
 //   -> check for zip code tax info
 //
 // *************************************
-const zipCheck = (() => {
+
+$(() => {
+  jQuery(document).on(
+    'submit',
+    'form[action*="/checkout"]:not([action*="/tools/checkout"], [action*="/checkout/recurring_product"])',
+    zipCheck
+  );
+  jQuery(document).on(
+    'click',
+    '[name="checkout"]:not(.bold_clone):not([action*="/tools/checkout"]),[href*="/checkout"]:not(.bold_clone):not([action*="/tools/checkout"]):not([href*="/tools/checkout"])',
+    zipCheck
+  );
+});
+const zipCheck = e => {
+  e.preventDefault();
   const $body = $(document.body);
   // $('.btn--secondary.btn--full.cart__checkout').attr('id', 'checkout-btn');
-  $body.on('click', '#check-zip', function(e) {
-    const zipCode = $('#zip-input').val();
-    const id = parseInt(window.localStorage.getItem('taxId'));
-    const isValidZip = validateZip(zipCode);
+  const zipCode = $('#zip-input').val();
+  const id = parseInt(window.localStorage.getItem('taxId'));
+  const isValidZip = validateZip(zipCode);
 
-    disable();
+  disable();
 
-    if (!isValidZip) {
-      const message = 'please enter a valid zip code to continue';
-      displayError(message);
-      enable();
-    } else if (isValidZip && !id) {
-      getTaxProduct(zipCode);
-    } else if (id) {
-      verifyId(id, zipCode);
-    } else {
-      const message = 'please enter a valid zip code to continue';
-      displayError(message);
-    }
-  });
-})();
+  if (!isValidZip) {
+    const message = 'please enter a valid zip code to continue';
+    displayError(message);
+    enable();
+  } else if (isValidZip && !id) {
+    getTaxProduct(zipCode, e);
+  } else if (id) {
+    verifyId(id, zipCode, e);
+  } else {
+    const message = 'please enter a valid zip code to continue';
+    displayError(message);
+  }
+};
 
-const getTaxProduct = (zip, evt) => {
+const getTaxProduct = (zip, e) => {
+  console.log('EVENT', e);
   $.ajax({
     url: '/cart.js',
     contentType: 'application/json',
@@ -98,7 +111,7 @@ const getTaxProduct = (zip, evt) => {
       const total = JSON.parse(data.total_price);
       return $.ajax({
         method: 'POST',
-        url: 'http://fb426d6e.ngrok.io/compliance/check',
+        url: 'http://a9e19b84.ngrok.io/compliance/check',
         data: { zip, total }
       });
     })
@@ -117,11 +130,11 @@ const getTaxProduct = (zip, evt) => {
       localStorage.setItem('taxId', response.data.id);
       createForm(response.data.id).submit();
       enable();
-      return;
+      BOLD.helpers.triggerCheckoutEvent(e);
     });
 };
 
-const verifyId = (id, zip) => {
+const verifyId = (id, zip, evt) => {
   $.ajax({
     url: '/cart.js',
     contentType: 'application/json',
@@ -139,7 +152,7 @@ const verifyId = (id, zip) => {
       } else {
         console.log('tax has already been calculated.');
         enable();
-        return;
+        BOLD.helpers.triggerCheckoutEvent(evt);
       }
     });
 };
