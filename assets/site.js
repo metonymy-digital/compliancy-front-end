@@ -103,7 +103,6 @@ var variableNav = (function() {
 // *************************************
 const zipCheck = (() => {
   const $body = $(document.body);
-  // $('.btn--secondary.btn--full.cart__checkout').attr('id', 'checkout-btn');
   $body.on('click', '#check-zip', function(e) {
     const zipCode = $('#zip-input').val();
     const id = parseInt(window.localStorage.getItem('taxId'));

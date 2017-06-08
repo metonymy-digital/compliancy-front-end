@@ -192,3 +192,55 @@
     }
   }
 }
+
+@media screen and (max-width: 768px) {
+  #CartDrawer {
+    .ajaxcart__footer {
+      .terms-check label {
+        width: 372px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #CartDrawer {
+    .ajaxcart__footer {
+      padding: $space-md;
+      .terms-check {
+        padding: 0;
+        margin: 0 0 15px;
+
+        input[type=checkbox] {
+          &:checked + label:after {
+            left: 12px;
+          }
+        }
+      }
+
+      .terms-check label {
+        width: 256px;
+      }
+
+      .zip-check {
+        margin: $space-md;
+        margin-bottom: 30px;
+      }
+
+      .zip-check .warning {
+        margin-top: 15px;
+        text-align: left;
+        line-height: 1.4;
+      }
+
+      .zip-check input {
+        margin-bottom: 15px;
+      }
+
+      .zip-check #check-zip {
+        margin-left: 0;
+
+      }
+    }
+  }
+}
