@@ -198,12 +198,17 @@ const disable = () => {
   $('.btn--secondary.btn--full.cart__checkout')
     .attr('disabled', 'disabled')
     .addClass('disabled');
+  $('#check-zip')
+    .attr('disabled', 'disabled')
+    .addClass('disabled')
+    .text('checking...');
 };
 
 const enable = () => {
   $('.btn--secondary.btn--full.cart__checkout')
     .removeAttr('disabled')
     .removeClass('disabled');
+  $('#check-zip').removeAttr('disabled').removeClass('disabled').text('check');
 };
 
 const createForm = id => {

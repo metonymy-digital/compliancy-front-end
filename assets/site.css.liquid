@@ -2352,6 +2352,8 @@ body {
         font-family: 'Whitenights';
         text-transform: uppercase;
         margin-left: 15px; }
+      #CartDrawer .ajaxcart__footer .zip-check input {
+        width: 150px; }
     #CartDrawer .ajaxcart__footer .cart__checkout {
       display: -webkit-box;
       display: -webkit-flex;
@@ -2385,13 +2387,23 @@ body {
     #CartDrawer .ajaxcart__footer .terms-check {
       padding: 0;
       margin: 0 0 15px; }
-      #CartDrawer .ajaxcart__footer .terms-check input[type=checkbox]:checked + label:after {
-        left: 12px; }
+      #CartDrawer .ajaxcart__footer .terms-check input[type=checkbox] {
+        left: 11px; }
+        #CartDrawer .ajaxcart__footer .terms-check input[type=checkbox]:hover + label:before {
+          background: ''; }
+        #CartDrawer .ajaxcart__footer .terms-check input[type=checkbox]:checked + label:after {
+          left: 12px; }
     #CartDrawer .ajaxcart__footer .terms-check label {
       width: 256px; }
     #CartDrawer .ajaxcart__footer .zip-check {
       margin: 16px;
       margin-bottom: 30px; }
+    #CartDrawer .ajaxcart__footer .zip-check input {
+      width: 100%;
+      height: 40px;
+      margin-right: 15px; }
+    #CartDrawer .ajaxcart__footer .zip-check label {
+      margin-bottom: 15px; }
     #CartDrawer .ajaxcart__footer .zip-check .warning {
       margin-top: 15px;
       text-align: left;
