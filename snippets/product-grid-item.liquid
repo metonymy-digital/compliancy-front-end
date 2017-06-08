@@ -40,7 +40,7 @@
 <div class="grid__item product-home {{ grid_item_width }}">
   <div class="product">
     <a href="{{ product.url }}">
-      <img src={{ product.images[0].src | product_img_url: 'medium' }} alt="product" class="product__image" />
+      <img src={{ product.images[0].src | product_img_url: 'large' }} alt="product" class="product__image" />
     </a>
     <p class="product__type">{{ product.type }}</p>
     <h4>{{ product.title }}</h4>
