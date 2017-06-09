@@ -66,13 +66,12 @@ var termsCheck = (function() {
 // *************************************
 
 var variableNav = (function() {
-
   // define style swap function
   function styleSwap() {
-    if ($(document.body).scrollTop() !== 0) {
-      $('#nav').css({'background-color': 'rgba(55, 55, 55, 0.5)'})
+    if ($(window).scrollTop() !== 0) {
+      $('#nav').css({ 'background-color': 'rgba(55, 55, 55, 0.5)' });
     } else {
-      $('#nav').css({'background-color': 'rgba(0, 0, 0, 0)'})
+      $('#nav').css({ 'background-color': 'rgba(0, 0, 0, 0)' });
     }
   }
 
@@ -80,7 +79,7 @@ var variableNav = (function() {
   var navIsVariable =
     $('.template-index')[0] ||
     $('.how-it-works')[0] ||
-    $('.template-list-collections')[0]||
+    $('.template-list-collections')[0] ||
     $('.template-collection')[0];
 
   if (navIsVariable) {
@@ -92,7 +91,6 @@ var variableNav = (function() {
       styleSwap();
     });
   }
-
 })();
 
 // *************************************
