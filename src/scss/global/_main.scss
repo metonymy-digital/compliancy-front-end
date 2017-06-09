@@ -280,6 +280,18 @@ letter-spacing: -2px
   border-color: $brown;
 }
 
+.text__cta {
+    a {
+    text-decoration: underline;
+    color: $brown;
+    margin-top: 5px;
+    }
+}
+
+
+
+
+
 
 @media screen and (max-width: 769px) {
   h2 {
