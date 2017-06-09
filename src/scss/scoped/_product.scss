@@ -14,7 +14,7 @@
     }
     .product-single {
       .product-single__images {
-        padding-left: 0;
+        // padding-left: 0;
         display: flex;
         .product-single__thumbnails {
           @include list-no-style;
