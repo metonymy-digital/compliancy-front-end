@@ -555,6 +555,10 @@ letter-spacing: -2px
   .full-bleed__img > img {
     min-width: 768px;
   }
+
+  .recurring_radio_lbl, .one_time_radio_lbl {
+    font-size: 16px;
+  }
 }
 
 .product-tabs {
@@ -624,7 +628,6 @@ letter-spacing: -2px
 .product-description__details {
   list-style: none;
   font-family: "freight-display-pro";
-  font-style: italic;
   font-size: 24px;
 }
 
@@ -657,6 +660,7 @@ letter-spacing: -2px
   font-family: "freight-display-pro";
   font-weight: 800;
   margin-right: 0.25em;
+  font-style: italic;
 }
 
 .product-description__inner {
@@ -701,4 +705,15 @@ letter-spacing: -2px
 
 .hide {
   display: none;
+}
+
+
+.page__inner {
+  padding: 150px 0 100px;
+
+  h1 {
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 30px;
+  }
 }

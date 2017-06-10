@@ -102,51 +102,56 @@
         margin-right: $space-md;
         font-family: "Avenir";
       }
+
       input[type=checkbox] {
-        position: absolute;
-        opacity: 0;
-        z-index: 10;
-        top: 5px;
-        left: 20px;
-        font-size: 20px;
-        cursor: pointer;
-        transform: scale(1.3, 1.3);
-
-        & + label {
-          position: relative;
-          cursor: pointer;
-          padding: 0;
-
-        }
-
-        & + label:before {
-          content: '';
-          margin-right: 10px;
-          display: inline-block;
-          vertical-align: text-top;
-          width: 20px;
-          height: 20px;
-          background: white;
-          transition: 300ms ease-out;
-        }
-
-        &:hover + label:before {
-          background: $burgundy;
-        }
-
-        &:checked + label:before {
-          background: $burgundy;
-        }
-
-        &:checked + label:after {
-          content: '\2713';
-          position: absolute;
-          left: 20px;
-          top: 0px;
-          color: $white;
-          font-size: 16px;
-        }
+        align-self: flex-start;
+        margin-top: 5px;
       }
+      // input[type=checkbox] {
+      //   position: absolute;
+      //   opacity: 0;
+      //   z-index: 10;
+      //   top: 5px;
+      //   left: 20px;
+      //   font-size: 20px;
+      //   cursor: pointer;
+      //   transform: scale(1.3, 1.3);
+      //
+      //   & + label {
+      //     position: relative;
+      //     cursor: pointer;
+      //     padding: 0;
+      //
+      //   }
+      //
+      //   & + label:before {
+      //     content: '';
+      //     margin-right: 10px;
+      //     display: inline-block;
+      //     vertical-align: text-top;
+      //     width: 20px;
+      //     height: 20px;
+      //     background: white;
+      //     transition: 300ms ease-out;
+      //   }
+      //
+      //   &:hover + label:before {
+      //     background: $burgundy;
+      //   }
+      //
+      //   &:checked + label:before {
+      //     background: $burgundy;
+      //   }
+      //
+      //   &:checked + label:after {
+      //     content: '\2713';
+      //     position: absolute;
+      //     left: 20px;
+      //     top: 0px;
+      //     color: $white;
+      //     font-size: 16px;
+      //   }
+      // }
 
       input::placeholder {
         color: #fff;
@@ -215,15 +220,15 @@
         padding: 0;
         margin: 0 0 15px;
 
-        input[type=checkbox] {
-          left: 11px;
-          &:hover + label:before {
-            background: '';
-          }
-          &:checked + label:after {
-            left: 12px;
-          }
-        }
+        // input[type=checkbox] {
+        //   left: 11px;
+        //   &:hover + label:before {
+        //     background: '';
+        //   }
+        //   &:checked + label:after {
+        //     left: 12px;
+        //   }
+        // }
       }
 
       .terms-check label {

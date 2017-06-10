@@ -1,7 +1,6 @@
 // product.liquid
 
-.template-product
-{
+.template-product {
   @include body-padding;
   .main-content {
     @include content-padding;
@@ -51,13 +50,16 @@
         text-transform: uppercase;
         height: 48px;
         width: 360px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        text-align: center;
         margin-top: $space-lg;
         @include breakpoint-down(md) {
           margin: $space-lg auto;
           margin-bottom: 0;
+        }
+
+        @include breakpoint-down(sm) {
+          width: 80%;
+          margin: $space-lg 10%;
         }
       }
     }
@@ -164,3 +166,11 @@
     }
   }
 }
+
+// @media screen and (max-width: 480px) {
+//   .template-product {
+//     #AddToCartForm {
+//
+//     }
+//   }
+// }

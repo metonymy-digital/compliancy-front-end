@@ -10,7 +10,7 @@
   <link href="{{ 'favicon.ico' | asset_url }}" rel="icon" type="image/x-icon" />
 
   {% comment %}
-    hide favicon until we build customizable theme    
+    hide favicon until we build customizable theme
   <link rel="shortcut icon" href="{{ 'favicon.png' | asset_url }}" type="image/png" />
   {% endcomment %}
 
@@ -176,7 +176,7 @@ Add the page template as a class for easy page or template specific styling.
               </div>
             </div>
             <div class="grid__item one-third">
-              <div class="site-nav--mobile">                        
+              <div class="site-nav--mobile">
                 <a href="/" class="hero__logo">
                    <img src="{{ 'site-logo.png' | asset_url }}" alt="dean brothers" class="mobile--1--logo" />
                 </a>
@@ -212,11 +212,16 @@ Add the page template as a class for easy page or template specific styling.
               <li class="footer-nav__item">
                 <a href="/">Home</a>
               </li>
+              {% for link in linklists.main-menu.links %}
               <li class="footer-nav__item">
-                <a href="/">Affliate</a>
+                <a href="{{ link.url }}">{{ link.title }}</a>
+                </li>
+              {% endfor %}
+              <li class="footer-nav__item">
+                <a href="/pages/return-policy">return policy</a>
               </li>
               <li class="footer-nav__item">
-                <a href="/">Subscribe</a>
+                <a href="mailto:help@deenbrotherswine.com">contact us</a>
               </li>
               {% if shop.customer_accounts_enabled %}
               {% if customer %}
@@ -233,8 +238,11 @@ Add the page template as a class for easy page or template specific styling.
               <li class="footer-nav__item">
                 {{ 'layout.customer.create_account' | t | customer_register_link }}
               </li>
+
+
               {% endif %}
               {% endif %}
+
             </ul>
           </div>
 
@@ -243,8 +251,7 @@ Add the page template as a class for easy page or template specific styling.
               <h4>Contact</h4>
               <p>{{ shop.address.street }}</p>
               <p>{{ shop.address.city }}, {{ shop.address.province_code }} {{ shop.address.zip }}</p>
-              <p> (123) 456-7890 (O)</p>
-              <p> (123) 456-7890 (F)</p>
+              <p> (844) 480-9576</p>
             </div>
             {% include 'footer-newsletter' %}
           </div>
