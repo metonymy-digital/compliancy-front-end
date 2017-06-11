@@ -215,19 +215,22 @@ BOLD.helpers.triggerCommonEvent = function(bold_event_name, original_event, addi
 };
 
 BOLD.helpers.triggerCheckoutEvent = function(evt){
-	var hasZip = window.localStorage.getItem('verified')
-	if (hasZip) {
-		var original_target = evt.target;
-		var form = (original_target.tagName == 'FORM' ? original_target : (original_target.form ? original_target.form : null));
-		if(form){
-			var checkoutInput = BOLD.helpers.newHiddenInput('checkout','checkout');
-			form.appendChild(checkoutInput);
-		}
-		var cart = (BOLD.common && BOLD.common.cartDoctor ? BOLD.common.cartDoctor.rawCart : BOLD.rawCart);
-		BOLD.helpers.triggerCommonEvent('checkout', evt, {form:form, cart:cart, success: true});
+	const id = parseInt(window.localStorage.getItem('taxId'));
+	var original_target = evt.target;
+	var form = (original_target.tagName == 'FORM' ? original_target : (original_target.form ? original_target.form : null));
+	if(form){
+		var checkoutInput = BOLD.helpers.newHiddenInput('checkout','checkout');
+		form.appendChild(checkoutInput);
 	}
+	var cart = (BOLD.common && BOLD.common.cartDoctor ? BOLD.common.cartDoctor.rawCart : BOLD.rawCart);
 
-	else {
+	var verified = cart.items.filter(function(item) {
+		return item.variant_id === id;
+	});
+
+	if (verified.length !== 0) {
+		BOLD.helpers.triggerCommonEvent('checkout', evt, {form:form, cart:cart, success: true});
+	} else {
 		evt.preventDefault()
 		console.log('please enter zip')
 		$('#warning-container').empty();
