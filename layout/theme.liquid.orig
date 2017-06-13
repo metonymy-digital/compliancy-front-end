@@ -217,9 +217,22 @@ Add the page template as a class for easy page or template specific styling.
                 <a href="{{ link.url }}">{{ link.title }}</a>
                 </li>
               {% endfor %}
+<<<<<<< HEAD
+
+=======
+              <li class="footer-nav__item">
+                <a href="/pages/privacy-policy">Privacy Policy</a>
+              </li>
+              <li class="footer-nav__item">
+                <a href="/pages/terms-and-conditions">Terms and Conditions</a>
+              </li>
+              <li class="footer-nav__item">
+                <a href="/pages/faq">FAQ</a>
+              </li>
               <li class="footer-nav__item">
                 <a href="/pages/return-policy">return policy</a>
               </li>
+>>>>>>> 68f0249aee067c10db583aeda0b1cdb4f56379ee
               <li class="footer-nav__item">
                 <a href="mailto:help@deenbrotherswine.com">contact us</a>
               </li>
@@ -251,16 +264,17 @@ Add the page template as a class for easy page or template specific styling.
               <h4>Contact</h4>
               <p>{{ shop.address.street }}</p>
               <p>{{ shop.address.city }}, {{ shop.address.province_code }} {{ shop.address.zip }}</p>
-<<<<<<< HEAD
-              <p> (844) 480-9576</p>
-=======
               <p>1(844)480-9576</p>
->>>>>>> 246fc2b1a0557d3f487b6232dc9c46a61cb9baee
             </div>
             {% include 'footer-newsletter' %}
           </div>
           <div class="grid__item one-whole">
             <p class="copyright"> &copy; Copyright {{ 'now' | date: "%Y" }} <span class="uppercase">Deen Brothers, LLC.</span> All Rights Reserved.</p>
+          </div>
+          <div class="grid__item one-whole legal">
+            <a href="/pages/terms-and-conditions">terms and conditions</a>
+            <a href="/pages/privacy-policy">privacy policy</a>
+            <a href="/pages/return-policy">return policy</a>
           </div>
         </div>
       </div>
