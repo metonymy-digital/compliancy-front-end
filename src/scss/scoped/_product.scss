@@ -31,11 +31,16 @@
       }
       .product__pricing {
         display: flex;
+        align-items: center;
         #ComparePrice {
           margin-right: $space-md;
           color: $light-grey;
           text-decoration: line-through;
         }
+       .support__product {
+        font-weight: 500;
+        font-size: 20px; 
+       } 
       }
     }
 
