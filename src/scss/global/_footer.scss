@@ -48,9 +48,16 @@
       text-transform: uppercase;
     }
     @include breakpoint-up(lg) {
-      text-align: left;
+      text-align: center;
     }
 
   }
 
+  .legal {
+    text-align: center;
+  }
+
+  .legal a {
+    margin-right: 30px;
+  }
 }

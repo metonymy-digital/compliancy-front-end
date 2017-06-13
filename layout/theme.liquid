@@ -217,9 +217,7 @@ Add the page template as a class for easy page or template specific styling.
                 <a href="{{ link.url }}">{{ link.title }}</a>
                 </li>
               {% endfor %}
-              <li class="footer-nav__item">
-                <a href="/pages/return-policy">return policy</a>
-              </li>
+
               <li class="footer-nav__item">
                 <a href="mailto:help@deenbrotherswine.com">contact us</a>
               </li>
@@ -257,6 +255,11 @@ Add the page template as a class for easy page or template specific styling.
           </div>
           <div class="grid__item one-whole">
             <p class="copyright"> &copy; Copyright {{ 'now' | date: "%Y" }} <span class="uppercase">Deen Brothers, LLC.</span> All Rights Reserved.</p>
+          </div>
+          <div class="grid__item one-whole legal">
+            <a href="/pages/terms-and-conditions">terms and conditions</a>
+            <a href="/pages/privacy-policy">privacy policy</a>
+            <a href="/pages/return-policy">return policy</a>
           </div>
         </div>
       </div>
