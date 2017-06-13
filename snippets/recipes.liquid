@@ -1,0 +1,78 @@
+
+{% if product.metafields.recipes.group == 'mixed' %}
+<ul class="recipe-list">
+  <li>
+    <img src="{{ 'salmon-thumb.jpg' | asset_url }}" class="recipe__thumb" />
+    <h3><a href="/pages/cedar-salmon-with-wasabi-dip">Cedar Salmon with Wasabi Dip</a></h3>
+  </li>
+  <li>
+    <img src="{{ 'pork-thumb.jpg' | asset_url }}" class="recipe__thumb" />
+    <h3><a href="/pages/caramelized-pork-loin">Caramelized Pork Loin</a></h3>
+  </li>
+  <li>
+    <img src="{{ 'tuna-thumb.jpg' | asset_url }}" class="recipe__thumb" />
+    <h3><a href="/pages/grilled-tuna-steaks-with-lemon-pepper-butter">Grilled Tuna Steaks with Lemon-Pepper Butter</a></h3>
+  </li>
+
+  <li>
+    <img src="{{ 'roast-chicken-thumb.jpg' | asset_url }}" class="recipe__thumb" />
+    <h3><a href="/pages/apple-garlic-and-sage-roasted-chicken">Apple, Garlic, and Sage Roasted Chicken</a></h3>
+  </li>
+  <li>
+    <img src="{{ 'risotto-thumb.jpg' | asset_url }}" class="recipe__thumb" />
+    <h3><a href="/pages/risotto-cakes">Risotto Cakes</a></h3>
+  </li>
+  <li>
+    <img src="{{ 'shrimp-grits-thumb.jpg' | asset_url }}" class="recipe__thumb" />
+    <h3><a href="/pages/shrimp-and-grits">Shrimp and Grits</a></h3>
+  </li>
+
+  <li>
+    <img src="{{ 'cioppino-thumb.jpg' | asset_url }}" class="recipe__thumb" />
+    <h3><a href="/pages/the-deen-brothers-cioppino">The Deen Brothers’ Cioppino</a></h3>
+  </li>
+  <li>
+    <img src="{{ 'orzo-thumb.jpg' | asset_url }}" class="recipe__thumb" />
+    <h3><a href="/pages/mediterranean-orzo-salad-with-olives-sun-dried-tomatoes-and-pine-nuts">Mediterranean Orzo Salad with Olives, Sun-Dried Tomatoes, and Pine Nuts</a></h3>
+  </li>
+  <li>
+    <img src="{{ 'prosciutto-thumb.jpg' | asset_url }}" class="recipe__thumb" />
+    <h3><a href="/pages/prosciutto-and-melon-salad">Prosciutto and Melon Salad</a></h3>
+  </li>
+</ul>
+
+{% elsif product.metafields.recipes.group == 'red' %}
+
+<ul class="recipe-list">
+  <li>
+    <img src="{{ 'chimichurri-thumb.jpg' | asset_url }}" class="recipe__thumb" />
+    <h3><a href="/pages/chimichurri-steaks">Chimichurri Steaks</a></h3>
+  </li>
+  <li>
+    <img src="{{ 'lamb-thumb.jpg' | asset_url }}" class="recipe__thumb" />
+    <h3><a href="/pages/grilled-rosemary-lamb-chops">Grilled Rosemary Lamb Chops</a></h3>
+  </li>
+  <li>
+    <img src="{{ 'roast-beef-thumb.jpg' | asset_url }}" class="recipe__thumb" />
+    <h3><a href="/pages/pot-roasted-beef-with-sweet-potatoes-and-celery">Pot Roasted Beef with Sweet Potatoes and Celery</a></h3>
+  </li>
+</ul>
+
+{% elsif product.metafields.recipes.group == 'white' %}
+
+<ul class="recipe-list">
+  <li>
+    <img src="{{ 'tilapia-thumb.jpg' | asset_url }}" class="recipe__thumb" />
+    <h3><a href="/pages/baked-tilapia-with-garlic-and-lime">Baked Tilapia with Garlic and Lime</a></h3>
+  </li>
+  <li>
+    <img src="{{ 'mozzerella-tomato-thumb.jpg' | asset_url }}" class="recipe__thumb" />
+    <h3><a href="/pages/bite-size-tomato-and-mozzarella-tarts">Bite-Size Tomato and Mozzarella Tarts</a></h3>
+  </li>
+  <li>
+    <img src="{{ 'oysters-thumb.jpg' | asset_url }}" class="recipe__thumb" />
+    <h3><a href="/pages/chargrilled-oysters">Chargrilled Oysters</a></h3>
+  </li>
+</ul>
+
+{% endif %}
